@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync } from "node:fs";
+import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 
 const root = new URL("..", import.meta.url).pathname;
 const dist = `${root}/dist`;
@@ -79,3 +79,12 @@ cpSync(`${root}/demo/sala-cero-plantilla`, `${dist}/demo/sala-cero-plantilla`, {
 
 // Demo Sala Cero — versión futurista interactiva
 cpSync(`${root}/demo/sala-cero-futuro`, `${dist}/demo/sala-cero-futuro`, { recursive: true });
+
+// Redirects: URLs sin barra final → con barra (evita CSS/JS rotos en subcarpetas)
+writeFileSync(
+  `${dist}/_redirects`,
+  [
+    "/demo/sala-cero-futuro /demo/sala-cero-futuro/ 301",
+    "/demo/sala-cero-plantilla /demo/sala-cero-plantilla/ 301",
+  ].join("\n") + "\n"
+);
