@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" role="img" aria-label="CHANEZ STORE">
+  <rect width="240" height="56" rx="6" fill="#0A0A0A"/>
+  <text x="14" y="24" fill="#EAB308" font-family="Arial Black, Impact, sans-serif" font-size="22" font-weight="900" letter-spacing="1.5">CHANEZ</text>
+  <text x="14" y="46" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="5">STORE</text>
+  <path d="M106 10 L112 4 L118 10 L115 10 L115 16 L109 16 L109 10 Z" fill="#EAB308"/>
+</svg>

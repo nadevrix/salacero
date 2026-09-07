@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Sala Cero App Reservas — Demo</title>
+  <link rel="stylesheet" href="../../demo-shared.css">
+  <style>
+    .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:0.35rem; text-align:center; font-size:0.78rem; }
+    .cal-grid span { padding:0.5rem; border-radius:8px; }
+    .cal-grid .sel { background:#8248ff; color:#fff; }
+    .time-slots { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+    .time-slots button { padding:0.5rem 0.85rem; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#fff; font-size:0.82rem; }
+    .time-slots .sel { background:#29b8ff; border-color:#29b8ff; }
+  </style>
+</head>
+<body style="margin:0;background:#111">
+  <div class="app-shell">
+    <header class="app-header"><h1>Reservar turno</h1></header>
+    <main class="app-content">
+      <p style="color:#9b98a8;font-size:0.82rem">Elegí fecha y hora</p>
+      <div class="cal-grid">
+        <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+        <span>1</span><span>2</span><span>3</span><span class="sel">4</span><span>5</span><span>6</span><span>7</span>
+      </div>
+      <div class="time-slots">
+        <button>09:00</button><button class="sel">10:30</button><button>14:00</button><button>16:30</button>
+      </div>
+      <a href="#" style="display:block;text-align:center;margin-top:2rem;padding:0.85rem;background:linear-gradient(110deg,#29b8ff,#8248ff);border-radius:999px;color:#fff;font-weight:600;text-decoration:none">Confirmar reserva</a>
+    </main>
+    <nav class="app-tabbar">
+      <a href="#" class="active">Reservar</a>
+      <a href="#">Mis turnos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </div>
+</body>
+</html>

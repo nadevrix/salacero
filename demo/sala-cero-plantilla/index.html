@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sala Cero — Desarrollo web, e-commerce y software en Santa Cruz, Bolivia. Demo hecha 100% con plantilla premium. Precios desde Bs 990.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Sala Cero — Versión plantilla premium">
+  <meta property="og:description" content="Experimento: ¿puede una web hecha solo con plantilla superar al sitio original de Sala Cero?">
+  <meta property="og:type" content="website">
+  <title>Sala Cero — Versión plantilla · Santa Cruz</title>
+  <link rel="icon" href="./assets/logo-sala-cero.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sala-cero-theme.css">
+  <link rel="stylesheet" href="catalogo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+  <p class="demo-badge" aria-hidden="true">Demo · 100% plantilla</p>
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <div class="preloader">
+    <div class="preloader-content">
+      <div class="brand-logo">
+        <img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="160" height="84">
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="loading-text">Cargando experiencia…</div>
+    </div>
+  </div>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <header class="header">
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="logo brand-logo">
+        <a href="#home" aria-label="Sala Cero inicio">
+          <img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="140" height="73">
+        </a>
+      </div>
+      <div class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Inicio</a></li>
+        <li><a href="#about" class="nav-link">Nosotros</a></li>
+        <li><a href="#services" class="nav-link">Servicios</a></li>
+        <li><a href="#pricing" class="nav-link">Precios</a></li>
+        <li><a href="./catalogo.html" class="nav-link">Catálogo</a></li>
+        <li><a href="#work" class="nav-link">Portafolio</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/salacerobo/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/salacero" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61593645197844" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <div class="gradient-overlay"></div>
+        <div class="noise-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-tagline">Digital studio · Santa Cruz</div>
+          <h1 class="hero-title">
+            <span class="line">
+              <span class="word" data-delay="0">Páginas</span>
+              <span class="word" data-delay="1">web</span>
+            </span>
+            <span class="line">
+              <span class="word highlight" data-delay="2">que</span>
+              <span class="word" data-delay="3">venden</span>
+            </span>
+          </h1>
+          <p class="hero-subtitle">
+            <span class="subtitle-line">Desarrollamos sitios, tiendas online y sistemas</span>
+            <span class="subtitle-line">para negocios en Bolivia. Precio y plazo</span>
+            <span class="subtitle-line">en 24 horas por WhatsApp.</span>
+          </p>
+          <div class="hero-cta-group">
+            <a href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20quiero%20cotizar%20un%20proyecto." class="cta-button" target="_blank" rel="noopener">
+              <span class="btn-text">Cotizar por WhatsApp</span>
+              <span class="btn-icon"><i class="fab fa-whatsapp"></i></span>
+            </a>
+            <a href="#work" class="cta-button secondary">
+              <span class="btn-text">Ver demos reales</span>
+            </a>
+          </div>
+          <p class="demo-compare">Experimento de plantilla vs sitio original → <a href="../../index.html">Comparar con sala-cero.onrender.com</a></p>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+          </div>
+          <div class="hero-image-box">
+            <img src="./assets/demo-sala-cero-hero-main.webp" alt="Estudio digital Sala Cero, desarrollo web en Santa Cruz" width="900" height="506">
+            <div class="hero-image-overlay"></div>
+          </div>
+          <div class="hero-image-box secondary">
+            <img src="./assets/unsplash-hero-secondary.webp" alt="Dashboard de negocio en laptop" width="700" height="525">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse"><div class="wheel"></div></div>
+        <span>Desliza</span>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nosotros</span>
+          <h2 class="section-title">
+            <span class="title-line">Equipo de</span>
+            <span class="title-line highlight">8 en Santa Cruz</span>
+          </h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="lead-text" data-animate>
+              Somos un estudio digital que convierte ideas en
+              <span class="text-highlight">productos web</span> y
+              <span class="text-highlight">software que funciona</span>.
+            </p>
+            <p data-animate>
+              Esta página es un experimento: está hecha casi al 100% con la plantilla
+              <strong>FoxyMoron</strong> (agencia creativa, tema oscuro, animaciones incluidas).
+              Solo cambiamos textos, colores al gradiente de Sala Cero y enlaces reales.
+              La pregunta es simple: ¿se siente más premium que nuestro sitio custom?
+            </p>
+            <div class="stats-grid" data-animate>
+              <div class="stat-item">
+                <span class="stat-number" data-count="8">0</span>
+                <span class="stat-label">Desarrolladores full stack</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="24">0</span>
+                <span class="stat-label">Horas para cotizar</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="990">0</span>
+                <span class="stat-label">Desde Bs en web express</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="6">0</span>
+                <span class="stat-label">Meses de garantía</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="image-wrapper" data-animate>
+              <img src="./assets/demo-sala-cero-equipo.webp" alt="Equipo de desarrollo colaborando" class="about-img" width="900" height="675" loading="lazy">
+              <div class="image-decoration"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="parallax-bg">
+        <div class="parallax-shape shape-circle"></div>
+        <div class="parallax-shape shape-square"></div>
+      </div>
+    </section>
+
+    <section class="clients">
+      <div class="container">
+        <div class="clients-header">
+          <span class="section-tag">A quién ayudamos</span>
+          <p>Negocios locales que necesitan vender y operar mejor online</p>
+        </div>
+        <div class="sectors-grid">
+          <div class="sector-pill">🍽️ Restaurantes<span>Menú, pedidos, reservas</span></div>
+          <div class="sector-pill">👗 Moda y ferias<span>Catálogos y e-commerce</span></div>
+          <div class="sector-pill">🏪 Retail<span>Tiendas con stock</span></div>
+          <div class="sector-pill">🏭 PyMEs<span>Sistemas internos</span></div>
+          <div class="sector-pill">📦 Exportadores<span>Tiendas internacionales</span></div>
+          <div class="sector-pill">📱 Startups<span>Apps y MVPs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Servicios</span>
+          <h2 class="section-title">
+            <span class="title-line">Tres líneas</span>
+            <span class="title-line highlight">de producto</span>
+          </h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" data-animate>
+            <div class="service-image">
+              <img src="./assets/demo-sala-cero-servicio-web.webp" loading="lazy" alt="Diseño web responsive" width="800" height="450">
+            </div>
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <h3 class="service-title">Sitios y comercio online</h3>
+            <p class="service-desc">Landing pages, sitios institucionales, catálogos digitales y tiendas e-commerce listas para vender desde el primer día.</p>
+            <a href="#pricing" class="service-link"><span>Ver precios</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="service-card" data-animate>
+            <div class="service-image">
+              <img src="./assets/unsplash-servicio-software.webp" loading="lazy" alt="Software modular para negocios" width="800" height="450">
+            </div>
+            <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+            <h3 class="service-title">Software para negocios</h3>
+            <p class="service-desc">Inventario, pedidos, CRM, caja y reportes. Sistemas modulares que reemplazan Excel y procesos manuales.</p>
+            <a href="#contact" class="service-link"><span>Cotizar sistema</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="service-card" data-animate>
+            <div class="service-image">
+              <img src="./assets/unsplash-servicio-apps.webp" loading="lazy" alt="Aplicaciones móviles iOS y Android" width="800" height="450">
+            </div>
+            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3 class="service-title">Aplicaciones móviles</h3>
+            <p class="service-desc">Apps para vender, reservar, fidelizar o operar en campo. iOS y Android con publicación en tiendas.</p>
+            <a href="#contact" class="service-link"><span>Cotizar app</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="pricing">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Catálogo completo</span>
+          <h2 class="section-title">
+            <span class="title-line">24 productos</span>
+            <span class="title-line highlight">con precio</span>
+          </h2>
+          <p style="max-width: 640px; margin: 1rem auto 0; color: var(--light-gray);">Web, sistemas, apps, chatbots e IA. Misma info que el landing oficial de Sala Cero.</p>
+        </div>
+        <div class="catalog-toolbar catalog-toolbar-center">
+          <div class="catalog-toolbar-actions" style="justify-content:center;width:100%;">
+            <a href="./catalogo.html" class="cta-button"><span class="btn-text">Ver catálogo completo</span></a>
+            <a href="./catalogo-sala-cero.pdf" class="cta-button secondary" target="_blank" rel="noopener"><span class="btn-text"><i class="fas fa-file-pdf"></i> Descargar PDF</span></a>
+          </div>
+        </div>
+        <div id="catalog-preview"></div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Demos interactivas</span>
+          <h2 class="section-title">
+            <span class="title-line">Así podría</span>
+            <span class="title-line highlight">verse tu negocio</span>
+          </h2>
+          <p style="max-width: 560px; margin-top: 1rem; color: var(--light-gray);">Ejemplos para mostrar en reuniones — no son clientes pagos todavía. Tocá y probá el flujo completo.</p>
+        </div>
+        <div class="work-grid">
+          <div class="work-item large" data-animate>
+            <div class="work-image">
+              <img src="./assets/portfolio-restaurante.webp" alt="Demo restaurante">
+            </div>
+            <div class="work-overlay">
+              <div class="work-content">
+                <span class="work-category">Restaurante · Demo</span>
+                <h3 class="work-title">Menú digital</h3>
+                <p class="work-desc">Carta online, platos y pedido por WhatsApp. Nombre ficticio para el ejemplo.</p>
+                <a href="../restaurante/" class="work-link">Abrir demo <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="work-item" data-animate>
+            <div class="work-image">
+              <img src="./assets/unsplash-demo-ecommerce.webp" alt="Demo tienda online" loading="lazy" width="800" height="450">
+            </div>
+            <div class="work-overlay">
+              <div class="work-content">
+                <span class="work-category">E-commerce · Demo</span>
+                <h3 class="work-title">Tienda online</h3>
+                <p class="work-desc">Carrito, checkout y pedido armado</p>
+                <a href="../chanez-ecommerce/" class="work-link">Abrir demo <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="work-item" data-animate>
+            <div class="work-image">
+              <img src="./assets/unsplash-demo-catalogo.webp" alt="Demo catálogo digital" loading="lazy" width="800" height="600">
+            </div>
+            <div class="work-overlay">
+              <div class="work-content">
+                <span class="work-category">Catálogo · Demo</span>
+                <h3 class="work-title">Catálogo digital</h3>
+                <p class="work-desc">Productos, precios y WhatsApp</p>
+                <a href="../chanez-store/" class="work-link">Abrir demo <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="work-item" data-animate>
+            <div class="work-image">
+              <img src="./assets/portfolio-restaurante.webp" alt="Demo restaurante plantilla pro" loading="lazy" width="800" height="600">
+            </div>
+            <div class="work-overlay">
+              <div class="work-content">
+                <span class="work-category">Restaurante · Plantilla</span>
+                <h3 class="work-title">Restaurante pro</h3>
+                <p class="work-desc">Versión con plantilla premium</p>
+                <a href="../restaurante-pro/" class="work-link">Abrir demo <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="awards" id="process">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Proceso</span>
+          <h2 class="section-title">
+            <span class="title-line">De la idea</span>
+            <span class="title-line highlight">a producción</span>
+          </h2>
+        </div>
+        <div class="awards-marquee">
+          <div class="marquee-track">
+            <div class="award-item"><i class="fas fa-bullseye"></i><span>Definir alcance</span></div>
+            <div class="award-item"><i class="fas fa-pencil-ruler"></i><span>Diseñar</span></div>
+            <div class="award-item"><i class="fas fa-code"></i><span>Desarrollar</span></div>
+            <div class="award-item"><i class="fas fa-rocket"></i><span>Publicar</span></div>
+            <div class="award-item"><i class="fas fa-headset"></i><span>Soporte 6 meses</span></div>
+            <div class="award-item"><i class="fas fa-bullseye"></i><span>Definir alcance</span></div>
+            <div class="award-item"><i class="fas fa-pencil-ruler"></i><span>Diseñar</span></div>
+            <div class="award-item"><i class="fas fa-code"></i><span>Desarrollar</span></div>
+          </div>
+        </div>
+        <div class="process-steps">
+          <div class="process-step" data-animate>
+            <strong>01</strong>
+            <h4>Definir</h4>
+            <p>Objetivo, alcance y ruta técnica en una conversación clara.</p>
+          </div>
+          <div class="process-step" data-animate>
+            <strong>02</strong>
+            <h4>Construir</h4>
+            <p>Diseño y desarrollo en el mismo equipo, sin intermediarios.</p>
+          </div>
+          <div class="process-step" data-animate>
+            <strong>03</strong>
+            <h4>Lanzar</h4>
+            <p>Pruebas, dominio, capacitación y puesta en marcha.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="section-header">
+              <span class="section-tag">Contacto</span>
+              <h2 class="section-title">
+                <span class="title-line">Hablemos</span>
+                <span class="title-line highlight">hoy</span>
+              </h2>
+            </div>
+            <p class="contact-desc">Contanos qué necesitás. Te respondemos el mismo día con precio, plazo y próximos pasos.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/59175063505" target="_blank" rel="noopener">+591 750 63505</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:salacero.bo@gmail.com">salacero.bo@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Santa Cruz de la Sierra, Bolivia</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/salacerobo/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61593645197844" target="_blank" rel="noopener" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/salacero" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Tu nombre</label>
+                  <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                  <input type="tel" id="phone" name="phone" required>
+                  <label for="phone">WhatsApp / teléfono</label>
+                  <span class="focus-border"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <select id="service" name="service" required>
+                  <option value="" disabled selected></option>
+                  <option value="Web Express">Web Express (Bs 990)</option>
+                  <option value="Landing page">Landing page</option>
+                  <option value="Catálogo digital">Catálogo digital</option>
+                  <option value="E-commerce">Tienda e-commerce</option>
+                  <option value="Software">Software a medida</option>
+                  <option value="App móvil">App móvil</option>
+                </select>
+                <label for="service">¿Qué necesitás?</label>
+                <span class="focus-border"></span>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">Contanos tu proyecto</label>
+                <span class="focus-border"></span>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span class="btn-text">Enviar por WhatsApp</span>
+                <span class="btn-icon"><i class="fab fa-whatsapp"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo brand-logo">
+            <img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="140" height="73">
+          </div>
+          <p class="footer-tagline">Estudio digital en Santa Cruz. Web, e-commerce y software con precios claros y entrega rápida.</p>
+          <p class="template-credit">Plantilla base: <a href="https://github.com/stackmasteraliza/agency-template" target="_blank" rel="noopener">FoxyMoron Agency</a> (MIT) · Personalizada para Sala Cero</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="#about">Nosotros</a></li>
+              <li><a href="#work">Portafolio</a></li>
+              <li><a href="#pricing">Precios</a></li>
+              <li><a href="./catalogo.html">Catálogo</a></li>
+              <li><a href="./catalogo-sala-cero.pdf" target="_blank" rel="noopener">Catálogo PDF</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="#services">Sitios web</a></li>
+              <li><a href="#services">E-commerce</a></li>
+              <li><a href="#services">Software</a></li>
+              <li><a href="#services">Apps móviles</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Comparar</h4>
+            <ul>
+              <li><a href="../../index.html">Sitio original Sala Cero</a></li>
+              <li><a href="../sala-cero-futuro/">Versión futurista</a></li>
+              <li><a href="../restaurante-pro/">Demo restaurante pro</a></li>
+              <li><a href="../chanez-ecommerce/">Demo e-commerce</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sala Cero · Demo plantilla · Santa Cruz, Bolivia</p>
+        <div class="footer-legal">
+          <a href="../../privacidad.html">Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="./catalogo-sala-cero.js"></script>
+  <script src="./js/catalogo.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.SALA_CERO_CATALOGO && window.SalaCeroCatalogo) {
+        SalaCeroCatalogo.render(document.getElementById("catalog-preview"), window.SALA_CERO_CATALOGO);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#050509"/>
+  <g transform="translate(26.0 85.5) scale(1.24)">
+
+  <title id="title">Sala Cero</title>
+  <defs>
+    <linearGradient id="brand" x1="4" y1="0" x2="194" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34b9ff"/>
+      <stop offset=".34" stop-color="#7b72ff"/>
+      <stop offset=".62" stop-color="#ee37b7"/>
+      <stop offset=".82" stop-color="#ff4c69"/>
+      <stop offset="1" stop-color="#ffae27"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="#f7f6fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5">
+    <path d="M40 12H14C3 12 3 28 14 28h17c12 0 12 16 0 16H6"/>
+    <path d="m52 44 15-32 15 32"/>
+    <path d="M97 12v32h29"/>
+    <path d="m140 44 15-32 15 32"/>
+  </g>
+
+  <g fill="none" stroke="url(#brand)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+    <path d="M40 65c-4-5-9-8-16-8C13 57 5 65 5 77s8 20 19 20c7 0 12-3 16-8"/>
+    <path d="M55 58h29M55 77h23M55 96h29"/>
+    <path d="M100 96V58h17c12 0 15 18 1 19h-18m17 0 15 19"/>
+    <ellipse cx="164" cy="77" rx="21" ry="20"/>
+  </g>
+
+  </g>
+</svg>

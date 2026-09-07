@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="664" viewBox="0 0 1640 664">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#29b8ff"/><stop offset=".42" stop-color="#8248ff"/>
+      <stop offset=".68" stop-color="#ff3aa7"/><stop offset="1" stop-color="#ff921e"/>
+    </linearGradient>
+    <radialGradient id="h" cx="240" cy="120" r="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a4a8c" stop-opacity=".34"/><stop offset="1" stop-color="#050509" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="i" cx="1480" cy="580" r="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8248ff" stop-opacity=".24"/><stop offset="1" stop-color="#050509" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1640" height="664" fill="#050509"/>
+  <rect width="1640" height="664" fill="url(#h)"/>
+  <rect width="1640" height="664" fill="url(#i)"/>
+  <rect y="658" width="1640" height="6" fill="url(#g)"/>
+  <g font-family="IBM Plex Sans, Inter, Segoe UI, sans-serif">
+    <text x="96" y="196" fill="#7b7885" font-size="22" letter-spacing="5">WEB · SISTEMAS · APPS · IA</text>
+    <text x="94" y="278" fill="#f6f5f8" font-size="56" font-weight="600" letter-spacing="-1.4">Páginas web, tiendas</text>
+    <text x="94" y="344" fill="#f6f5f8" font-size="56" font-weight="600" letter-spacing="-1.4">online y sistemas</text>
+    <text x="94" y="410" fill="#f6f5f8" font-size="56" font-weight="600" letter-spacing="-1.4">para tu negocio</text>
+    <text x="96" y="474" fill="#a5a2ad" font-size="25">Santa Cruz de la Sierra · Precio y plazo en 24 horas</text>
+    <text x="96" y="512" fill="#a5a2ad" font-size="25">6 meses de garantía</text>
+  </g>
+</svg>

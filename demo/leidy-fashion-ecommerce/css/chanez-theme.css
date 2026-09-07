@@ -1,0 +1,143 @@
+/* LEIDY FASHION — paleta: rojo #DC2626, negro #0A0A0A, blanco #F8FAFC */
+
+:root {
+  --brand-accent: #dc2626;
+  --brand-accent-hover: #b91c1c;
+  --brand-accent-soft: rgba(220, 38, 38, 0.12);
+  --brand-ink: #0a0a0a;
+  --brand-ink-soft: #141414;
+  --brand-light: #f8fafc;
+  --brand-muted: #94a3b8;
+  --chanez-gold: var(--brand-accent);
+  --chanez-gold-hover: var(--brand-accent-hover);
+  --chanez-gold-soft: var(--brand-accent-soft);
+  --chanez-ink: var(--brand-ink);
+  --chanez-ink-soft: var(--brand-ink-soft);
+  --chanez-light: var(--brand-light);
+  --chanez-muted: var(--brand-muted);
+  --chanez-black: var(--brand-ink);
+  --bs-primary: var(--brand-accent);
+  --bs-primary-rgb: 220, 38, 38;
+  --bs-body-bg: #fff;
+  --bs-body-color: var(--brand-ink);
+  --bs-link-color: var(--brand-accent-hover);
+  --bs-link-hover-color: var(--brand-accent);
+}
+
+body {
+  font-family: Jost, Georgia, serif;
+  background: var(--brand-light);
+  color: var(--brand-ink);
+}
+
+.preloader { display: none !important; }
+
+.demo-badge {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2000;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand-light);
+  background: var(--brand-accent);
+}
+
+.chanez-topbar {
+  background: var(--brand-ink);
+  color: var(--brand-light);
+  font-size: 0.78rem;
+}
+
+.chanez-topbar a { color: #fca5a5; text-decoration: none; }
+.chanez-topbar a:hover { color: #fecaca; }
+
+.navbar-chanez {
+  background: var(--brand-ink) !important;
+  border-bottom: 2px solid var(--brand-accent) !important;
+}
+
+.navbar-chanez .navbar-brand img.brand-avatar { height: 48px; width: 48px; border-radius: 50%; display: block; object-fit: cover; }
+.brand-lockup .brand-name { line-height: 1.1; color: var(--brand-light); }
+.brand-lockup .brand-name strong { font-size: 0.95rem; letter-spacing: 0.02em; font-family: Georgia, serif; font-style: italic; }
+.text-muted-brand { color: #fca5a5 !important; font-size: 0.68rem; letter-spacing: 0.02em; font-family: Arial, sans-serif; font-style: normal; }
+.navbar-chanez .navbar-brand img { height: 48px; width: auto; display: block; }
+.navbar-chanez .nav-link { color: var(--brand-light) !important; letter-spacing: 0.06em; }
+.navbar-chanez .nav-link:hover,
+.navbar-chanez .nav-link.active { color: #fca5a5 !important; }
+.navbar-chanez .navbar-toggler { border-color: rgba(248, 250, 252, 0.35); }
+.navbar-chanez .navbar-toggler-icon { filter: invert(1); }
+
+.btn-primary, .btn-dark {
+  --bs-btn-bg: var(--brand-ink);
+  --bs-btn-border-color: var(--brand-ink);
+  --bs-btn-color: var(--brand-light);
+  --bs-btn-hover-bg: var(--brand-ink-soft);
+  --bs-btn-hover-border-color: var(--brand-ink-soft);
+  --bs-btn-hover-color: #fca5a5;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: var(--brand-ink);
+  --bs-btn-border-color: var(--brand-ink);
+  --bs-btn-hover-bg: var(--brand-ink);
+  --bs-btn-hover-border-color: var(--brand-ink);
+  --bs-btn-hover-color: #fca5a5;
+}
+
+.btn-chanez {
+  background: var(--brand-accent);
+  border: none;
+  color: var(--brand-light);
+  font-weight: 700;
+}
+
+.btn-chanez:hover, .btn-chanez:focus {
+  background: var(--brand-accent-hover);
+  color: var(--brand-light);
+}
+
+.badge-chanez {
+  background: var(--brand-accent);
+  color: var(--brand-light);
+  font-weight: 700;
+}
+
+.product-item .product-image { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; background: #fef2f2; }
+.product-item .product-badge { position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2; }
+.shop-toolbar { border-bottom: 1px solid #fecaca; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+.shop-toolbar .btn-outline-dark.active,
+.shop-toolbar .btn-outline-dark:hover { background: var(--brand-ink); border-color: var(--brand-ink); color: #fca5a5; }
+.shop-sidebar { position: sticky; top: 6.5rem; background: #fff; border-color: #fecaca !important; }
+.shop-sidebar h2 { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.promo-strip { background: var(--brand-ink); }
+.promo-strip img { aspect-ratio: 16 / 7; object-fit: cover; width: 100%; }
+.promo-strip .promo-caption {
+  position: absolute; inset: auto 0 0 0; padding: 1rem 1.25rem;
+  background: linear-gradient(transparent, rgba(10, 10, 10, 0.92)); color: var(--brand-light);
+}
+.promo-strip .promo-caption strong { color: #fca5a5; }
+[data-cart-count] { font-weight: 700; color: #fca5a5; }
+.empty-state { text-align: center; padding: 3rem 1rem; }
+.qty-control { display: inline-flex; align-items: center; border: 1px solid #fecaca; border-radius: 999px; overflow: hidden; }
+.qty-control button { border: 0; background: var(--brand-accent-soft); width: 2rem; height: 2rem; color: var(--brand-ink); }
+.qty-control input { width: 2.5rem; border: 0; text-align: center; background: #fff; }
+.payment-pill { display: block; padding: 0.85rem 1rem; border: 1px solid #fecaca; border-radius: 0.75rem; cursor: pointer; }
+.payment-pill.active { border-color: var(--brand-accent); background: var(--brand-accent-soft); font-weight: 600; }
+.site-footer-chanez { background: var(--brand-ink); color: var(--brand-muted); border-top: 2px solid var(--brand-accent); }
+.site-footer-chanez a { color: #fca5a5; }
+.site-footer-chanez .footer-logo img { height: 44px; width: auto; }
+.pdp-gallery { border-color: #fecaca !important; background: #fff; }
+.pdp-gallery img { width: 100%; border-radius: 0.5rem; }
+.size-btn { min-width: 2.75rem; padding: 0.45rem 0.75rem; border: 1px solid #fecaca; border-radius: 999px; background: #fff; }
+.size-btn.active { border-color: var(--brand-accent); background: var(--brand-ink); color: #fca5a5; }
+#offcanvasCart { background: var(--brand-light); }
+#offcanvasCart .offcanvas-header { background: var(--brand-ink); color: var(--brand-light); }
+#offcanvasCart .offcanvas-title { color: #fca5a5; }
+#offcanvasCart .btn-close { filter: invert(1); }
+#offcanvasCart .list-group-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 0.35rem; }
+.breadcrumb a { color: var(--brand-accent-hover); }

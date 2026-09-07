@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Leidy Fashion Bolivia">
+  <circle cx="100" cy="100" r="100" fill="#050505"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#dc2626" stroke-width="5"/>
+  <text x="100" y="92" text-anchor="middle" fill="#ffffff" font-family="Brush Script MT, Segoe Script, cursive" font-size="42">Leidy</text>
+  <text x="100" y="118" text-anchor="middle" fill="#ffffff" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="600">Fashion</text>
+  <text x="100" y="142" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="7.5" font-weight="700" letter-spacing="0.8">PRENDAS DE VESTIR</text>
+  <text x="100" y="152" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="7.5" font-weight="700" letter-spacing="0.8">PARA DAMAS</text>
+</svg>

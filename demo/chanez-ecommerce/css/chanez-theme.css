@@ -1,0 +1,381 @@
+/* Paleta extraída del logo CHANEZ: oro #EAB308, negro #0A0A0A, blanco humo #F8FAFC */
+
+:root {
+  --chanez-gold: #eab308;
+  --chanez-gold-hover: #ca8a04;
+  --chanez-gold-soft: rgba(234, 179, 8, 0.14);
+  --chanez-ink: #0a0a0a;
+  --chanez-ink-soft: #141414;
+  --chanez-light: #f8fafc;
+  --chanez-muted: #94a3b8;
+  --chanez-black: var(--chanez-ink);
+  --bs-primary: var(--chanez-gold);
+  --bs-primary-rgb: 234, 179, 8;
+  --bs-body-bg: var(--chanez-light);
+  --bs-body-color: var(--chanez-ink);
+  --bs-link-color: var(--chanez-gold-hover);
+  --bs-link-hover-color: var(--chanez-gold);
+}
+
+body {
+  font-family: Jost, system-ui, sans-serif;
+  background: var(--chanez-light);
+  color: var(--chanez-ink);
+}
+
+.preloader {
+  display: none !important;
+}
+
+.demo-badge {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2000;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--chanez-ink);
+  background: var(--chanez-gold);
+}
+
+.chanez-topbar {
+  background: var(--chanez-ink);
+  color: var(--chanez-light);
+  font-size: 0.78rem;
+}
+
+.chanez-topbar a {
+  color: var(--chanez-gold);
+  text-decoration: none;
+}
+
+.chanez-topbar a:hover {
+  color: #fde047;
+}
+
+.navbar-chanez {
+  background: var(--chanez-ink) !important;
+  border-bottom: 2px solid var(--chanez-gold) !important;
+}
+
+.navbar-chanez .navbar-brand {
+  padding: 0.15rem 0;
+}
+
+.navbar-chanez .navbar-brand img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.brand-mark {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 5.5rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.35rem;
+  background: var(--chanez-ink);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  line-height: 1;
+}
+
+.brand-mark-top {
+  color: var(--chanez-gold);
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.brand-mark-bottom {
+  color: var(--chanez-light);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  margin-top: 0.2rem;
+}
+
+.brand-lockup .brand-name {
+  line-height: 1.1;
+  color: var(--chanez-light);
+}
+
+.brand-lockup .brand-name strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.text-muted-brand {
+  color: var(--chanez-gold) !important;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.site-footer-chanez .brand-mark {
+  border-color: rgba(234, 179, 8, 0.5);
+}
+
+.navbar-chanez .nav-link {
+  color: var(--chanez-light) !important;
+  letter-spacing: 0.06em;
+}
+
+.navbar-chanez .nav-link:hover,
+.navbar-chanez .nav-link.active {
+  color: var(--chanez-gold) !important;
+}
+
+.navbar-chanez .navbar-toggler {
+  border-color: rgba(248, 250, 252, 0.35);
+}
+
+.navbar-chanez .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.btn-primary,
+.btn-dark {
+  --bs-btn-bg: var(--chanez-ink);
+  --bs-btn-border-color: var(--chanez-ink);
+  --bs-btn-color: var(--chanez-light);
+  --bs-btn-hover-bg: var(--chanez-ink-soft);
+  --bs-btn-hover-border-color: var(--chanez-ink-soft);
+  --bs-btn-hover-color: var(--chanez-gold);
+}
+
+.btn-outline-dark {
+  --bs-btn-color: var(--chanez-ink);
+  --bs-btn-border-color: var(--chanez-ink);
+  --bs-btn-hover-bg: var(--chanez-ink);
+  --bs-btn-hover-border-color: var(--chanez-ink);
+  --bs-btn-hover-color: var(--chanez-gold);
+}
+
+.btn-chanez {
+  background: var(--chanez-gold);
+  border: none;
+  color: var(--chanez-ink);
+  font-weight: 700;
+}
+
+.btn-chanez:hover,
+.btn-chanez:focus {
+  background: var(--chanez-gold-hover);
+  color: var(--chanez-ink);
+}
+
+.btn-outline-chanez {
+  border: 1px solid var(--chanez-gold);
+  color: var(--chanez-gold);
+  font-weight: 600;
+  background: transparent;
+}
+
+.btn-outline-chanez:hover {
+  background: var(--chanez-gold);
+  color: var(--chanez-ink);
+  border-color: var(--chanez-gold);
+}
+
+.badge-chanez {
+  background: var(--chanez-gold);
+  color: var(--chanez-ink);
+  font-weight: 700;
+}
+
+.product-item .product-image {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+  background: #e2e8f0;
+}
+
+.product-item .product-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+}
+
+.product-item .product-content a {
+  color: var(--chanez-ink);
+}
+
+.product-item .product-content a:hover {
+  color: var(--chanez-gold-hover);
+}
+
+.shop-toolbar {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.shop-toolbar .btn-outline-dark.active,
+.shop-toolbar .btn-outline-dark:hover {
+  background: var(--chanez-ink);
+  border-color: var(--chanez-ink);
+  color: var(--chanez-gold);
+}
+
+.shop-sidebar {
+  position: sticky;
+  top: 6.5rem;
+  background: #fff;
+  border-color: #e2e8f0 !important;
+}
+
+.shop-sidebar h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--chanez-ink);
+}
+
+.promo-strip {
+  background: var(--chanez-ink);
+}
+
+.promo-strip img {
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  width: 100%;
+}
+
+.promo-strip .promo-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(transparent, rgba(10, 10, 10, 0.92));
+  color: var(--chanez-light);
+}
+
+.promo-strip .promo-caption strong {
+  color: var(--chanez-gold);
+}
+
+.cart-count,
+[data-cart-count] {
+  font-weight: 700;
+  color: var(--chanez-gold);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.qty-control button {
+  border: 0;
+  background: var(--chanez-gold-soft);
+  width: 2rem;
+  height: 2rem;
+  color: var(--chanez-ink);
+}
+
+.qty-control input {
+  width: 2.5rem;
+  border: 0;
+  text-align: center;
+  background: #fff;
+}
+
+.payment-pill {
+  display: block;
+  padding: 0.85rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.payment-pill.active {
+  border-color: var(--chanez-gold);
+  background: var(--chanez-gold-soft);
+  font-weight: 600;
+}
+
+.site-footer-chanez {
+  background: var(--chanez-ink);
+  color: var(--chanez-muted);
+  border-top: 2px solid var(--chanez-gold);
+}
+
+.site-footer-chanez a {
+  color: var(--chanez-gold);
+}
+
+.site-footer-chanez .footer-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.pdp-gallery {
+  border-color: #e2e8f0 !important;
+  background: #fff;
+}
+
+.pdp-gallery img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.size-btn {
+  min-width: 2.75rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.size-btn.active {
+  border-color: var(--chanez-gold);
+  background: var(--chanez-ink);
+  color: var(--chanez-gold);
+}
+
+#offcanvasCart {
+  background: var(--chanez-light);
+}
+
+#offcanvasCart .offcanvas-header {
+  background: var(--chanez-ink);
+  color: var(--chanez-light);
+}
+
+#offcanvasCart .offcanvas-title {
+  color: var(--chanez-gold);
+}
+
+#offcanvasCart .btn-close {
+  filter: invert(1);
+}
+
+#offcanvasCart .list-group-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 0.35rem;
+}
+
+.breadcrumb a {
+  color: var(--chanez-gold-hover);
+}
+
+.breadcrumb a:hover {
+  color: var(--chanez-gold);
+}

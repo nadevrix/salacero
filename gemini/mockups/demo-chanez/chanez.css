@@ -1,0 +1,182 @@
+/* CHANEZ STORE — overrides sobre plantilla Modish (TemplatesJungle) */
+
+:root {
+  --chanez-gold: #eab308;
+  --chanez-gold-dark: #ca8a04;
+  --chanez-black: #0a0a0a;
+}
+
+.demo-badge {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2000;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--chanez-black);
+  background: var(--chanez-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.top-bar {
+  background: var(--chanez-black);
+  color: #f8fafc;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.top-bar span {
+  opacity: 0.92;
+}
+
+.navbar-brand img {
+  height: 42px;
+  width: auto;
+}
+
+#billboard .hero-wrap {
+  background: linear-gradient(120deg, rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.35)),
+    url("./assets/hero-chanez.webp") center / cover no-repeat;
+  min-height: 88vh;
+}
+
+.hero-kicker {
+  color: var(--chanez-gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.btn-chanez {
+  background: var(--chanez-gold);
+  border: none;
+  color: var(--chanez-black);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.btn-chanez:hover,
+.btn-chanez:focus {
+  background: var(--chanez-gold-dark);
+  color: var(--chanez-black);
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--chanez-black);
+}
+
+.section-hombre {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.75)),
+    url("./assets/product-urban-tee-black.webp") center / cover no-repeat;
+  min-height: 55vh;
+}
+
+.section-mujer {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.45), rgba(10, 10, 10, 0.7)),
+    url("./assets/product-polo-color.webp") center / cover no-repeat;
+  min-height: 55vh;
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: var(--chanez-gold);
+  color: var(--chanez-black);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.price-mayor {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cart-button .btn-wrap {
+  background: var(--chanez-black) !important;
+  color: #fff !important;
+}
+
+.cart-button .btn-wrap:hover {
+  background: var(--chanez-gold) !important;
+  color: var(--chanez-black) !important;
+}
+
+.info-strip {
+  background: #111;
+  color: #f8fafc;
+}
+
+.info-strip .info-icon {
+  color: var(--chanez-gold);
+  font-size: 1.4rem;
+}
+
+#footer {
+  background: var(--chanez-black) !important;
+}
+
+.demo-footer-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.demo-footer-note a {
+  color: var(--chanez-gold);
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-fab svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+@media (max-width: 767px) {
+  #billboard .hero-wrap {
+    min-height: 78vh;
+  }
+
+  .whatsapp-fab span {
+    display: none;
+  }
+
+  .whatsapp-fab {
+    padding: 0.95rem;
+    border-radius: 50%;
+  }
+}

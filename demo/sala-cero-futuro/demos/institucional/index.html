@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Sala Cero Institucional — Demo sitio corporativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-strip">Demo · <strong>Sitio institucional</strong> · Empresa completa: menú, servicios, equipo, noticias · <a href="../../producto.html?slug=sitio-institucional">Guía</a></div>
+
+  <div class="topbar">📞 +591 750 63505 · Santa Cruz, Bolivia · Lun–Vie 8:00–18:00</div>
+
+  <header class="corp-header">
+    <img src="assets/logo-sala-cero.svg" alt="Grupo Andino" width="100" height="52">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn-outline" href="#contacto">Trabajá con nosotros</a>
+  </header>
+
+  <section class="corp-hero" id="inicio" style="background-image:url('../../assets/catalog/sitio-institucional.jpg')">
+    <div class="corp-hero-inner">
+      <p class="eyebrow">Grupo Andino · Desde 2010</p>
+      <h1>Soluciones tecnológicas para empresas bolivianas</h1>
+      <p>Consultoría, desarrollo de software e infraestructura. Presencia en Santa Cruz, La Paz y Cochabamba.</p>
+      <a class="btn" href="#servicios">Conocé nuestros servicios</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong>14+</strong><span>Años</span></div>
+    <div><strong>200+</strong><span>Clientes</span></div>
+    <div><strong>45</strong><span>Empleados</span></div>
+    <div><strong>3</strong><span>Ciudades</span></div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="wrap split">
+      <div>
+        <h2>Quiénes somos</h2>
+        <p>El <strong>sitio institucional</strong> presenta la empresa completa: historia, valores, servicios detallados, equipo y noticias. A diferencia de una landing (1 objetivo) o Web Express (1 página), acá hay <strong>varias secciones navegables</strong>.</p>
+        <p>Ideal para empresas que necesitan transmitir seriedad, SEO por sección y formularios en distintos puntos.</p>
+      </div>
+      <img src="../../assets/panel-equipo.jpg" alt="Oficina" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section gray" id="servicios">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <div class="service-grid">
+        <article><h3>Consultoría IT</h3><p>Diagnóstico, roadmap y acompañamiento digital.</p><a href="#">Ver más →</a></article>
+        <article><h3>Desarrollo a medida</h3><p>Sistemas web, apps y integraciones.</p><a href="#">Ver más →</a></article>
+        <article><h3>Infraestructura</h3><p>Servidores, nube y soporte 24/7.</p><a href="#">Ver más →</a></article>
+        <article><h3>Capacitación</h3><p>Talleres para equipos internos.</p><a href="#">Ver más →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="equipo">
+    <div class="wrap">
+      <h2>Nuestro equipo</h2>
+      <div class="team-grid">
+        <article><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80&fit=crop" alt="CEO" loading="lazy"><h3>María López</h3><p>Directora general</p></article>
+        <article><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80&fit=crop" alt="CTO" loading="lazy"><h3>Carlos Mendoza</h3><p>Director técnico</p></article>
+        <article><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80&fit=crop" alt="COO" loading="lazy"><h3>Ana Quispe</h3><p>Operaciones</p></article>
+        <article><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&q=80&fit=crop" alt="Sales" loading="lazy"><h3>Jorge Ríos</h3><p>Comercial</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray" id="noticias">
+    <div class="wrap">
+      <h2>Noticias</h2>
+      <div class="news-grid">
+        <article><span class="date">Mar 2026</span><h3>Abrimos oficina en Cochabamba</h3><p>Ampliamos cobertura a la región andina.</p></article>
+        <article><span class="date">Feb 2026</span><h3>Certificación ISO en proceso</h3><p>Compromiso con calidad y seguridad.</p></article>
+        <article><span class="date">Ene 2026</span><h3>Alianza con proveedor cloud</h3><p>Mejores precios para clientes.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contacto">
+    <div class="wrap split">
+      <div>
+        <h2>Contacto</h2>
+        <p>Av. Cristóbal de Mendoza 123, Equipetrol, Santa Cruz</p>
+        <p>contacto@grupoandino.demo · +591 750 63505</p>
+      </div>
+      <form class="corp-form" onsubmit="event.preventDefault(); alert('Demo: formulario institucional');">
+        <label>Nombre<input required></label>
+        <label>Empresa<input></label>
+        <label>Mensaje<textarea rows="4" required></textarea></label>
+        <button type="submit" class="btn">Enviar consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="corp-footer">
+    <p>Demo <strong>Sala Cero Institucional</strong> · Hasta 8 páginas · Bs 2.900 · <a href="../../producto.html?slug=sitio-institucional">Documentación</a></p>
+  </footer>
+</body>
+</html>

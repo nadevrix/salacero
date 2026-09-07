@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Demo Landing Page — Sala Cero. Una página, un objetivo: convertir visitas en contactos.">
+  <title>Sala Cero Landing — Demo conversión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-strip">Demo · <strong>Landing page</strong> · Un solo objetivo: que te escriban · <a href="../../producto.html?slug=landing-page">Guía del producto</a></div>
+
+  <!-- LANDING = sin menú corporativo, solo logo + CTA -->
+  <header class="header">
+    <img src="assets/logo-sala-cero.svg" alt="Sala Cero" width="110" height="57">
+    <a class="btn btn-sm" href="#formulario">Pedir cotización</a>
+  </header>
+
+  <main>
+    <!-- 1. Hero: promesa única + CTA -->
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="badge">Lanzamiento · Santa Cruz</span>
+        <h1>Tu negocio online en <em>7 días</em> — con precio cerrado</h1>
+        <p class="hero-lead">Esta es una <strong>landing page</strong>: una sola pantalla diseñada para que el visitante deje sus datos o te escriba. Sin menús que distraigan.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#formulario">Quiero mi cotización gratis</a>
+          <span class="hero-note">Respondemos el mismo día · Sin compromiso</span>
+        </div>
+        <ul class="hero-trust">
+          <li>✓ 120+ proyectos</li>
+          <li>✓ Desde Bs 990</li>
+          <li>✓ 6 meses garantía</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <img src="../../assets/catalog/landing-page.jpg" alt="Dashboard de resultados" width="800" height="500">
+      </div>
+    </section>
+
+    <!-- 2. Problema → solución (patrón Google Ads landing) -->
+    <section class="section problem">
+      <div class="wrap">
+        <h2>¿Te pasa esto?</h2>
+        <div class="problem-grid">
+          <article><span>😤</span><p>Pagaste por una web y nadie te explica cómo actualizarla</p></article>
+          <article><span>📉</span><p>Tenés tráfico de Instagram pero no capturás leads</p></article>
+          <article><span>⏰</span><p>Necesitás algo listo esta semana, no en 2 meses</p></article>
+        </div>
+        <p class="solution">Una landing resuelve eso: <strong>un mensaje claro, un formulario, una acción.</strong></p>
+      </div>
+    </section>
+
+    <!-- 3. Beneficios (por qué esta sección existe) -->
+    <section class="section benefits">
+      <div class="wrap">
+        <h2>Qué incluye esta landing</h2>
+        <div class="benefit-grid">
+          <article>
+            <h3>Textos que venden</h3>
+            <p>Los escribimos nosotros. Vos solo revisás y aprobás.</p>
+          </article>
+          <article>
+            <h3>Formulario + WhatsApp</h3>
+            <p>Dos caminos para convertir: datos o chat directo.</p>
+          </article>
+          <article>
+            <h3>Medición de visitas</h3>
+            <p>Sabés cuánta gente entró y desde dónde.</p>
+          </article>
+          <article>
+            <h3>Mobile first</h3>
+            <p>En Bolivia el 80% entra desde el celular. Optimizado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Prueba social -->
+    <section class="section social">
+      <div class="wrap">
+        <blockquote>
+          <p>"En 4 días teníamos la landing lista. El primer fin de semana ya nos escribieron 12 personas por WhatsApp."</p>
+          <footer>— Ejemplo demo · Empresa de servicios, Santa Cruz</footer>
+        </blockquote>
+        <div class="stats">
+          <div><strong>4 días</strong><span>entrega</span></div>
+          <div><strong>Bs 1.900</strong><span>precio</span></div>
+          <div><strong>1 página</strong><span>sin distracciones</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Formulario = objetivo único de la landing -->
+    <section class="section form-section" id="formulario">
+      <div class="wrap form-wrap">
+        <div class="form-copy">
+          <h2>Pedí tu landing hoy</h2>
+          <p>Completá el formulario. Te respondemos con precio y plazo el mismo día.</p>
+          <ul>
+            <li>Sin llamadas obligatorias</li>
+            <li>Precio cerrado antes de empezar</li>
+            <li>Dominio configurado incluido</li>
+          </ul>
+        </div>
+        <form class="lead-form" onsubmit="event.preventDefault(); this.querySelector('.ok').hidden=false;">
+          <label>Nombre<input type="text" required placeholder="Tu nombre"></label>
+          <label>WhatsApp<input type="tel" required placeholder="7XX XXX XX"></label>
+          <label>¿Qué vendés?<textarea rows="3" placeholder="Contanos en una línea..."></textarea></label>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar y recibir cotización</button>
+          <p class="ok" hidden>✓ Demo: en producción esto abre WhatsApp o envía el lead.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 6. FAQ (reduce objeciones antes del CTA final) -->
+    <section class="section faq">
+      <div class="wrap">
+        <h2>Preguntas frecuentes</h2>
+        <details open><summary>¿Landing vs sitio completo?</summary><p>La landing es una sola página para campañas. El sitio institucional tiene varias secciones y menú.</p></details>
+        <details><summary>¿Puedo editar los textos después?</summary><p>Sí. Te capacitamos o lo hacemos nosotros con precio cerrado.</p></details>
+        <details><summary>¿Incluye dominio?</summary><p>Lo configuramos sin costo. Vos lo comprás donde quieras.</p></details>
+      </div>
+    </section>
+
+    <!-- 7. CTA final repetido (best practice landing) -->
+    <section class="section cta-final">
+      <div class="wrap">
+        <h2>¿Listo para convertir visitas en clientes?</h2>
+        <a class="btn btn-primary btn-lg" href="#formulario">Pedir cotización gratis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Demo <strong>Sala Cero Landing</strong> · Plantilla de conversión · <a href="../../producto.html?slug=landing-page">Ver documentación</a></p>
+  </footer>
+</body>
+</html>

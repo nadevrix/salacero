@@ -1,0 +1,14 @@
+{
+  "name": "sala-cero",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sitio web de Sala Cero",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "check": "node --check script.js && node --check site-config.js",
+    "catalogo:sync": "node scripts/sync-catalogo.mjs",
+    "catalogo:pdf": "node scripts/generate-catalogo-pdf.mjs",
+    "build": "node scripts/sync-catalogo.mjs && node scripts/generate-catalogo-pdf.mjs && node scripts/prepare-deploy.mjs"
+  }
+}
+

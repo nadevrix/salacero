@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Catálogo completo — Sala Cero</title>
+  <link rel="icon" href="./assets/logo-sala-cero.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sala-cero-theme.css">
+  <link rel="stylesheet" href="catalogo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <p class="demo-badge">Catálogo · 24 productos</p>
+
+  <header class="header">
+    <nav class="navbar" role="navigation" aria-label="Navegación">
+      <div class="logo brand-logo">
+        <a href="./index.html"><img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="140" height="73"></a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="./index.html" class="nav-link">Inicio</a></li>
+        <li><a href="./catalogo.html" class="nav-link active">Catálogo</a></li>
+        <li><a href="./catalogo-sala-cero.pdf" class="nav-link" target="_blank" rel="noopener">PDF</a></li>
+        <li><a href="./index.html#contact" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container catalog-page-hero">
+    <div class="section-header">
+      <span class="section-tag">Precios / catálogo completo</span>
+      <h1 class="section-title">
+        <span class="title-line">Todo lo que</span>
+        <span class="title-line highlight">hacemos</span>
+      </h1>
+      <p style="color: var(--light-gray); max-width: 640px;">24 productos con precio, plazo, mantenimiento y qué incluye. Referencia en bolivianos — Santa Cruz, Bolivia.</p>
+    </div>
+
+    <div class="catalog-toolbar">
+      <p style="margin:0;color:var(--light-gray);font-size:0.9rem;">Actualizado desde el landing oficial de Sala Cero</p>
+      <div class="catalog-toolbar-actions">
+        <a href="./catalogo-sala-cero.pdf" class="cta-button secondary" target="_blank" rel="noopener"><span class="btn-text"><i class="fas fa-file-pdf"></i> Descargar PDF</span></a>
+        <a href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20quiero%20cotizar%20un%20proyecto." class="cta-button" target="_blank" rel="noopener"><span class="btn-text">WhatsApp</span></a>
+      </div>
+    </div>
+
+    <div id="catalog-root"></div>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Sala Cero · Catálogo comercial</p></div></div></footer>
+
+  <script src="./catalogo-sala-cero.js"></script>
+  <script src="./js/catalogo.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      SalaCeroCatalogo.render(document.getElementById("catalog-root"), window.SALA_CERO_CATALOGO);
+    });
+  </script>
+</body>
+</html>

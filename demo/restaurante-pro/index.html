@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sabor Cruceño — comida cruceña a domicilio en Santa Cruz. Demo portafolio Sala Cero (plantilla profesional)." />
+  <meta name="robots" content="noindex" />
+  <title>Sabor Cruceño — Comida cruceña a domicilio</title>
+  <script>(function(){var t=localStorage.getItem('sc-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <p class="demo-badge" aria-hidden="true">Demo · Plantilla pro</p>
+
+  <header id="site-header" class="site-header">
+    <nav class="nav-container" role="navigation" aria-label="Navegación principal">
+      <a href="#hero" class="nav-logo" aria-label="Sabor Cruceño — inicio">Sabor Cruceño</a>
+
+      <button class="nav-toggle"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="nav-links">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#menu" class="nav-link">Menú</a></li>
+        <li><a href="#testimonials" class="nav-link">Reseñas</a></li>
+        <li><a href="#reservations" class="nav-link">Pedidos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Cambiar a modo claro"
+              aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">☀</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero" class="hero-section" aria-label="Portada">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Santa Cruz · Delivery y retiro</p>
+        <h1 class="hero-title">Sabor Cruceño</h1>
+        <p class="hero-tagline">El sabor de Santa Cruz, directo a tu mesa</p>
+        <a href="#reservations" class="btn btn-primary hero-cta">Pedir ahora</a>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section" aria-labelledby="menu-heading">
+      <div class="section-container">
+
+        <header class="section-header fade-in">
+          <p class="section-eyebrow">Nuestro menú</p>
+          <h2 id="menu-heading" class="section-title">Lo más pedido</h2>
+          <p class="section-subtitle">Platos hechos el mismo día. Salteñas horneadas, silpancho cruceño y jugos naturales. Precios en bolivianos.</p>
+        </header>
+
+        <div class="menu-category fade-in">
+          <h3 class="category-title">Especialidades cruceñas</h3>
+          <div class="menu-grid">
+
+            <article class="menu-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/demo-restaurante-saltena.webp"
+                  alt="Salteña dorada recién horneada"
+                  class="card-image"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="card-body">
+                <h4 class="dish-name">Salteña especial</h4>
+                <p class="dish-description">Masa dorada, relleno jugoso. Horneada en el día, lista para retiro o delivery.</p>
+                <p class="dish-price">Bs 12</p>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/demo-restaurante-silpancho.webp"
+                  alt="Silpancho cruceño con arroz y huevo"
+                  class="card-image"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="card-body">
+                <h4 class="dish-name">Silpancho cruceño</h4>
+                <p class="dish-description">Carne empanizada, arroz, papa frita y huevo. Porción generosa, sabor casero.</p>
+                <p class="dish-price">Bs 28</p>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/demo-restaurante-jugo.webp"
+                  alt="Jugo natural de frutas tropicales"
+                  class="card-image"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="card-body">
+                <h4 class="dish-name">Jugo natural</h4>
+                <p class="dish-description">Maracuyá, tumbo o surtido del día. Sin azúcar añadida, recién exprimido.</p>
+                <p class="dish-price">Bs 10</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="section-container">
+
+        <header class="section-header fade-in">
+          <p class="section-eyebrow">Clientes</p>
+          <h2 id="testimonials-heading" class="section-title">Lo que dicen en Santa Cruz</h2>
+        </header>
+
+        <div class="carousel-wrapper fade-in"
+             role="region"
+             aria-label="Reseñas de clientes"
+             aria-live="polite">
+
+          <div class="carousel-track" id="carousel-track">
+
+            <div class="testimonial-card" role="group" aria-label="Reseña 1 de 3">
+              <div class="star-rating" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                "Las salteñas llegaron calentitas y la masa quedó perfecta. Pedimos seguido los fines de semana y siempre confirman rápido por WhatsApp."
+              </blockquote>
+              <cite class="testimonial-author">— Carla M., Equipetrol</cite>
+            </div>
+
+            <div class="testimonial-card" role="group" aria-label="Reseña 2 de 3">
+              <div class="star-rating" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                "El silpancho es de los mejores que probé por delivery. Buena porción, buen precio y el jugo de maracuyá va de la mano."
+              </blockquote>
+              <cite class="testimonial-author">— Rodrigo V., Urbari</cite>
+            </div>
+
+            <div class="testimonial-card" role="group" aria-label="Reseña 3 de 3">
+              <div class="star-rating" aria-label="5 de 5 estrellas">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                "Ideal para almorzar en la oficina. Menú claro, fotos reales y el pedido llegó en el tiempo que dijeron. Muy recomendado."
+              </blockquote>
+              <cite class="testimonial-author">— Daniela R., Centro</cite>
+            </div>
+
+          </div>
+
+          <div class="carousel-dots" role="tablist" aria-label="Navegación de reseñas">
+            <button class="dot active" role="tab" aria-selected="true" aria-label="Ver reseña 1" data-index="0"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Ver reseña 2" data-index="1"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Ver reseña 3" data-index="2"></button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="reservations" class="reservations-section" aria-labelledby="reservations-heading">
+      <div class="section-container">
+
+        <header class="section-header fade-in">
+          <p class="section-eyebrow">Delivery</p>
+          <h2 id="reservations-heading" class="section-title">Hacé tu pedido</h2>
+          <p class="section-subtitle">Completá el formulario y te contactamos por WhatsApp para confirmar disponibilidad y tiempo de entrega.</p>
+        </header>
+
+        <div class="form-wrapper fade-in">
+
+          <form id="reservation-form" class="reservation-form" novalidate aria-label="Formulario de pedido">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name" class="form-label">
+                  Nombre completo <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="full-name" name="fullName" class="form-input" placeholder="María López" autocomplete="name" required aria-required="true" aria-describedby="full-name-error" />
+                <span class="form-error" id="full-name-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">
+                  WhatsApp <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="7000 0000" autocomplete="tel" required aria-required="true" aria-describedby="phone-error" />
+                <span class="form-error" id="phone-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests" class="form-label">
+                  Zona de entrega <span class="required" aria-hidden="true">*</span>
+                </label>
+                <select id="guests" name="guests" class="form-input form-select" required aria-required="true" aria-describedby="guests-error">
+                  <option value="">Seleccionar zona</option>
+                  <option value="Equipetrol">Equipetrol</option>
+                  <option value="Urbari">Urbari</option>
+                  <option value="Centro">Centro</option>
+                  <option value="Otra">Otra zona</option>
+                </select>
+                <span class="form-error" id="guests-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="time" class="form-label">
+                  Horario preferido <span class="required" aria-hidden="true">*</span>
+                </label>
+                <select id="time" name="time" class="form-input form-select" required aria-required="true" aria-describedby="time-error">
+                  <option value="">Seleccionar hora</option>
+                </select>
+                <span class="form-error" id="time-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="special-requests" class="form-label">Tu pedido</label>
+              <textarea id="special-requests" name="specialRequests" class="form-input form-textarea" rows="4" placeholder="Ej: 2 salteñas, 1 silpancho y 1 jugo de maracuyá…" maxlength="500" aria-describedby="requests-hint"></textarea>
+              <span class="form-hint" id="requests-hint">Opcional — hasta 500 caracteres</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Enviar pedido</button>
+
+          </form>
+
+          <div class="form-success" id="form-success" role="alert" aria-live="assertive" tabindex="-1" hidden>
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h3 class="success-title">Pedido recibido</h3>
+            <p class="success-message" id="success-message"></p>
+            <button class="btn btn-secondary make-another" id="make-another-btn">Hacer otro pedido</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <div class="section-container">
+
+        <header class="section-header fade-in">
+          <p class="section-eyebrow">Contacto</p>
+          <h2 id="contact-heading" class="section-title">Dónde estamos</h2>
+          <p class="section-subtitle">Retiro en local o delivery en zonas cercanas. Pedidos confirmados por WhatsApp.</p>
+        </header>
+
+        <div class="contact-layout fade-in">
+
+          <div class="contact-form-wrapper">
+            <div class="contact-details" style="margin-top:0">
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <p class="contact-detail-text">
+                  Lun – sáb · 11:00 – 22:00<br />
+                  Dom · 11:00 – 16:00
+                </p>
+              </div>
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <address class="contact-detail-text">
+                  Equipetrol, Santa Cruz de la Sierra<br />
+                  Retiro en puerta o delivery
+                </address>
+              </div>
+              <div class="contact-detail-item">
+                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 12 19.79 19.79 0 0 1 1.09 3.4 2 2 0 0 1 3.06 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+                </svg>
+                <p class="contact-detail-text">
+                  <a href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20vi%20la%20demo%20Sabor%20Cruce%C3%B1o%20(pro)%20y%20quiero%20una%20web%20as%C3%AD%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map-wrapper">
+            <div class="contact-map-embed" aria-label="Mapa de Santa Cruz de la Sierra">
+              <iframe
+                title="Santa Cruz de la Sierra, Bolivia"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.5!2d-63.181!3d-17.783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93ea367f4250f5f9%3A0x846171d1b0b5e!2sSanta%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1700000000000"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <p class="footer-logo">Sabor Cruceño</p>
+        <p class="footer-tagline">Comida cruceña · Santa Cruz</p>
+        <p class="footer-desc">Salteñas, platos cruceños y jugos naturales. Hecho en casa, entregado con el sabor de Santa Cruz.</p>
+        <p class="demo-compare">
+          Demo portafolio ·
+          <a href="https://sala-cero.onrender.com" target="_blank" rel="noopener">Sala Cero</a>
+          ·
+          <a href="/demo/restaurante/">Ver versión básica</a>
+        </p>
+      </div>
+
+      <div class="footer-info">
+        <h4 class="footer-heading">Ubicación</h4>
+        <address class="footer-address">
+          <p>Equipetrol</p>
+          <p>Santa Cruz de la Sierra</p>
+          <p><a href="https://wa.me/59175063505" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+        </address>
+      </div>
+
+      <div class="footer-hours">
+        <h4 class="footer-heading">Horario</h4>
+        <p class="footer-hours-day">Lunes – sábado</p>
+        <p>11:00 – 22:00</p>
+        <p class="footer-hours-day" style="margin-top:0.6rem">Domingo</p>
+        <p>11:00 – 16:00</p>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="footer-heading">Plantilla</h4>
+        <p class="footer-desc" style="font-size:0.85rem;margin-top:0.5rem">
+          Basada en <a href="https://github.com/fishbatu8/frenchrestaurant" target="_blank" rel="noopener noreferrer">frenchrestaurant</a> (MIT).
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="copyright-year"></span> Demo Sala Cero · Web Express desde Bs 990</p>
+    </div>
+  </footer>
+
+  <a id="whatsapp-fab"
+     class="whatsapp-fab"
+     href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20vi%20la%20demo%20Sabor%20Cruce%C3%B1o%20(pro)%20y%20quiero%20una%20web%20as%C3%AD%20para%20mi%20negocio."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Pedir por WhatsApp">
+    <svg class="whatsapp-fab__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.023 7.774L0 32l8.476-2.001A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.787-1.864l-.487-.29-5.03 1.187 1.22-4.898-.318-.503A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.26-9.927c-.398-.2-2.355-1.162-2.72-1.294-.364-.133-.63-.2-.895.2-.266.397-1.03 1.294-1.263 1.56-.232.265-.464.298-.862.1-.398-.2-1.681-.62-3.203-1.98-1.183-1.057-1.982-2.363-2.214-2.76-.232-.398-.025-.613.175-.81.179-.179.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.498-.034-.697-.1-.2-.895-2.16-1.228-2.957-.323-.776-.651-.671-.895-.683l-.763-.013c-.265 0-.697.1-1.062.498-.364.398-1.394 1.362-1.394 3.322s1.428 3.853 1.627 4.119c.2.265 2.81 4.29 6.81 6.018.952.41 1.695.655 2.274.838.955.304 1.825.26 2.512.158.766-.114 2.355-.963 2.688-1.894.332-.93.332-1.728.232-1.894-.099-.166-.364-.265-.762-.465z"/>
+    </svg>
+    <span class="whatsapp-fab__tooltip">WhatsApp</span>
+  </a>
+
+  <script src="./script.js"></script>
+</body>
+</html>

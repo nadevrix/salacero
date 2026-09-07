@@ -1,0 +1,282 @@
+/* Sala Cero — overrides sobre plantilla FoxyMoron (MIT, stackmasteraliza/agency-template) */
+
+:root {
+  --primary-black: #050509;
+  --secondary-black: #090911;
+  --dark-gray: #12121a;
+  --medium-gray: #2a2833;
+  --light-gray: #8b8794;
+  --accent-rose: #8248ff;
+  --accent-rose-light: #29b8ff;
+  --accent-magenta: #ff3aa7;
+  --accent-orange: #ff921e;
+  --brand-gradient: linear-gradient(110deg, #29b8ff, #8248ff 42%, #ff3aa7 68%, #ff921e);
+}
+
+body {
+  background-color: var(--primary-black);
+  cursor: auto;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+@media (pointer: fine) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+
+  body.has-custom-cursor a,
+  body.has-custom-cursor button {
+    cursor: none;
+  }
+}
+
+.demo-badge {
+  position: fixed;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 10001;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-black);
+  background: var(--brand-gradient);
+}
+
+.demo-compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--light-gray);
+}
+
+.demo-compare a {
+  color: var(--accent-rose-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.brand-logo img {
+  height: 46px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(41, 184, 255, 0.15));
+}
+
+.preloader .brand-logo img {
+  height: 56px;
+  margin: 0 auto 1.25rem;
+}
+
+.hero-title .highlight,
+.title-line.highlight,
+.logo-highlight {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-title .highlight::after {
+  background: var(--brand-gradient);
+}
+
+.cta-button,
+.submit-btn {
+  background: var(--brand-gradient);
+  border: none;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 1px solid rgba(130, 72, 255, 0.55);
+}
+
+.cta-button.secondary:hover {
+  border-color: var(--accent-rose-light);
+  color: var(--accent-rose-light);
+}
+
+.progress-fill {
+  background: var(--brand-gradient) !important;
+}
+
+.text-highlight {
+  background: linear-gradient(90deg, var(--accent-rose-light), var(--accent-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.sector-pill {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.sector-pill:hover {
+  border-color: rgba(130, 72, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+.sector-pill span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--light-gray);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.price-card {
+  position: relative;
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  transition: transform var(--transition-medium), border-color var(--transition-fast);
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(130, 72, 255, 0.45);
+}
+
+.price-card.featured {
+  border-color: rgba(41, 184, 255, 0.55);
+  box-shadow: 0 0 0 1px rgba(130, 72, 255, 0.2), 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.price-card .price-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-rose-light);
+  margin-bottom: 0.75rem;
+}
+
+.price-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-card .amount {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.75rem 0 1rem;
+}
+
+.price-card .amount small {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.price-card ul {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.price-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.55rem;
+  color: #cfcbd6;
+  font-size: 0.92rem;
+}
+
+.price-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-gradient);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.process-step {
+  padding: 1.5rem;
+  border-left: 3px solid transparent;
+  border-image: var(--brand-gradient) 1;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.process-step strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-rose-light);
+  margin-bottom: 0.5rem;
+}
+
+.process-step h4 {
+  margin-bottom: 0.35rem;
+}
+
+.process-step p {
+  color: var(--light-gray);
+  font-size: 0.92rem;
+}
+
+.template-credit {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--light-gray);
+}
+
+.template-credit a {
+  color: var(--accent-rose-light);
+}
+
+.work-link[href^="../"],
+.work-link[href^="../../"] {
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .brand-logo img {
+    height: 38px;
+  }
+
+  .demo-badge {
+    top: auto;
+    bottom: 0.85rem;
+    right: 0.85rem;
+  }
+}

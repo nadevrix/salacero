@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="191" viewBox="0 0 1128 191">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1128" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#29b8ff"/><stop offset=".42" stop-color="#8248ff"/>
+      <stop offset=".68" stop-color="#ff3aa7"/><stop offset="1" stop-color="#ff921e"/>
+    </linearGradient>
+    <radialGradient id="h" cx="180" cy="20" r="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a4a8c" stop-opacity=".30"/><stop offset="1" stop-color="#050509" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1128" height="191" fill="#050509"/>
+  <rect width="1128" height="191" fill="url(#h)"/>
+  <rect y="188" width="1128" height="3" fill="url(#g)"/>
+  <text x="72" y="98" fill="#f6f5f8" font-family="IBM Plex Sans, Inter, sans-serif" font-size="34" font-weight="600" letter-spacing="-.6">Páginas web, tiendas online y sistemas</text>
+  <text x="72" y="136" fill="#a5a2ad" font-family="IBM Plex Sans, Inter, sans-serif" font-size="20">Santa Cruz de la Sierra, Bolivia · Precio y plazo en 24 horas</text>
+</svg>

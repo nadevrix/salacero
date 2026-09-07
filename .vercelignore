@@ -1,0 +1,10 @@
+# Solo se despliegan los archivos públicos de la landing.
+/*
+!index.html
+!styles.css
+!script.js
+!robots.txt
+!sitemap.xml
+!public
+!vercel.json
+.playwright-mcp/

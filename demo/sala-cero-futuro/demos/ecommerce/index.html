@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Sala Cero E-commerce — Demo tienda online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-strip">Demo · <strong>E-commerce</strong> · Tienda con carrito y checkout · <a href="../../producto.html?slug=paquete-ecommerce">Guía</a></div>
+
+  <header class="shop-header">
+    <a class="logo" href="#">Sala Cero <span>Store</span></a>
+    <nav>
+      <a href="#tienda">Tienda</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+    <button type="button" class="cart-btn" id="open-cart" aria-label="Abrir carrito">
+      🛒 Carrito <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <section class="shop-hero">
+    <div class="shop-hero-copy">
+      <span class="tag">E-commerce completo</span>
+      <h1>Tienda online con carrito y checkout</h1>
+      <p>No es una landing ni un catálogo: es una <strong>tienda</strong> donde el cliente agrega productos, ve el total y completa la compra.</p>
+    </div>
+    <img src="../../assets/catalog/paquete-ecommerce.jpg" alt="Tienda online" width="600" height="400">
+  </section>
+
+  <section class="shop" id="tienda">
+    <div class="shop-toolbar">
+      <h2>Productos</h2>
+      <input type="search" id="search" placeholder="Buscar..." aria-label="Buscar productos">
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <!-- Carrito lateral -->
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Tu carrito</h2>
+      <button type="button" id="close-cart" aria-label="Cerrar">✕</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-foot">
+      <p class="cart-total">Total: <strong id="cart-total">Bs 0</strong></p>
+      <a class="btn btn-primary btn-block" id="checkout-wa" href="#">Completar pedido</a>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <!-- Checkout -->
+  <section class="checkout" id="checkout">
+    <h2>Checkout — paso final</h2>
+    <p class="checkout-note">En producción: datos de envío, pago y confirmación. Aquí simulamos el flujo.</p>
+    <ol class="checkout-steps">
+      <li class="done">1. Carrito</li>
+      <li class="done">2. Datos</li>
+      <li class="active">3. Confirmar</li>
+    </ol>
+    <form class="checkout-form" onsubmit="event.preventDefault(); alert('Demo: pedido confirmado. En producción conectamos pagos.');">
+      <label>Nombre<input required></label>
+      <label>Dirección de entrega<input required></label>
+      <label>Teléfono / WhatsApp<input type="tel" required></label>
+      <button type="submit" class="btn btn-primary btn-lg">Confirmar pedido</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>Demo <strong>Sala Cero E-commerce</strong> · Carrito + checkout · <a href="../../producto.html?slug=paquete-ecommerce">Documentación</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

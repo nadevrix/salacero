@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Sala Cero Catálogo — Demo catálogo digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-strip">Demo · <strong>Catálogo digital</strong> · Productos + pedido por WhatsApp (sin checkout) · <a href="../../producto.html?slug=catalogo-digital">Guía</a></div>
+
+  <header class="cat-header">
+    <div class="cat-brand">
+      <h1>Moda Urbana SC</h1>
+      <p>Catálogo · Santa Cruz</p>
+    </div>
+    <input type="search" id="search" placeholder="Buscar producto..." aria-label="Buscar">
+    <button type="button" class="order-btn" id="order-btn">Pedido (<span id="order-count">0</span>)</button>
+  </header>
+
+  <section class="cat-hero">
+    <p><strong>Catálogo digital</strong> ≠ e-commerce. Acá el cliente arma su pedido y lo manda por WhatsApp. Sin pasarela de pago, ideal para empezar a vender rápido.</p>
+  </section>
+
+  <div class="filters" id="filters">
+    <button type="button" class="active" data-cat="all">Todos</button>
+    <button type="button" data-cat="ropa">Ropa</button>
+    <button type="button" data-cat="calzado">Calzado</button>
+    <button type="button" data-cat="accesorios">Accesorios</button>
+  </div>
+
+  <main class="cat-grid" id="grid"></main>
+
+  <div class="order-bar" id="order-bar" hidden>
+    <p><span id="order-summary">0 productos</span> · <strong id="order-total">Bs 0</strong></p>
+    <a class="btn-wa" id="wa-link" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+  </div>
+
+  <footer class="footer">
+    <p>Demo <strong>Sala Cero Catálogo</strong> · Buscador + categorías + WhatsApp · <a href="../../producto.html?slug=catalogo-digital">Documentación</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sala Cero — Experimento futurista. Desarrollo web, e-commerce y software en Santa Cruz, Bolivia.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Sala Cero — Versión futurista">
+  <meta property="og:description" content="Demo inmersiva: movimiento, imágenes gigantes e interactividad total.">
+  <title>Sala Cero — Futuro · Santa Cruz</title>
+  <link rel="icon" href="./assets/logo-sala-cero.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="catalogo.css">
+</head>
+<body class="has-custom-cursor">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="orb orb-c" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <p class="demo-badge">Demo · Futurista · Interactiva</p>
+
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-logo" href="#inicio" aria-label="Sala Cero inicio">
+      <img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="120" height="62">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#productos-web">Web</a>
+      <a href="#aplicaciones">Apps</a>
+      <a href="#sistemas">Sistemas</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="nav-cta magnetic" href="#contacto" data-magnetic>Cotizar ahora</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#productos-web">Web</a>
+    <a href="#aplicaciones">Apps</a>
+    <a href="#sistemas">Sistemas</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="inicio" data-hero>
+      <canvas class="hero-canvas" data-hero-canvas aria-hidden="true"></canvas>
+      <div class="hero-bg">
+        <div class="hero-slide is-active" data-hero-slide="0">
+          <img src="./assets/hero-cosmos.jpg" alt="" width="2400" height="1350" fetchpriority="high">
+        </div>
+        <div class="hero-slide" data-hero-slide="1">
+          <img src="./assets/hero-neon.jpg" alt="" width="2400" height="1350" loading="lazy">
+        </div>
+        <div class="hero-slide" data-hero-slide="2">
+          <img src="./assets/panel-cyber.jpg" alt="" width="2400" height="1350" loading="lazy">
+        </div>
+      </div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal"><span class="pulse-dot"></span> Santa Cruz · Bolivia · Desde Bs 990</p>
+        <h1 class="hero-title">
+          <span class="hero-line reveal" data-delay="1">Construimos</span>
+          <span class="hero-line hero-line-gradient reveal" data-delay="2">el futuro</span>
+          <span class="hero-line reveal" data-delay="3">de tu negocio</span>
+        </h1>
+        <p class="hero-sub reveal" data-delay="4">Web, e-commerce, sistemas y apps con precio claro. Respuesta el mismo día. Esta demo es el experimento más ambicioso de Sala Cero.</p>
+        <div class="hero-actions reveal" data-delay="5">
+          <a href="#catalogo" class="btn btn-primary magnetic" data-magnetic>Ver catálogo completo</a>
+          <a href="./catalogo-sala-cero.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Descargar PDF</a>
+        </div>
+        <div class="hero-stats reveal" data-delay="6">
+          <div><strong data-count="24">0</strong><span>productos</span></div>
+          <div><strong data-count="6">0</strong><span>meses garantía</span></div>
+          <div><strong data-count="24">0</strong><span>hrs respuesta</span></div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+
+      <div class="hero-thumbs" aria-label="Cambiar imagen del hero">
+        <button type="button" class="hero-thumb is-active" data-hero-go="0" aria-label="Imagen 1"></button>
+        <button type="button" class="hero-thumb" data-hero-go="1" aria-label="Imagen 2"></button>
+        <button type="button" class="hero-thumb" data-hero-go="2" aria-label="Imagen 3"></button>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <span>Desarrollo web · E-commerce · Software · Apps · IA · Chatbots · Santa Cruz · Bolivia · Sala Cero · </span>
+        <span>Desarrollo web · E-commerce · Software · Apps · IA · Chatbots · Santa Cruz · Bolivia · Sala Cero · </span>
+      </div>
+    </div>
+
+    <section class="immersive" id="experiencia">
+      <article class="immersive-panel" data-parallax-panel>
+        <div class="immersive-media" data-parallax="0.35">
+          <img src="./assets/panel-cyber.jpg" alt="Tecnología y seguridad digital" width="2400" height="1600" loading="lazy">
+        </div>
+        <div class="immersive-copy reveal">
+          <span class="tag">01 — Software</span>
+          <h2>Sistemas que escalan con tu empresa</h2>
+          <p>Inventarios, facturación, CRM y dashboards. Módulos que sumás cuando los necesitás, con precio cerrado antes de empezar.</p>
+          <a href="#catalogo" class="text-link">Ver sistemas →</a>
+        </div>
+      </article>
+
+      <article class="immersive-panel immersive-panel-reverse" data-parallax-panel>
+        <div class="immersive-media" data-parallax="0.35">
+          <img src="./assets/demo-sala-cero-servicio-web.webp" alt="Desarrollo web profesional" width="1600" height="1200" loading="lazy">
+        </div>
+        <div class="immersive-copy reveal">
+          <span class="tag">02 — Web</span>
+          <h2>Páginas que venden desde el primer día</h2>
+          <p>Landing, catálogos digitales y tiendas online. Dominio configurado, publicación incluida y WhatsApp integrado.</p>
+          <a href="#catalogo" class="text-link">Ver webs y tiendas →</a>
+        </div>
+      </article>
+
+      <article class="immersive-panel" data-parallax-panel>
+        <div class="immersive-media" data-parallax="0.35">
+          <img src="./assets/panel-equipo.jpg" alt="Equipo creativo trabajando" width="2400" height="1600" loading="lazy">
+        </div>
+        <div class="immersive-copy reveal">
+          <span class="tag">03 — Equipo</span>
+          <h2>Gente real en Santa Cruz</h2>
+          <p>Capacitación incluida, soporte por WhatsApp y 6 meses de garantía. No somos una agencia fantasma: estamos acá.</p>
+          <a href="#contacto" class="text-link">Hablar con nosotros →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="section-head reveal">
+        <span class="tag">Servicios</span>
+        <h2>Tres pilares.<br><span class="gradient-text">Infinitas posibilidades.</span></h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal" data-tilt data-spotlight>
+          <div class="service-bg"><img src="./assets/servicio-web.jpg" alt="" loading="lazy"></div>
+          <div class="service-content">
+            <span class="service-num">01</span>
+            <h3>Web &amp; E-commerce</h3>
+            <p>Desde Bs 990. Catálogos, landing pages y tiendas con carrito completo.</p>
+            <ul>
+              <li>Dominio configurado</li>
+              <li>WhatsApp integrado</li>
+              <li>Responsive total</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card reveal" data-tilt data-spotlight>
+          <div class="service-bg"><img src="./assets/servicio-data.jpg" alt="" loading="lazy"></div>
+          <div class="service-content">
+            <span class="service-num">02</span>
+            <h3>Software &amp; Sistemas</h3>
+            <p>ERP, inventarios, facturación y paneles de control a medida.</p>
+            <ul>
+              <li>Módulos escalables</li>
+              <li>Multiplataforma</li>
+              <li>Reportes en tiempo real</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card reveal" data-tilt data-spotlight>
+          <div class="service-bg"><img src="./assets/demo-sala-cero-servicio-apps.webp" alt="" loading="lazy"></div>
+          <div class="service-content">
+            <span class="service-num">03</span>
+            <h3>Apps &amp; IA</h3>
+            <p>Android, iOS, chatbots y automatización con inteligencia artificial.</p>
+            <ul>
+              <li>Publicación en tiendas</li>
+              <li>Chatbots 24/7</li>
+              <li>Integraciones API</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase-section" id="productos-web">
+      <div class="section-head reveal">
+        <span class="tag">Páginas y tiendas web</span>
+        <h2>Productos web<br><span class="gradient-text">con demo y guía</span></h2>
+        <p>Cada producto tiene su página explicando qué es, por qué elegirlo, pros y secciones del demo. Basado en buenas prácticas de Google.</p>
+      </div>
+      <div id="showcase-web"></div>
+    </section>
+
+    <section class="showcase-section showcase-section-alt" id="aplicaciones">
+      <div class="section-head reveal">
+        <span class="tag">Apps móviles</span>
+        <h2>Aplicaciones<br><span class="gradient-text">con preview móvil</span></h2>
+        <p>Plantillas de referencia para Android e iOS. Algunas incluyen enlace para probar en Expo Go.</p>
+      </div>
+      <div id="showcase-apps"></div>
+    </section>
+
+    <section class="showcase-section" id="sistemas">
+      <div class="section-head reveal">
+        <span class="tag">Sistemas para tu negocio</span>
+        <h2>Software y módulos<br><span class="gradient-text">documentados</span></h2>
+        <p>ERP, inventario, CRM y más. Cada uno con guía de por qué elegirlo y qué incluye.</p>
+      </div>
+      <div id="showcase-sistemas"></div>
+    </section>
+
+    <section class="showcase-section showcase-section-alt" id="otros-servicios">
+      <div class="section-head reveal">
+        <span class="tag">IA y automatización</span>
+        <h2>Chatbots e IA<br><span class="gradient-text">para tu operación</span></h2>
+      </div>
+      <div id="showcase-otros"></div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-head reveal">
+        <span class="tag">Catálogo completo</span>
+        <h2>24 productos<br><span class="gradient-text">con precio real</span></h2>
+        <p>Web, sistemas, apps, chatbots e IA. Misma info que el landing oficial.</p>
+        <div class="catalog-actions">
+          <a href="./catalogo.html" class="btn btn-primary magnetic" data-magnetic>Ver catálogo completo</a>
+          <a href="./catalogo-sala-cero.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Descargar PDF</a>
+        </div>
+      </div>
+      <div id="catalog-preview"></div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="contact-bg" aria-hidden="true">
+        <img src="./assets/hero-cosmos.jpg" alt="" loading="lazy">
+      </div>
+      <div class="contact-inner reveal">
+        <div class="contact-copy">
+          <span class="tag">Contacto</span>
+          <h2>¿Listo para el siguiente nivel?</h2>
+          <p>Contanos tu proyecto. Te respondemos el mismo día con precio y plazo.</p>
+          <div class="contact-chips">
+            <a href="https://wa.me/59175063505" target="_blank" rel="noopener">+591 750 63505</a>
+            <a href="mailto:salacero.bo@gmail.com">salacero.bo@gmail.com</a>
+          </div>
+        </div>
+        <form class="contact-form" data-contact-form data-whatsapp="59175063505">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="nombre" required autocomplete="name">
+          </label>
+          <label>
+            <span>Correo</span>
+            <input type="email" name="email" autocomplete="email">
+          </label>
+          <label>
+            <span>¿Qué necesitás?</span>
+            <select name="servicio" required>
+              <option value="">Elegí una opción</option>
+              <option value="Página web">Página web</option>
+              <option value="Tienda online">Tienda online</option>
+              <option value="Sistema / software">Sistema / software</option>
+              <option value="App móvil">App móvil</option>
+              <option value="Chatbot / IA">Chatbot / IA</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+          <label>
+            <span>Mensaje</span>
+            <textarea name="mensaje" rows="4" placeholder="Contanos tu idea..."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary magnetic" data-magnetic>Enviar por WhatsApp</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <img src="./assets/logo-sala-cero.svg" alt="Sala Cero" width="100" height="52">
+      <div class="footer-links">
+        <a href="../../index.html">Sitio original</a>
+        <a href="../sala-cero-plantilla/">Versión plantilla</a>
+        <a href="./catalogo.html">Catálogo</a>
+        <a href="./catalogo-sala-cero.pdf" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </div>
+    <p>&copy; <span data-year></span> Sala Cero · Demo futurista · Santa Cruz, Bolivia</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="./catalogo-sala-cero.js"></script>
+  <script src="./js/productos-data.js"></script>
+  <script src="./js/catalogo.js"></script>
+  <script src="./js/showcase.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.SALA_CERO_CATALOGO && window.SalaCeroCatalogo) {
+        SalaCeroCatalogo.render(document.getElementById("catalog-preview"), window.SALA_CERO_CATALOGO);
+      }
+    });
+  </script>
+</body>
+</html>

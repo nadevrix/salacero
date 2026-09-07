@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Sala Cero E-commerce Pro — Demo tienda premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-strip">Demo · <strong>E-commerce a medida</strong> · Tienda premium + dashboard · <a href="../../producto.html?slug=ecommerce-medida">Guía</a></div>
+
+  <header class="pro-header">
+    <span class="logo">ATELIER <em>Premium</em></span>
+    <nav><a href="#tienda">Colección</a><a href="#dashboard">Panel</a></nav>
+    <button type="button" class="cart" id="cart-btn">Bolsa (<span id="count">0</span>)</button>
+  </header>
+
+  <section class="pro-hero">
+    <div class="pro-hero-copy">
+      <span class="label">E-commerce Pro</span>
+      <h1>Moda premium con inventario conectado</h1>
+      <p>Más que una tienda básica: reportes, integraciones, diseño a medida y flujos personalizados.</p>
+    </div>
+    <img src="../../assets/catalog/ecommerce-medida.jpg" alt="Tienda premium">
+  </section>
+
+  <!-- Dashboard preview = diferenciador del Pro vs E-commerce básico -->
+  <section class="dashboard" id="dashboard">
+    <h2>Panel de control (vista admin)</h2>
+    <div class="dash-cards">
+      <div class="dash-card"><span>Ventas hoy</span><strong>Bs 12.400</strong></div>
+      <div class="dash-card"><span>Pedidos</span><strong>28</strong></div>
+      <div class="dash-card"><span>Stock bajo</span><strong>3 items</strong></div>
+      <div class="dash-card"><span>Conversión</span><strong>4.2%</strong></div>
+    </div>
+  </section>
+
+  <section class="pro-shop" id="tienda">
+    <h2>Colección</h2>
+    <div class="pro-grid" id="grid"></div>
+  </section>
+
+  <aside class="pro-cart" id="pro-cart" aria-hidden="true">
+    <header><h2>Tu bolsa</h2><button type="button" id="close">✕</button></header>
+    <ul id="items"></ul>
+    <footer><p>Total: <strong id="total">Bs 0</strong></p><a href="#" class="checkout" id="wa">Checkout</a></footer>
+  </aside>
+
+  <footer class="footer">
+    <p>Demo <strong>Sala Cero E-commerce Pro</strong> · A medida · Bs 12.000 · <a href="../../producto.html?slug=ecommerce-medida">Documentación</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

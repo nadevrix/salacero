@@ -1,0 +1,24 @@
+{
+  "name": "Sala Cero",
+  "short_name": "Sala Cero",
+  "description": "Desarrollo web, software y apps en Santa Cruz, Bolivia.",
+  "start_url": "/",
+  "display": "standalone",
+  "lang": "es-BO",
+  "background_color": "#050509",
+  "theme_color": "#050509",
+  "icons": [
+    {
+      "src": "/public/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/logo-sala-cero.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

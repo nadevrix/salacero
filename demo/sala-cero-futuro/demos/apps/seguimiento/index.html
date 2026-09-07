@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Sala Cero App Delivery — Demo</title>
+  <link rel="stylesheet" href="../../demo-shared.css">
+  <style>
+    .map { height:220px; border-radius:12px; background:url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&fit=crop') center/cover; margin-bottom:1rem; position:relative; }
+    .map-pin { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2rem; }
+    .timeline { display:flex; flex-direction:column; gap:0.75rem; }
+    .timeline div { display:flex; gap:0.75rem; align-items:center; font-size:0.88rem; }
+    .timeline .dot { width:10px; height:10px; border-radius:50%; background:#29b8ff; }
+    .timeline .done .dot { background:#63f5af; }
+  </style>
+</head>
+<body style="margin:0;background:#111">
+  <div class="app-shell">
+    <header class="app-header"><h1>Pedido #2847</h1><span>En camino</span></header>
+    <main class="app-content">
+      <div class="map"><span class="map-pin">📍</span></div>
+      <div class="timeline">
+        <div class="done"><span class="dot"></span> Pedido confirmado</div>
+        <div class="done"><span class="dot"></span> Preparando</div>
+        <div><span class="dot"></span> En camino — ~12 min</div>
+        <div style="opacity:0.4"><span class="dot" style="background:#555"></span> Entregado</div>
+      </div>
+    </main>
+    <nav class="app-tabbar">
+      <a href="#" class="active">Seguimiento</a>
+      <a href="#">Historial</a>
+      <a href="#">Ayuda</a>
+    </nav>
+  </div>
+</body>
+</html>

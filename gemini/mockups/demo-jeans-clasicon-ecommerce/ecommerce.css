@@ -1,0 +1,262 @@
+/* CHANEZ e-commerce — layout tienda */
+
+:root {
+  --chanez-gold: #eab308;
+  --chanez-black: #0a0a0a;
+}
+
+body {
+  font-family: Jost, system-ui, sans-serif;
+  color: #111;
+  background: #fafafa;
+}
+
+.demo-badge {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2000;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--chanez-black);
+  background: var(--chanez-gold);
+}
+
+.top-bar {
+  background: var(--chanez-black);
+  color: #fff;
+  font-size: 0.78rem;
+}
+
+.site-nav {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-nav .navbar-brand img {
+  height: 40px;
+}
+
+.nav-link.active {
+  color: var(--chanez-black) !important;
+  font-weight: 700;
+}
+
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--chanez-gold);
+  color: var(--chanez-black);
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-left: 0.25rem;
+}
+
+.btn-chanez {
+  background: var(--chanez-gold);
+  border: none;
+  color: var(--chanez-black);
+  font-weight: 700;
+}
+
+.btn-chanez:hover {
+  background: #ca8a04;
+  color: var(--chanez-black);
+}
+
+.btn-outline-chanez {
+  border: 1px solid var(--chanez-black);
+  color: var(--chanez-black);
+  font-weight: 600;
+}
+
+.btn-outline-chanez:hover {
+  background: var(--chanez-black);
+  color: #fff;
+}
+
+.shop-sidebar {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.shop-sidebar h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card-body {
+  padding: 1rem;
+}
+
+.product-card .price {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.product-card .price-mayor {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.badge-offer {
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.pdp-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.size-btn {
+  min-width: 3rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+}
+
+.size-btn.active,
+.size-btn:hover {
+  border-color: var(--chanez-black);
+  background: var(--chanez-black);
+  color: #fff;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.qty-control button {
+  border: 0;
+  background: #f3f4f6;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.qty-control input {
+  width: 3rem;
+  border: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-table img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.checkout-summary {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.site-footer {
+  background: var(--chanez-black);
+  color: #fff;
+}
+
+.site-footer a {
+  color: var(--chanez-gold);
+}
+
+.compare-link {
+  font-size: 0.85rem;
+}
+
+.compare-link a {
+  color: var(--chanez-gold);
+}
+
+.hero-ecom {
+  background: linear-gradient(120deg, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.35)),
+    url("./assets/hero-chanez.webp") center / cover no-repeat;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-ecom h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+}
+
+.payment-pill {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+}
+
+.payment-pill.active {
+  border-color: var(--chanez-black);
+  background: #fffbeb;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #fff;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .checkout-summary {
+    position: static;
+  }
+}

@@ -1,0 +1,89 @@
+/* Demos Sala Cero — estilos compartidos (Material / Google UX patterns) */
+:root {
+  --bg: #fafafa;
+  --text: #1a1a1f;
+  --muted: #5c5c66;
+  --brand: #8248ff;
+  --brand2: #29b8ff;
+  --line: #e8e8ed;
+  --radius: 12px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.5; }
+img { max-width: 100%; display: block; }
+a { color: var(--brand); text-decoration: none; }
+.demo-banner {
+  position: sticky; top: 0; z-index: 99;
+  padding: 0.5rem 1rem;
+  background: #050509; color: #fff;
+  font-size: 0.75rem; text-align: center;
+}
+.demo-banner a { color: #29b8ff; margin-left: 0.5rem; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.75rem 1.5rem; border-radius: 999px; border: none;
+  background: linear-gradient(110deg, #29b8ff, #8248ff);
+  color: #fff; font-weight: 600; font-size: 0.92rem; cursor: pointer;
+}
+.btn-outline { background: transparent; border: 1px solid var(--line); color: var(--text); }
+.hero { padding: 4rem 0; text-align: center; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 1rem; line-height: 1.1; }
+.hero p { color: var(--muted); max-width: 520px; margin: 0 auto 1.5rem; font-size: 1.05rem; }
+.grid { display: grid; gap: 1.25rem; }
+.grid-3 { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.card-body { padding: 1rem; }
+.card-body h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.card-body p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+.price { font-weight: 700; color: var(--brand); }
+section { padding: 3rem 0; }
+section h2 { text-align: center; margin: 0 0 2rem; font-size: 1.75rem; }
+.nav-demo {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem; background: #fff; border-bottom: 1px solid var(--line);
+}
+.nav-demo strong { font-size: 1.1rem; }
+.nav-demo nav { display: flex; gap: 1.25rem; font-size: 0.88rem; }
+.nav-demo nav a { color: var(--muted); }
+footer.demo-foot {
+  padding: 2rem 1.25rem; text-align: center; color: var(--muted); font-size: 0.85rem;
+  border-top: 1px solid var(--line); background: #fff;
+}
+
+/* Mobile app shell */
+.app-shell {
+  max-width: 390px; margin: 0 auto; min-height: 100dvh;
+  background: #0a0a12; color: #f4f3f7;
+  display: flex; flex-direction: column;
+  font-family: system-ui, sans-serif;
+}
+.app-status { height: 44px; background: #0a0a12; }
+.app-header {
+  padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.app-header h1 { margin: 0; font-size: 1.1rem; }
+.app-content { flex: 1; padding: 1rem; overflow-y: auto; }
+.app-tabbar {
+  display: flex; border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,18,0.95);
+}
+.app-tabbar a {
+  flex: 1; padding: 0.75rem; text-align: center; font-size: 0.65rem;
+  color: #9b98a8; text-decoration: none;
+}
+.app-tabbar a.active { color: #29b8ff; }
+.app-list-item {
+  display: flex; gap: 0.75rem; padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.app-list-item img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; }
+.app-list-item h3 { margin: 0; font-size: 0.92rem; }
+.app-list-item p { margin: 0.2rem 0 0; font-size: 0.78rem; color: #9b98a8; }

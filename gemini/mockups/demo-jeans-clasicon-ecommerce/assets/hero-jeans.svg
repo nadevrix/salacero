@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Jeans clásicos para hombre">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect x="80" y="60" width="280" height="300" rx="12" fill="#1d4ed8" opacity="0.35"/>
+  <rect x="120" y="90" width="200" height="240" rx="8" fill="#2563eb"/>
+  <rect x="420" y="80" width="280" height="300" rx="12" fill="#334155" opacity="0.35"/>
+  <rect x="460" y="110" width="200" height="240" rx="8" fill="#475569"/>
+  <rect x="760" y="70" width="280" height="300" rx="12" fill="#1e40af" opacity="0.35"/>
+  <rect x="800" y="100" width="200" height="240" rx="8" fill="#3b82f6"/>
+  <text x="80" y="390" fill="#F8FAFC" font-family="Arial Black, sans-serif" font-size="42" font-weight="900">JEANS CLÁSICO PARA HOMBRE</text>
+  <text x="80" y="415" fill="#93C5FD" font-family="Arial, sans-serif" font-size="18">Fabricantes directos · Feria Barrio Lindo · Santa Cruz</text>
+</svg>

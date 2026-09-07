@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="JEANS CLASICON">
+  <circle cx="100" cy="100" r="100" fill="#050505"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#2a2a2a" stroke-width="1"/>
+  <path id="topArc" d="M 38 100 A 62 62 0 0 1 162 100" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="2.2" fill="#d1d5db">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">CORE DENIM</textPath>
+  </text>
+  <path id="botArc" d="M 162 100 A 62 62 0 0 1 38 100" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.6" fill="#9ca3af">
+    <textPath href="#botArc" startOffset="50%" text-anchor="middle">SUPERIOR QUALITY</textPath>
+  </text>
+  <text x="100" y="92" text-anchor="middle" fill="#ffffff" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" letter-spacing="1">JEANS</text>
+  <text x="100" y="118" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="15" font-style="italic">Casual Denim</text>
+  <text x="100" y="156" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1">EST. 1992</text>
+</svg>
