@@ -1,13 +1,423 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0; url=./index.html#tienda" />
-  <meta name="robots" content="noindex" />
-  <title>Redirigiendo…</title>
-  <script>location.replace("./index.html#tienda");</script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="CHANEZ STORE — Tienda online de ropa urbana. Feria Barrio Lindo, Santa Cruz."/>
+<title>Tienda · CHANEZ STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',system-ui,sans-serif;background:#ffffff;color:#111111;-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+ul,ol{list-style:none}
+
+/* ─── TOPBAR ─── */
+.topbar{
+  background:#f5f5f5;
+  color:#555555;
+  font-size:.78rem;
+  padding:.45rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #eeeeee;
+}
+.topbar a{
+  color:#555555;
+  font-weight:600;
+  letter-spacing:.04em;
+  transition:color .2s;
+  text-transform:uppercase;
+  font-size:.72rem;
+}
+.topbar a:hover{color:#3fa293}
+.topbar-left,.topbar-right{display:flex;gap:1.5rem;align-items:center}
+
+/* ─── NAVBAR ─── */
+.navbar{
+  background:#000000;
+  border-bottom:0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.navbar-inner{
+  display:flex;
+  align-items:center;
+  padding:0 2rem;
+  height:68px;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+/* Brand */
+.brand{display:flex;align-items:center;margin-right:3rem;flex-shrink:0}
+.brand-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:.38rem .75rem;
+  background:#000000;
+  border:1px solid rgba(63,162,147,.45);
+  border-radius:.45rem;
+  line-height:1;
+  transition:border-color .2s;
+}
+.brand:hover .brand-block{border-color:#3fa293}
+.brand-top{
+  font-family:'Outfit',sans-serif;
+  font-size:1rem;
+  font-weight:900;
+  letter-spacing:.1em;
+  color:#3fa293;
+}
+.brand-bot{font-size:.5rem;font-weight:700;letter-spacing:.3em;color:#d4d4d8;margin-top:.15rem}
+
+/* Nav links */
+.nav-links{display:flex;align-items:center;flex:1}
+.nav-item{position:relative}
+.nav-link{
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  color:#e4e4e7;
+  font-family:'Outfit',sans-serif;
+  font-size:.86rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:0 1rem;
+  height:68px;
+  border-bottom:0;
+  transition:color .2s,background .2s;
+}
+.nav-link:hover{color:#ffffff;background:rgba(63,162,147,.22)}
+.nav-link.active{color:#ffffff;background:#3fa293}
+.nav-link svg{width:10px;height:10px;opacity:.7}
+.nav-item:hover .nav-dropdown{display:block}
+.nav-dropdown{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#111111;
+  border:1px solid rgba(63,162,147,.2);
+  border-top:2px solid #3fa293;
+  border-radius:0 0 .6rem .6rem;
+  min-width:185px;
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+  z-index:200;
+}
+.nav-dropdown a{
+  display:block;
+  padding:.65rem 1.15rem;
+  color:#d4d4d8;
+  font-size:.84rem;
+  font-weight:500;
+  transition:background .15s,color .15s;
+}
+.nav-dropdown a:hover{background:rgba(63,162,147,.12);color:#3fa293}
+
+/* Nav right */
+.nav-right{display:flex;align-items:center;gap:.75rem;margin-left:auto}
+.search-wrap{position:relative}
+.search-wrap input{
+  background:#ffffff;
+  border:1px solid #eeeeee;
+  color:#333333;
+  font-family:'Jost',sans-serif;
+  font-size:.84rem;
+  padding:.5rem 1rem .5rem 2.5rem;
+  border-radius:9999px;
+  width:210px;
+  outline:none;
+  transition:border-color .2s,width .3s;
+}
+.search-wrap input::placeholder{color:#888888}
+.search-wrap input:focus{border-color:#3fa293;width:250px}
+.search-icon{
+  position:absolute;
+  left:.78rem;
+  top:50%;
+  transform:translateY(-50%);
+  color:#71717a;
+  pointer-events:none;
+}
+.btn-cart{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:.5rem;
+  color:#d4d4d8;
+  transition:all .2s;
+  position:relative;
+}
+.btn-cart:hover{border-color:#3fa293;color:#3fa293}
+.cart-badge{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+  background:#3fa293;
+  color:#ffffff;
+  font-family:'Outfit',sans-serif;
+  font-size:.6rem;
+  font-weight:800;
+  min-width:18px;
+  height:18px;
+  border-radius:9999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 3px;
+}
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb-bar{
+  background:#fff;
+  border-bottom:1px solid #e4e4e7;
+  padding:.55rem 2rem;
+}
+.breadcrumb-inner{
+  max-width:1400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.82rem;
+  color:#71717a;
+}
+.breadcrumb-inner a{color:#71717a;transition:color .2s}
+.breadcrumb-inner a:hover{color:#3fa293}
+.bc-sep{color:#cbd5e1}
+.bc-current{color:#111111;font-weight:600}
+
+/* ─── HERO BANNER ─── */
+.cat-banner{
+  position:relative;
+  overflow:hidden;
+  height:280px;
+  background:#18181b;
+}
+.cat-banner-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  filter:brightness(.55);
+  transition:transform .8s ease;
+  display:block;
+}
+.cat-banner:hover .cat-banner-img{transform:scale(1.03)}
+.cat-banner-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:.75rem;
+  background:linear-gradient(135deg,#18181b 0%,#27272a 50%,#18181b 100%);
+}
+.cat-banner-placeholder svg{
+  opacity:.2;
+  width:72px;
+  height:72px;
+  color:#3fa293;
+  fill:#3fa293;
+}
+.cat-banner-placeholder p{
+  color:#52525b;
+  font-family:'Outfit',sans-serif;
+  font-size:.82rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.cat-banner-label{
+  position:absolute;
+  bottom:1.75rem;
+  left:2rem;
+  color:#fff;
+  font-family:'Outfit',sans-serif;
+  font-size:2.5rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-shadow:0 2px 20px rgba(0,0,0,.7);
+}
+
+/* ─── DEMO BADGE ─── */
+.demo-badge{
+  position:fixed;
+  top:.85rem;
+  left:.85rem;
+  z-index:3000;
+  padding:.4rem .85rem;
+  border-radius:9999px;
+  font-family:'Outfit',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:#ffffff;
+  background:#3fa293;
+  box-shadow:0 4px 18px rgba(63,162,147,.4);
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .search-wrap input{width:130px}
+  .cat-banner{height:180px}
+  .cat-banner-label{font-size:1.6rem}
+}
+@media(max-width:480px){.topbar{display:none}}
+</style>
 </head>
 <body>
-  <p><a href="./index.html#tienda">Ir a la tienda</a></p>
+
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="#">Como comprar?</a>
+    <a href="#">Contactanos</a>
+  </div>
+  <div class="topbar-right">
+    <a href="#">Gift Card</a>
+    <a href="#">Iniciar sesion</a>
+  </div>
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" role="navigation" aria-label="Menu principal">
+  <div class="navbar-inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="brand" aria-label="CHANEZ STORE inicio">
+      <div class="brand-block">
+        <span class="brand-top">CHANEZ</span>
+        <span class="brand-bot">STORE</span>
+      </div>
+    </a>
+
+    <!-- Links -->
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          Marcas
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">Adidas</a>
+          <a href="#">Nike</a>
+          <a href="#">Puma</a>
+          <a href="#">CAT</a>
+          <a href="#">Converse</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          Hombre
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">Poleras</a>
+          <a href="#">Buzos</a>
+          <a href="#">Shorts</a>
+          <a href="#">Accesorios</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Mujer</a>
+      </div>
+      <div class="nav-item">
+        <a href="./tienda.html" class="nav-link active">
+          Accesorios
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">Gorras</a>
+          <a href="#">Mochilas</a>
+          <a href="#">Bolsos</a>
+          <a href="#">Medias</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Iconics</a>
+      </div>
+    </div>
+
+    <!-- Buscador + carrito -->
+    <div class="nav-right">
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" id="nav-search" placeholder="Que estas buscando?" aria-label="Buscar productos"/>
+      </div>
+      <button class="btn-cart" id="open-cart" aria-label="Abrir carrito">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2M1 2v2h2l3.6 7.59-1.35 2.44C5.01 14.37 5.48 15 6.21 15H19v-2H6.42c-.14 0-.25-.11-.25-.25l.03-.12L7.5 11h11.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.96 3H5.21l-.94-2H1m16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2"/>
+        </svg>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb-bar">
+  <nav aria-label="Ruta de navegacion">
+    <ol class="breadcrumb-inner">
+      <li><a href="./index.html">Inicio</a></li>
+      <li class="bc-sep">&rsaquo;</li>
+      <li class="bc-current" aria-current="page">Tienda</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- ══ HERO BANNER ══
+     INSTRUCCION PARA AGREGAR TU IMAGEN:
+     1. Copia tu imagen a la carpeta assets/ (ej: assets/banner-tienda.jpg)
+     2. Borra el bloque <div class="cat-banner-placeholder">...</div>
+     3. Descomenta la linea: <img src="./assets/banner-tienda.jpg" ...>
+-->
+<div class="cat-banner">
+  <!-- DESCOMENTAR Y EDITAR cuando tengas la imagen:
+  <img src="./assets/banner-tienda.jpg"
+       alt="Coleccion CHANEZ STORE - Ropa urbana"
+       class="cat-banner-img">
+  -->
+
+  <!-- PLACEHOLDER (quitar cuando pongas la imagen real) -->
+  <div class="cat-banner-placeholder">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+    </svg>
+    <p>Agrega aqui tu imagen de banner</p>
+  </div>
+
+  <span class="cat-banner-label">Tienda</span>
+</div>
+
+<!-- Continuacion: grilla de productos, filtros y footer se agregan en el siguiente paso -->
+
+<script src="./js/store.js"></script>
+<script>
+(function(){
+  var STORAGE_KEY = 'chanez-cart-v1';
+  function readCart(){ try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); }catch(e){ return []; } }
+  function cartCount(){ return readCart().reduce(function(s,i){ return s+i.qty; }, 0); }
+  function updateBadge(){ var el=document.getElementById('cart-count'); if(el) el.textContent=String(cartCount()); }
+  document.addEventListener('DOMContentLoaded', updateBadge);
+})();
+</script>
 </body>
 </html>

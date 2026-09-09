@@ -1,96 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="CHANEZ STORE — Tienda online de ropa urbana. Demo e-commerce Sala Cero." />
   <meta name="robots" content="noindex" />
   <title>CHANEZ STORE — Tienda online</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/vendor.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/chanez-theme.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body data-page="shop">
-  <p class="demo-badge">Demo · E-commerce</p>
   <div id="chanez-chrome"></div>
 
-  <section class="promo-strip border-bottom">
-    <div class="container-fluid px-0">
-      <div class="row g-0">
-        <div class="col-md-4 position-relative">
-          <a href="#tienda"><img src="./assets/hero-chanez.webp" alt="Nueva colección urbana" loading="eager"></a>
-          <div class="promo-caption"><strong class="text-uppercase">Nueva colección</strong><br><span class="small">Ropa street Feria Barrio Lindo</span></div>
-        </div>
-        <div class="col-md-4 position-relative">
-          <a href="#tienda"><img src="./assets/product-hoodie-gray.webp" alt="Buzos y hoodies" loading="lazy"></a>
-          <div class="promo-caption"><strong class="text-uppercase">Buzos &amp; hoodies</strong><br><span class="small">Desde Bs 78 mayor</span></div>
-        </div>
-        <div class="col-md-4 position-relative">
-          <a href="#tienda"><img src="./assets/product-polo-color.webp" alt="Polos y poleras" loading="lazy"></a>
-          <div class="promo-caption"><strong class="text-uppercase">Polos &amp; poleras</strong><br><span class="small">Mayor y menor · envíos Bolivia</span></div>
-        </div>
-      </div>
-    </div>
+  <div class="breadcrumb-bar">
+    <nav class="breadcrumb-bar-inner" aria-label="Ruta de navegación">
+      <a href="./index.html">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <span>Tienda</span>
+    </nav>
+  </div>
+
+  <section class="cat-banner">
+    <img src="./assets/hero-chanez.webp" alt="Colección urbana CHANEZ STORE" loading="eager">
+    <span class="cat-banner-label">Tienda</span>
   </section>
 
-  <section id="tienda" class="py-5">
-    <div class="container">
-      <div class="shop-toolbar d-flex flex-wrap justify-content-between align-items-end gap-3">
-        <div>
-          <h1 class="h3 text-uppercase mb-1">Tienda CHANEZ</h1>
-          <p class="text-muted mb-0"><span id="shop-count">36 productos</span> · Precio detalle · Mayor por WhatsApp</p>
-        </div>
-        <div class="d-flex flex-wrap gap-2">
-          <button type="button" class="btn btn-sm btn-outline-dark active" data-filter-chip="all" aria-pressed="true">Todos</button>
-          <button type="button" class="btn btn-sm btn-outline-dark" data-filter-chip="poleras">Poleras</button>
-          <button type="button" class="btn btn-sm btn-outline-dark" data-filter-chip="polos">Polos</button>
-          <button type="button" class="btn btn-sm btn-outline-dark" data-filter-chip="buzos">Buzos</button>
-          <button type="button" class="btn btn-sm btn-outline-dark" data-filter-chip="shorts">Shorts</button>
-          <button type="button" class="btn btn-sm btn-outline-dark" data-filter-chip="accesorios">Accesorios</button>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <aside class="col-lg-3">
-          <div class="shop-sidebar border p-3 bg-white">
-            <h2 class="mb-3">Buscar</h2>
-            <input id="shop-search" class="form-control mb-4" type="search" placeholder="Polera, buzo, polo…" aria-label="Buscar productos" />
-            <h2 class="mb-2">Categoría</h2>
-            <div class="form-check"><input class="form-check-input" type="radio" name="cat" id="cat-all" value="all" data-filter-category checked><label class="form-check-label" for="cat-all">Todas</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="cat" id="cat-h" value="hombre" data-filter-category><label class="form-check-label" for="cat-h">Hombre</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="cat" id="cat-m" value="mujer" data-filter-category><label class="form-check-label" for="cat-m">Mujer</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="cat" id="cat-u" value="unisex" data-filter-category><label class="form-check-label" for="cat-u">Unisex</label></div>
-            <h2 class="mb-2 mt-4">Tipo</h2>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-all" value="all" data-filter-type checked><label class="form-check-label" for="type-all">Todos</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-poleras" value="poleras" data-filter-type><label class="form-check-label" for="type-poleras">Poleras</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-polos" value="polos" data-filter-type><label class="form-check-label" for="type-polos">Polos</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-buzos" value="buzos" data-filter-type><label class="form-check-label" for="type-buzos">Buzos</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-shorts" value="shorts" data-filter-type><label class="form-check-label" for="type-shorts">Shorts / joggers</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="type" id="type-acc" value="accesorios" data-filter-type><label class="form-check-label" for="type-acc">Accesorios</label></div>
+  <section id="tienda" class="shop-catalog">
+    <div class="shop-filter-bar" role="navigation" aria-label="Filtros de productos">
+      <div class="shop-filter-inner">
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Categoría <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-category="all">Todas</button>
+            <button type="button" data-ribbon-category="hombre">Hombre</button>
+            <button type="button" data-ribbon-category="mujer">Mujer</button>
+            <button type="button" data-ribbon-category="unisex">Unisex</button>
           </div>
-        </aside>
-        <div class="col-lg-9">
-          <div class="row g-4" id="shop-grid"></div>
         </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Color <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-category="all">Todos</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Talla <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button">S</button>
+            <button type="button">M</button>
+            <button type="button">L</button>
+            <button type="button">XL</button>
+            <button type="button">XXL</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Género <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-category="all">Todos</button>
+            <button type="button" data-ribbon-category="hombre">Hombre</button>
+            <button type="button" data-ribbon-category="mujer">Mujer</button>
+            <button type="button" data-ribbon-category="unisex">Unisex</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Marca <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button">CHANEZ</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Ropa <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-type="all">Toda</button>
+            <button type="button" data-ribbon-type="poleras">Poleras</button>
+            <button type="button" data-ribbon-type="polos">Polos</button>
+            <button type="button" data-ribbon-type="buzos">Buzos</button>
+            <button type="button" data-ribbon-type="shorts">Shorts</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Accesorios <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-type="all">Todos</button>
+            <button type="button" data-ribbon-type="accesorios">Accesorios</button>
+          </div>
+        </div>
+        <div class="shop-filter-item">
+          <button type="button" class="shop-filter-toggle">Precio <span aria-hidden="true">▾</span></button>
+          <div class="shop-filter-menu">
+            <button type="button" data-ribbon-type="all">Todos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-xl shop-grid-wrap">
+      <p class="visually-hidden"><span id="shop-count">36 productos</span></p>
+      <div class="row g-4 g-lg-5" id="shop-grid"></div>
+      <div class="shop-bottom-bar">
+        <nav id="shop-pagination" class="shop-pagination" aria-label="Paginación"></nav>
+        <label class="shop-page-size">Mostrar
+          <select id="shop-page-size" aria-label="Productos por página">
+            <option value="12" selected>12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+          </select>
+          por página
+        </label>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer-chanez py-4 mt-2">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-      <a class="footer-logo brand-lockup d-flex align-items-center gap-2" href="./index.html"><span class="brand-mark"><span class="brand-mark-top">CHANEZ</span><span class="brand-mark-bottom">STORE</span></span><span class="small text-white">Feria Barrio Lindo · Santa Cruz</span></a>
-      <div class="small text-end">
-        <p class="mb-1">Demo e-commerce · <a href="https://sala-cero.onrender.com">Sala Cero</a></p>
-        <p class="mb-0"><a href="../chanez-store/">Ver demo catálogo / landing</a></p>
-      </div>
-    </div>
-  </footer>
+  <div id="chanez-footer"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
   <script src="./js/layout.js"></script>
   <script src="./js/store.js"></script>
 </body>
+
 </html>
