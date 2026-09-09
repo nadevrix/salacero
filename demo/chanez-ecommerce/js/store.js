@@ -27,16 +27,20 @@
     { name: "Cinturón canvas logo", type: "accesorios", category: "unisex", subtype: "cinturones", price: 32, mayor: 24 },
     { name: "Maleta travel cabin", type: "accesorios", category: "unisex", subtype: "maletas", price: 180, mayor: 145 },
     { name: "Equipo de entrenamiento pack", type: "accesorios", category: "unisex", subtype: "entrenamiento", price: 88, mayor: 70 },
+    { name: "Billetera slim logo", type: "accesorios", category: "unisex", subtype: "billeteras", price: 28, mayor: 22 },
+    { name: "Guantes gym grip", type: "accesorios", category: "unisex", subtype: "guantes", price: 42, mayor: 34 },
+    { name: "Colchoneta training fold", type: "accesorios", category: "unisex", subtype: "colchonetas", price: 55, mayor: 44 },
     { name: "Medias street pack x6", type: "accesorios", category: "unisex", subtype: "medias", price: 30, mayor: 24 },
     { name: "Zapatilla urbana runner", type: "calzado", category: "hombre", subtype: "zapatillas", price: 210, mayor: 170 },
     { name: "Sandalia verano mujer", type: "calzado", category: "mujer", subtype: "sandalias", price: 75, mayor: 58 },
   ];
 
   var EDITIONS = ["Core", "Street", "Pro", "Essential", "Limited", "Classic"];
+  var COLORS = ["negro", "gris", "blanco", "azul", "rosa", "beige"];
 
   function buildCatalog() {
     var products = [];
-    for (var i = 1; i <= 36; i += 1) {
+    for (var i = 1; i <= 72; i += 1) {
       var seed = PRODUCT_SEEDS[(i - 1) % PRODUCT_SEEDS.length];
       var edition = EDITIONS[(i - 1) % EDITIONS.length];
       var suffix = i > PRODUCT_SEEDS.length ? " · " + edition + " " + i : "";
@@ -48,6 +52,8 @@
         category: seed.category,
         type: seed.type,
         subtype: seed.subtype || seed.type,
+        color: COLORS[(i - 1) % COLORS.length],
+        brand: "CHANEZ",
         badge: i % 4 !== 0 ? "Nuevo" : null,
         image: IMAGE_POOL[(i - 1) % IMAGE_POOL.length],
         sizes: seed.type === "accesorios" ? ["Única"] : ["S", "M", "L", "XL", "XXL"],
@@ -328,21 +334,157 @@
     var grid = document.getElementById("shop-grid");
     if (!grid) return;
 
-    var filters = { category: "all", type: "all", subtype: "all", q: "" };
+    var filters = {
+      category: "all",
+      type: "all",
+      subtype: "all",
+      color: "all",
+      size: "all",
+      brand: "all",
+      price: "all",
+      q: "",
+    };
     var countEl = document.getElementById("shop-count");
     var pageSizeEl = document.getElementById("shop-page-size");
     var paginationEl = document.getElementById("shop-pagination");
     var pageSize = pageSizeEl ? parseInt(pageSizeEl.value, 10) || 12 : 12;
     var currentPage = 1;
 
+    function priceInRange(price, range) {
+      if (range === "0-50") return price <= 50;
+      if (range === "50-100") return price > 50 && price <= 100;
+      if (range === "100-200") return price > 100 && price <= 200;
+      if (range === "200+") return price > 200;
+      return true;
+    }
+
+    function matchesFilters(product, skip) {
+      if (skip !== "category" && filters.category !== "all" && product.category !== filters.category) return false;
+      if (skip !== "type" && filters.type !== "all" && product.type !== filters.type) return false;
+      if (skip !== "subtype" && filters.subtype !== "all" && product.subtype !== filters.subtype) return false;
+      if (skip !== "color" && filters.color !== "all" && product.color !== filters.color) return false;
+      if (skip !== "size" && filters.size !== "all" && product.sizes.indexOf(filters.size) === -1) return false;
+      if (skip !== "brand" && filters.brand !== "all" && product.brand !== filters.brand) return false;
+      if (skip !== "price" && filters.price !== "all" && !priceInRange(product.price, filters.price)) return false;
+      if (filters.q && product.name.toLowerCase().indexOf(filters.q) === -1) return false;
+      return true;
+    }
+
     function filteredProducts() {
-      return getProducts().filter(function (p) {
-        if (filters.category !== "all" && p.category !== filters.category) return false;
-        if (filters.type !== "all" && p.type !== filters.type) return false;
-        if (filters.subtype !== "all" && p.subtype !== filters.subtype) return false;
-        if (filters.q && p.name.toLowerCase().indexOf(filters.q) === -1) return false;
-        return true;
+      return getProducts().filter(function (product) {
+        return matchesFilters(product);
       });
+    }
+
+    function facetCount(skip, testFn) {
+      return getProducts().filter(function (product) {
+        return matchesFilters(product, skip) && testFn(product);
+      }).length;
+    }
+
+    function filterOption(ribbon, value, label, count, selected) {
+      return (
+        '<button type="button" class="shop-filter-option' +
+        (selected ? " is-active" : "") +
+        '" data-ribbon="' +
+        ribbon +
+        '" data-value="' +
+        value +
+        '">' +
+        label +
+        ' <span class="shop-filter-count">(' +
+        count +
+        ")</span></button>"
+      );
+    }
+
+    function renderOptions(menuKey, skip, ribbon, selected, options) {
+      var menu = document.querySelector('[data-filter-menu="' + menuKey + '"]');
+      if (!menu) return;
+      menu.innerHTML = options
+        .map(function (option) {
+          var count = facetCount(skip, option.test);
+          var isSelected = selected === option.value;
+          if (count === 0 && !isSelected) return "";
+          return filterOption(ribbon, option.value, option.label, count, isSelected);
+        })
+        .join("");
+    }
+
+    function renderFilterMenus() {
+      renderOptions("category", "subtype", "subtype", filters.subtype, [
+        { value: "poleras", label: "Poleras", test: function (p) { return p.subtype === "poleras"; } },
+        { value: "polos", label: "Polos", test: function (p) { return p.subtype === "polos"; } },
+        { value: "buzos", label: "Buzos", test: function (p) { return p.subtype === "buzos"; } },
+        { value: "shorts", label: "Shorts", test: function (p) { return p.subtype === "shorts"; } },
+        { value: "mochilas", label: "Mochilas", test: function (p) { return p.subtype === "mochilas"; } },
+        { value: "carteras", label: "Bolsos y Carteras", test: function (p) { return p.subtype === "carteras"; } },
+        { value: "billeteras", label: "Billeteras", test: function (p) { return p.subtype === "billeteras"; } },
+        { value: "maletas", label: "Maletas", test: function (p) { return p.subtype === "maletas"; } },
+        { value: "gorras", label: "Gorras", test: function (p) { return p.subtype === "gorras"; } },
+        { value: "cinturones", label: "Cinturones", test: function (p) { return p.subtype === "cinturones"; } },
+        { value: "entrenamiento", label: "Equipo de entrenamiento", test: function (p) { return p.subtype === "entrenamiento"; } },
+        { value: "guantes", label: "Guantes", test: function (p) { return p.subtype === "guantes"; } },
+        { value: "colchonetas", label: "Colchonetas", test: function (p) { return p.subtype === "colchonetas"; } },
+        { value: "medias", label: "Medias", test: function (p) { return p.subtype === "medias"; } },
+        { value: "zapatillas", label: "Zapatillas", test: function (p) { return p.subtype === "zapatillas"; } },
+        { value: "sandalias", label: "Sandalias", test: function (p) { return p.subtype === "sandalias"; } },
+      ]);
+
+      renderOptions("color", "color", "color", filters.color, [
+        { value: "negro", label: "Negro", test: function (p) { return p.color === "negro"; } },
+        { value: "gris", label: "Gris", test: function (p) { return p.color === "gris"; } },
+        { value: "blanco", label: "Blanco", test: function (p) { return p.color === "blanco"; } },
+        { value: "azul", label: "Azul", test: function (p) { return p.color === "azul"; } },
+        { value: "rosa", label: "Rosa", test: function (p) { return p.color === "rosa"; } },
+        { value: "beige", label: "Beige", test: function (p) { return p.color === "beige"; } },
+      ]);
+
+      renderOptions("size", "size", "size", filters.size, [
+        { value: "S", label: "S", test: function (p) { return p.sizes.indexOf("S") !== -1; } },
+        { value: "M", label: "M", test: function (p) { return p.sizes.indexOf("M") !== -1; } },
+        { value: "L", label: "L", test: function (p) { return p.sizes.indexOf("L") !== -1; } },
+        { value: "XL", label: "XL", test: function (p) { return p.sizes.indexOf("XL") !== -1; } },
+        { value: "XXL", label: "XXL", test: function (p) { return p.sizes.indexOf("XXL") !== -1; } },
+        { value: "Única", label: "Única", test: function (p) { return p.sizes.indexOf("Única") !== -1; } },
+      ]);
+
+      renderOptions("gender", "category", "category", filters.category, [
+        { value: "hombre", label: "Hombre", test: function (p) { return p.category === "hombre"; } },
+        { value: "mujer", label: "Mujer", test: function (p) { return p.category === "mujer"; } },
+        { value: "unisex", label: "Unisex", test: function (p) { return p.category === "unisex"; } },
+      ]);
+
+      renderOptions("brand", "brand", "brand", filters.brand, [
+        { value: "CHANEZ", label: "CHANEZ", test: function (p) { return p.brand === "CHANEZ"; } },
+      ]);
+
+      renderOptions("ropa", "type", "type", filters.type, [
+        { value: "poleras", label: "Poleras", test: function (p) { return p.type === "poleras"; } },
+        { value: "polos", label: "Polos", test: function (p) { return p.type === "polos"; } },
+        { value: "buzos", label: "Buzos", test: function (p) { return p.type === "buzos"; } },
+        { value: "shorts", label: "Shorts", test: function (p) { return p.type === "shorts"; } },
+      ]);
+
+      renderOptions("accesorios", "subtype", "subtype", filters.subtype, [
+        { value: "mochilas", label: "Mochilas", test: function (p) { return p.subtype === "mochilas"; } },
+        { value: "carteras", label: "Bolsos y Carteras", test: function (p) { return p.subtype === "carteras"; } },
+        { value: "billeteras", label: "Billeteras", test: function (p) { return p.subtype === "billeteras"; } },
+        { value: "maletas", label: "Maletas", test: function (p) { return p.subtype === "maletas"; } },
+        { value: "gorras", label: "Gorras", test: function (p) { return p.subtype === "gorras"; } },
+        { value: "cinturones", label: "Cinturones", test: function (p) { return p.subtype === "cinturones"; } },
+        { value: "entrenamiento", label: "Equipo de entrenamiento", test: function (p) { return p.subtype === "entrenamiento"; } },
+        { value: "guantes", label: "Guantes", test: function (p) { return p.subtype === "guantes"; } },
+        { value: "colchonetas", label: "Colchonetas", test: function (p) { return p.subtype === "colchonetas"; } },
+        { value: "medias", label: "Medias", test: function (p) { return p.subtype === "medias"; } },
+      ]);
+
+      renderOptions("price", "price", "price", filters.price, [
+        { value: "0-50", label: "Hasta 50 Bs.", test: function (p) { return p.price <= 50; } },
+        { value: "50-100", label: "51 a 100 Bs.", test: function (p) { return p.price > 50 && p.price <= 100; } },
+        { value: "100-200", label: "101 a 200 Bs.", test: function (p) { return p.price > 100 && p.price <= 200; } },
+        { value: "200+", label: "Más de 200 Bs.", test: function (p) { return p.price > 200; } },
+      ]);
     }
 
     function renderPagination(pages) {
@@ -388,6 +530,7 @@
         '<div class="col-12"><div class="empty-state"><p>No hay productos con esos filtros.</p></div></div>';
       bindQuickAdd(grid);
       renderPagination(pages);
+      renderFilterMenus();
     }
 
     document.querySelectorAll("[data-filter-category]").forEach(function (input) {
@@ -420,28 +563,47 @@
       });
     });
 
-    document.querySelectorAll("[data-ribbon-category]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        filters.category = btn.getAttribute("data-ribbon-category");
-        filters.subtype = "all";
-        currentPage = 1;
-        renderGrid();
-      });
-    });
-
-    document.querySelectorAll("[data-ribbon-type]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        filters.type = btn.getAttribute("data-ribbon-type");
-        filters.subtype = "all";
-        currentPage = 1;
-        renderGrid();
-      });
-    });
+    function applyRibbonFilter(option) {
+      var key = option.getAttribute("data-ribbon");
+      var value = option.getAttribute("data-value");
+      if (!key) return;
+      filters[key] = filters[key] === value ? "all" : value;
+      if (key === "subtype") {
+        var accessoryTypes = {
+          mochilas: 1,
+          carteras: 1,
+          billeteras: 1,
+          maletas: 1,
+          gorras: 1,
+          cinturones: 1,
+          entrenamiento: 1,
+          guantes: 1,
+          colchonetas: 1,
+          medias: 1,
+        };
+        var clothingTypes = { poleras: 1, polos: 1, buzos: 1, shorts: 1 };
+        var footwearTypes = { zapatillas: 1, sandalias: 1 };
+        if (filters.subtype === "all") {
+          filters.type = "all";
+        } else if (accessoryTypes[filters.subtype]) {
+          filters.type = "accesorios";
+        } else if (clothingTypes[filters.subtype]) {
+          filters.type = filters.subtype;
+        } else if (footwearTypes[filters.subtype]) {
+          filters.type = "calzado";
+        }
+      }
+      if (key === "type") filters.subtype = "all";
+      currentPage = 1;
+      renderGrid();
+    }
 
     document.querySelectorAll(".shop-filter-toggle").forEach(function (btn) {
       btn.addEventListener("click", function (event) {
+        event.preventDefault();
         event.stopPropagation();
         var item = btn.closest(".shop-filter-item");
+        if (!item) return;
         var isOpen = item.classList.contains("open");
         document.querySelectorAll(".shop-filter-item.open").forEach(function (el) {
           el.classList.remove("open");
@@ -450,7 +612,8 @@
       });
     });
 
-    document.addEventListener("click", function () {
+    document.addEventListener("click", function (event) {
+      if (event.target.closest(".shop-filter-item")) return;
       document.querySelectorAll(".shop-filter-item.open").forEach(function (el) {
         el.classList.remove("open");
       });
@@ -459,6 +622,8 @@
     document.querySelectorAll(".shop-filter-menu").forEach(function (menu) {
       menu.addEventListener("click", function (event) {
         event.stopPropagation();
+        var option = event.target.closest("[data-ribbon]");
+        if (option) applyRibbonFilter(option);
         var item = menu.closest(".shop-filter-item");
         if (item) item.classList.remove("open");
       });
@@ -496,6 +661,10 @@
         filters.type = link.getAttribute("data-nav-type") || "all";
         filters.subtype = link.getAttribute("data-nav-subtype") || "all";
         filters.q = (link.getAttribute("data-nav-q") || "").toLowerCase();
+        filters.color = "all";
+        filters.size = "all";
+        filters.brand = "all";
+        filters.price = "all";
         currentPage = 1;
         renderGrid();
       });

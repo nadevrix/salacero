@@ -39,72 +39,41 @@
       <div class="shop-filter-inner">
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Categoría <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-category="all">Todas</button>
-            <button type="button" data-ribbon-category="hombre">Hombre</button>
-            <button type="button" data-ribbon-category="mujer">Mujer</button>
-            <button type="button" data-ribbon-category="unisex">Unisex</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="category"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Color <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-category="all">Todos</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="color"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Talla <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button">S</button>
-            <button type="button">M</button>
-            <button type="button">L</button>
-            <button type="button">XL</button>
-            <button type="button">XXL</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="size"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Género <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-category="all">Todos</button>
-            <button type="button" data-ribbon-category="hombre">Hombre</button>
-            <button type="button" data-ribbon-category="mujer">Mujer</button>
-            <button type="button" data-ribbon-category="unisex">Unisex</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="gender"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Marca <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button">CHANEZ</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="brand"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Ropa <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-type="all">Toda</button>
-            <button type="button" data-ribbon-type="poleras">Poleras</button>
-            <button type="button" data-ribbon-type="polos">Polos</button>
-            <button type="button" data-ribbon-type="buzos">Buzos</button>
-            <button type="button" data-ribbon-type="shorts">Shorts</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="ropa"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Accesorios <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-type="all">Todos</button>
-            <button type="button" data-ribbon-type="accesorios">Accesorios</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="accesorios"></div>
         </div>
         <div class="shop-filter-item">
           <button type="button" class="shop-filter-toggle">Precio <span aria-hidden="true">▾</span></button>
-          <div class="shop-filter-menu">
-            <button type="button" data-ribbon-type="all">Todos</button>
-          </div>
+          <div class="shop-filter-menu" data-filter-menu="price"></div>
         </div>
       </div>
     </div>
 
     <div class="container-xl shop-grid-wrap">
-      <p class="visually-hidden"><span id="shop-count">36 productos</span></p>
+      <p class="visually-hidden"><span id="shop-count">72 productos</span></p>
       <div class="row g-4 g-lg-5" id="shop-grid"></div>
       <div class="shop-bottom-bar">
         <nav id="shop-pagination" class="shop-pagination" aria-label="Paginación"></nav>
