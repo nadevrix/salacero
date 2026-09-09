@@ -30,7 +30,28 @@
   </div>
 
   <section class="cat-banner">
-    <img src="./assets/hero-chanez.webp" alt="Colección urbana CHANEZ STORE" loading="eager">
+    <div id="catBannerCarousel" class="carousel slide cat-banner-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="hover">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#catBannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+        <button type="button" data-bs-target="#catBannerCarousel" data-bs-slide-to="1" aria-label="Banner 2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/hero-chanez.webp" alt="Colección urbana CHANEZ STORE" loading="eager">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/hero-chanez-2.jpg" alt="Moda en tienda de ropa" loading="lazy">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#catBannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#catBannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
     <span class="cat-banner-label">Tienda</span>
   </section>
 

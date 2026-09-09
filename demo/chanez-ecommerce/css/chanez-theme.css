@@ -455,15 +455,21 @@ h6,
 .cat-banner {
   position: relative;
   overflow: hidden;
-  height: 280px;
+  height: 360px;
   background: #111111;
+}
+
+.cat-banner-carousel,
+.cat-banner .carousel-inner,
+.cat-banner .carousel-item {
+  height: 100%;
 }
 
 .cat-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center;
   filter: brightness(0.62);
 }
 
@@ -471,6 +477,7 @@ h6,
   position: absolute;
   bottom: 1.6rem;
   left: 1.5rem;
+  z-index: 4;
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
   font-size: 2.4rem;
@@ -478,6 +485,28 @@ h6,
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+.cat-banner .carousel-indicators {
+  margin-bottom: 0.65rem;
+}
+
+.cat-banner .carousel-indicators [data-bs-target] {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.cat-banner .carousel-indicators .active {
+  background: var(--chanez-accent);
+}
+
+.cat-banner .carousel-control-prev,
+.cat-banner .carousel-control-next {
+  width: 3.25rem;
 }
 
 /* Buttons */
@@ -944,7 +973,7 @@ h6,
   aspect-ratio: 1 / 1;
   object-fit: contain;
   width: 100%;
-  padding: 1.35rem 1.15rem;
+  padding: 1.25rem 1.15rem 0.2rem;
   display: block;
   background: #ffffff;
 }
@@ -969,10 +998,10 @@ h6,
 }
 
 .product-item .product-content {
-  padding: 0.2rem 1rem 1rem;
+  padding: 0 1rem 0.85rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   text-align: left;
   flex-grow: 1;
 }
@@ -981,11 +1010,16 @@ h6,
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
-  line-height: 1.35;
+  line-height: 1.3;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #111111;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-price-main {
@@ -1660,7 +1694,7 @@ h6,
   }
 
   .cat-banner {
-    height: 180px;
+    height: 220px;
   }
 
   .cat-banner-label {

@@ -309,7 +309,7 @@
       '<img src="' + product.image + '" alt="' + product.name + '" class="product-image" loading="lazy">' +
       "</div>" +
       '<div class="product-content">' +
-      "<h5>" + title + "</h5>" +
+      '<h5 title="' + title + '">' + title + "</h5>" +
       '<p class="product-price-main">' + formatBsCard(product.price) + "</p>" +
       "</div></a>" +
       '<button type="button" class="btn-card-comprar" data-quick-add="' + product.id + '">Comprar</button>' +
