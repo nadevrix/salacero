@@ -75,24 +75,6 @@ p, address {
   top: 1rem;
 }
 
-.demo-badge {
-  position: fixed;
-  top: 0.85rem;
-  right: 0.85rem;
-  z-index: 3000;
-  margin: 0;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  font-family: "Outfit", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--accent);
-  box-shadow: 0 4px 18px var(--accent-glow);
-}
-
 .kicker {
   color: var(--accent);
   font-family: "Outfit", sans-serif;
@@ -961,10 +943,6 @@ p, address {
 }
 
 @media (max-width: 640px) {
-  .demo-badge {
-    display: none;
-  }
-
   .product-grid {
     grid-template-columns: 1fr;
   }
