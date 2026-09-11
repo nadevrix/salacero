@@ -6,34 +6,175 @@
     <meta name="description" content="Sabor Cruceño — comida cruceña a domicilio en Santa Cruz. Demo portafolio Sala Cero." />
     <meta name="robots" content="noindex" />
     <title>Sabor Cruceño — Comida cruceña a domicilio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <p class="demo-badge" aria-hidden="true">Demo Sala Cero</p>
+    <a class="skip-link" href="#menu">Saltar al contenido</a>
 
-    <header class="site-header">
-      <a class="logo" href="#">Sabor <span>Cruceño</span></a>
-      <a
-        class="nav-cta"
-        href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20vi%20la%20demo%20Sabor%20Cruce%C3%B1o%20y%20quiero%20una%20web%20as%C3%AD%20para%20mi%20negocio."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pedir ahora
-      </a>
-    </header>
+    <div class="site-top" id="site-top">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <span class="demo-badge">Demo Sala Cero</span>
+          <p class="topbar-text">
+            Delivery y retiro en Equipetrol · pedidos confirmados por WhatsApp
+          </p>
+          <a
+            class="topbar-btn"
+            href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
+            target="_blank"
+            rel="noopener noreferrer"
+            >Pedir ahora</a
+          >
+        </div>
+      </div>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-bg">
-        <!-- Gemini: gemini/assets/demo-restaurante-hero.webp -->
+      <header class="site-header" id="site-header">
+        <div class="header-inner">
+          <a class="brand" href="#hero" aria-label="Sabor Cruceño — inicio">
+            <span class="brand-diamond">
+              <span class="brand-stack">
+                <span class="brand-script">Sabor</span>
+                <span class="brand-word">Cruceño</span>
+              </span>
+            </span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="#menu">Menú</a></li>
+              <li><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+              <li><a class="nav-link" href="#pedidos">Pedidos</a></li>
+              <li><a class="nav-link" href="#catering">Catering</a></li>
+              <li class="nav-item-drop">
+                <button
+                  class="nav-link nav-drop-toggle"
+                  id="nav-drop-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="nav-drop"
+                >
+                  Pedí online
+                  <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true">
+                    <path
+                      d="M2 4l4 4 4-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="nav-drop" id="nav-drop">
+                  <a
+                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20delivery."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Delivery por WhatsApp</a
+                  >
+                  <a
+                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20retirar%20mi%20pedido%20en%20el%20local."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Retiro en el local</a
+                  >
+                  <a href="#menu">Ver el menú completo</a>
+                </div>
+              </li>
+            </ul>
+
+            <div class="nav-social">
+              <a
+                class="nav-social-link"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9c1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.6v7A10 10 0 0 0 22 12"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m-5 3.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12A2.5 2.5 0 0 0 12 9.5M17.5 6.8a1 1 0 1 1-1 1a1 1 0 0 1 1-1"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://wa.me/59170000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
         <img
+          class="hero-photo"
           src="./assets/demo-restaurante-hero.webp"
           width="1600"
           height="900"
           alt=""
           fetchpriority="high"
         />
+        <video
+          class="hero-video"
+          id="hero-video"
+          poster="./assets/demo-restaurante-hero.webp"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./assets/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-shade" aria-hidden="true"></div>
       </div>
+
       <div class="hero-inner">
         <p class="eyebrow">Santa Cruz · Delivery y retiro</p>
         <h1 id="hero-title">El sabor de Santa Cruz, directo a tu mesa.</h1>
@@ -44,7 +185,7 @@
         <div class="hero-actions">
           <a
             class="btn btn-wa"
-            href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20vi%20la%20demo%20Sabor%20Cruce%C3%B1o%20y%20quiero%20una%20web%20as%C3%AD%20para%20mi%20negocio."
+            href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -53,22 +194,184 @@
           <a class="btn btn-ghost" href="#menu">Ver menú</a>
         </div>
       </div>
+
+      <div class="hero-controls" id="hero-controls" hidden>
+        <button class="hero-ctrl" id="hero-play" type="button" aria-label="Pausar video">
+          <svg class="ic ic-pause" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M7 4h4v16H7zm6 0h4v16h-4z" />
+          </svg>
+          <svg class="ic ic-play" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M7 4l13 8-13 8z" />
+          </svg>
+        </button>
+        <button class="hero-ctrl" id="hero-mute" type="button" aria-label="Activar sonido">
+          <svg class="ic ic-sound-off" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 9h3l5-4v14l-5-4H4z" />
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              d="M16 9.5l5 5m0-5l-5 5"
+            />
+          </svg>
+          <svg class="ic ic-sound-on" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 9h3l5-4v14l-5-4H4z" />
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              d="M16 8.5a4.5 4.5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <div class="addr-strip">
+      <p>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9A2.5 2.5 0 0 1 12 11.5"
+          />
+        </svg>
+        Av. San Martín, Equipetrol · Santa Cruz de la Sierra
+      </p>
+    </div>
+
+    <section class="order-band" id="pedidos" aria-labelledby="order-title">
+      <h2 class="order-title" id="order-title">Pedí online</h2>
+      <p class="order-kicker">Tus favoritos para disfrutar en casa</p>
+      <p class="order-lead">Armá tu pedido en segundos y te lo confirmamos al instante.</p>
+      <a
+        class="btn-order"
+        href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Pedir ahora
+      </a>
+    </section>
+
+    <section class="about" id="nosotros" aria-labelledby="about-title">
+      <div class="about-inner">
+        <figure class="about-photo">
+          <img
+            src="./assets/demo-restaurante-hero.webp"
+            width="1600"
+            height="900"
+            alt="Mesa servida con salteñas, silpancho y jugo natural"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="about-text">
+          <h2 class="about-title" id="about-title">Sobre nosotros</h2>
+
+          <span class="about-mark" aria-hidden="true">
+            <span class="about-mark-stack">
+              <span class="about-mark-script">Sabor</span>
+              <span class="about-mark-word">Cruceño</span>
+            </span>
+          </span>
+
+          <p>
+            Sabor Cruceño abrió en 2018 en Equipetrol, de la mano de la familia Rojas.
+            Cocinamos como en casa: masa amasada el mismo día, relleno jugoso y nada de
+            atajos.
+          </p>
+
+          <a class="btn-order" href="#menu">Ver el menú</a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slider"
+      id="catering"
+      aria-roledescription="carrusel"
+      aria-labelledby="slider-title"
+    >
+      <div class="slider-track" id="slider-track">
+        <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 2">
+          <img
+            src="./assets/demo-restaurante-catering-1.jpg"
+            width="1600"
+            height="1067"
+            alt="Sopa casera con sándwich tostado servidos sobre mesa de madera"
+            loading="lazy"
+          />
+        </div>
+        <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 2">
+          <img
+            src="./assets/demo-restaurante-catering-2.jpg"
+            width="1600"
+            height="1067"
+            alt="Desayuno servido con tortilla, pan casero y jugo de naranja"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="slider-shade" aria-hidden="true"></div>
+
+      <div class="slider-inner">
+        <h2 class="slider-title" id="slider-title">Servicio de catering simplificado</h2>
+        <a
+          class="btn-order"
+          href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20catering%20para%20un%20evento."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ¡Pedí ahora!
+        </a>
+      </div>
+
+      <button
+        class="slider-ctrl"
+        id="slider-play"
+        type="button"
+        aria-label="Pausar carrusel"
+        hidden
+      >
+        <svg class="ic ic-pause" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M7 4h4v16H7zm6 0h4v16h-4z" />
+        </svg>
+        <svg class="ic ic-play" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M7 4l13 8-13 8z" />
+        </svg>
+      </button>
+
+      <div class="slider-dots" id="slider-dots" hidden>
+        <button
+          class="slider-dot"
+          type="button"
+          aria-label="Ir a la imagen 1"
+          aria-current="true"
+        ></button>
+        <button class="slider-dot" type="button" aria-label="Ir a la imagen 2"></button>
+      </div>
     </section>
 
     <section class="section" id="menu" aria-labelledby="menu-title">
       <div class="section-head">
+        <p class="eyebrow">Nuestro menú</p>
         <h2 id="menu-title">Lo más pedido</h2>
         <p>Platos hechos el mismo día. Precios en bolivianos.</p>
       </div>
       <div class="menu-grid">
         <article class="menu-card">
-          <img
-            src="./assets/demo-restaurante-saltena.webp"
-            width="800"
-            height="600"
-            alt="Salteña dorada recién horneada"
-            loading="lazy"
-          />
+          <div class="menu-card-media">
+            <img
+              src="./assets/demo-restaurante-saltena.webp"
+              width="800"
+              height="600"
+              alt="Salteña dorada recién horneada"
+              loading="lazy"
+            />
+          </div>
           <div class="menu-card-body">
             <h3>Salteña especial</h3>
             <p>Masa dorada, relleno jugoso. Horneada en el día.</p>
@@ -76,13 +379,15 @@
           </div>
         </article>
         <article class="menu-card">
-          <img
-            src="./assets/demo-restaurante-silpancho.webp"
-            width="800"
-            height="600"
-            alt="Silpancho cruceño con arroz y huevo"
-            loading="lazy"
-          />
+          <div class="menu-card-media">
+            <img
+              src="./assets/demo-restaurante-silpancho.webp"
+              width="800"
+              height="600"
+              alt="Silpancho cruceño con arroz y huevo"
+              loading="lazy"
+            />
+          </div>
           <div class="menu-card-body">
             <h3>Silpancho cruceño</h3>
             <p>Carne empanizada, arroz, papa y huevo frito.</p>
@@ -90,13 +395,15 @@
           </div>
         </article>
         <article class="menu-card">
-          <img
-            src="./assets/demo-restaurante-jugo.webp"
-            width="800"
-            height="600"
-            alt="Jugo natural de frutas tropicales"
-            loading="lazy"
-          />
+          <div class="menu-card-media">
+            <img
+              src="./assets/demo-restaurante-jugo.webp"
+              width="800"
+              height="600"
+              alt="Jugo natural de frutas tropicales"
+              loading="lazy"
+            />
+          </div>
           <div class="menu-card-body">
             <h3>Jugo natural</h3>
             <p>Maracuyá, tumbo o surtido del día. Sin azúcar añadida.</p>
@@ -106,8 +413,9 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="info-title">
+    <section class="section" id="ubicacion" aria-labelledby="info-title">
       <div class="section-head">
+        <p class="eyebrow">Visitanos</p>
         <h2 id="info-title">Dónde estamos</h2>
         <p>Retiro en local o delivery en zonas cercanas.</p>
       </div>
@@ -127,19 +435,6 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="cta-title">
-      <h2 id="cta-title">¿Listo para almorzar?</h2>
-      <p>Escribinos y te armamos el pedido.</p>
-      <a
-        class="btn btn-wa"
-        href="https://wa.me/59175063505?text=Hola%20Sala%20Cero%2C%20vi%20la%20demo%20Sabor%20Cruce%C3%B1o%20y%20quiero%20una%20web%20as%C3%AD%20para%20mi%20negocio."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Abrir WhatsApp
-      </a>
-    </section>
-
     <footer class="site-footer">
       <p>
         Demo de portafolio ·
@@ -156,10 +451,18 @@
       rel="noopener noreferrer"
       aria-label="Pedir por WhatsApp"
     >
+      <span class="wa-float-tip" aria-hidden="true">
+        <strong>¿Hacemos tu pedido?</strong>
+        Escribinos por WhatsApp
+      </span>
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z" />
+        <path
+          fill="currentColor"
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z"
+        />
       </svg>
-      <span>WhatsApp</span>
     </a>
+
+    <script src="./script.js"></script>
   </body>
 </html>
