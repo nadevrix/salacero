@@ -509,6 +509,7 @@
       bar.hidden = n === 0;
       barCount.textContent = n === 1 ? "1 ítem" : n + " ítems";
       barTotal.textContent = money(sum());
+      paintCartChip(n);
 
       list.innerHTML = "";
       items.forEach(function (item, i) {
@@ -1031,6 +1032,13 @@
     });
 
     document.getElementById("cart-open").addEventListener("click", openCart);
+    var chip = document.getElementById("cart-chip");
+    if (chip) {
+      chip.addEventListener("click", function (event) {
+        event.preventDefault();
+        openCart();
+      });
+    }
     document.getElementById("cart-close").addEventListener("click", closeCart);
     document.getElementById("cart-clear").addEventListener("click", function () {
       items = [];
@@ -1053,11 +1061,40 @@
     render();
   }
 
+  /* El recuento del carrito vive en el encabezado de todas las páginas. */
+  function paintCartChip(n) {
+    var num = document.getElementById("cart-chip-count");
+    var chip = document.getElementById("cart-chip");
+    if (num) num.textContent = String(n);
+    if (chip) {
+      chip.setAttribute(
+        "aria-label",
+        n === 0 ? "Carrito vacío" : "Ver pedido, " + n + (n === 1 ? " ítem" : " ítems")
+      );
+    }
+  }
+
+  function initCartChip() {
+    var n = 0;
+    try {
+      var saved = JSON.parse(window.localStorage.getItem("sabor-cruceno-pedido") || "[]");
+      if (Array.isArray(saved)) {
+        n = saved.reduce(function (sum, item) {
+          return sum + (item && item.qty > 0 ? item.qty : 0);
+        }, 0);
+      }
+    } catch (error) {
+      n = 0;
+    }
+    paintCartChip(n);
+  }
+
   syncHeader();
   initHeroVideo();
   initSlider();
   initTabs(".menu-tab");
   initTabs(".order-tab");
   initNewsletter();
+  initCartChip();
   initOrder();
 })();

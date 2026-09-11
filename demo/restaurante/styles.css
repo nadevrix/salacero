@@ -15,7 +15,7 @@
   --max: 1180px;
   --pad: clamp(1rem, 4vw, 2.5rem);
   --topbar-h: 36px;
-  --header-h: 64px;
+  --header-h: 80px;
 }
 
 *,
@@ -132,19 +132,6 @@ h3 {
   color: var(--ink);
 }
 
-.demo-badge {
-  position: absolute;
-  left: var(--pad);
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #efe7e1;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .site-header {
   background: transparent;
   transition: background 0.35s ease, box-shadow 0.35s ease;
@@ -168,20 +155,20 @@ h3 {
 
 /* ── LOGO EN ROMBO ───────────────────────────────────────────────────────── */
 
-/* El rombo desborda el header sin estirarlo, para que el hero calce debajo. */
+/* El rombo rotado mide lado × √2: 52px → 74px, cabe en los 80px del encabezado. */
 .brand {
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  width: 78px;
+  width: 76px;
   height: var(--header-h);
 }
 
 .brand-diamond {
   display: grid;
   place-items: center;
-  width: 78px;
-  height: 78px;
+  width: 52px;
+  height: 52px;
   transform: rotate(45deg);
   border: 2px solid #fff;
   background: var(--ink);
@@ -202,16 +189,16 @@ h3 {
 
 .brand-script {
   font-family: "Dancing Script", cursive;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
 }
 
 .brand-word {
-  margin-top: 0.1rem;
-  font-size: 0.46rem;
+  margin-top: 0.08rem;
+  font-size: 0.4rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--warm);
 }
@@ -358,6 +345,34 @@ h3 {
 .nav-social-link svg {
   width: 18px;
   height: 18px;
+}
+
+.cart-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding: 0.38rem 0.72rem 0.38rem 0.55rem;
+  border: none;
+  border-radius: 999px;
+  background: #e1272f;
+  color: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-chip svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cart-chip:hover {
+  color: #fff;
+  filter: brightness(1.08);
 }
 
 /* ── HERO ────────────────────────────────────────────────────────────────── */
@@ -586,7 +601,7 @@ h3 {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
@@ -1507,11 +1522,15 @@ body.page-inner .site-header {
   display: flex;
   gap: 0.9rem;
   margin: 0;
-  padding: 0 0 0.5rem;
+  padding: 0;
   list-style: none;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.order-rail::-webkit-scrollbar {
+  display: none;
 }
 
 .rail-item {
@@ -2523,12 +2542,33 @@ a.news-submit[hidden] {
 
 @media (max-width: 860px) {
   :root {
-    --header-h: 60px;
+    --header-h: 72px;
+  }
+
+  .brand {
+    width: 68px;
+  }
+
+  .brand-diamond {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-script {
+    font-size: 0.98rem;
+  }
+
+  .brand-word {
+    font-size: 0.36rem;
   }
 
   .nav-toggle {
     display: grid;
     place-items: center;
+  }
+
+  .cart-chip {
+    order: 3;
   }
 
   .site-nav {
@@ -2585,10 +2625,6 @@ a.news-submit[hidden] {
     font-size: 0.72rem;
   }
 
-  .demo-badge {
-    display: none;
-  }
-
   .about-inner {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -2601,6 +2637,10 @@ a.news-submit[hidden] {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* En pantalla angosta la sección se alarga y ese 215% quedaría irreconocible. */
   .specials {
     background-size: cover;
@@ -2610,20 +2650,20 @@ a.news-submit[hidden] {
 
 @media (max-width: 640px) {
   .brand {
-    width: 62px;
+    width: 64px;
   }
 
   .brand-diamond {
-    width: 62px;
-    height: 62px;
+    width: 42px;
+    height: 42px;
   }
 
   .brand-script {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
 
   .brand-word {
-    font-size: 0.38rem;
+    font-size: 0.34rem;
   }
 
   .hero {
@@ -2655,6 +2695,10 @@ a.news-submit[hidden] {
 
   .dish-card {
     grid-template-columns: minmax(0, 1fr) 7.6rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
