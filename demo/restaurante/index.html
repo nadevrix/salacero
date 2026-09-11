@@ -24,13 +24,7 @@
           <p class="topbar-text">
             Delivery y retiro en Equipetrol · pedidos confirmados por WhatsApp
           </p>
-          <a
-            class="topbar-btn"
-            href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
-            target="_blank"
-            rel="noopener noreferrer"
-            >Pedir ahora</a
-          >
+          <a class="topbar-btn" href="./pedidos.html">Pedir ahora</a>
         </div>
       </div>
 
@@ -60,9 +54,10 @@
 
           <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
             <ul class="nav-list">
-              <li><a class="nav-link" href="#menu">Menú</a></li>
+              <li><a class="nav-link" href="./menu.html">Menú</a></li>
+              <li><a class="nav-link" href="./especiales.html">Especiales</a></li>
               <li><a class="nav-link" href="#ubicacion">Ubicación</a></li>
-              <li><a class="nav-link" href="#pedidos">Pedidos</a></li>
+              <li><a class="nav-link" href="./pedidos.html">Pedidos</a></li>
               <li><a class="nav-link" href="#catering">Catering</a></li>
               <li class="nav-item-drop">
                 <button
@@ -85,19 +80,14 @@
                   </svg>
                 </button>
                 <div class="nav-drop" id="nav-drop">
+                  <a href="./pedidos.html">Armar mi pedido</a>
+                  <a href="./menu.html">Ver el menú completo</a>
                   <a
-                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20delivery."
+                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20tengo%20una%20consulta."
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Delivery por WhatsApp</a
+                    >Escribinos por WhatsApp</a
                   >
-                  <a
-                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20retirar%20mi%20pedido%20en%20el%20local."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Retiro en el local</a
-                  >
-                  <a href="#menu">Ver el menú completo</a>
                 </div>
               </li>
             </ul>
@@ -191,7 +181,7 @@
           >
             Pedir por WhatsApp
           </a>
-          <a class="btn btn-ghost" href="#menu">Ver menú</a>
+          <a class="btn btn-ghost" href="./menu.html">Ver menú</a>
         </div>
       </div>
 
@@ -245,14 +235,7 @@
       <h2 class="order-title" id="order-title">Pedí online</h2>
       <p class="order-kicker">Tus favoritos para disfrutar en casa</p>
       <p class="order-lead">Armá tu pedido en segundos y te lo confirmamos al instante.</p>
-      <a
-        class="btn-order"
-        href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pedir ahora
-      </a>
+      <a class="btn-order" href="./pedidos.html">Pedir ahora</a>
     </section>
 
     <section class="about" id="nosotros" aria-labelledby="about-title">
@@ -283,7 +266,7 @@
             atajos.
           </p>
 
-          <a class="btn-order" href="#menu">Ver el menú</a>
+          <a class="btn-order" href="./menu.html">Ver el menú</a>
         </div>
       </div>
     </section>
@@ -411,6 +394,10 @@
           </div>
         </article>
       </div>
+
+      <div class="center-cta">
+        <a class="btn-order" href="./menu.html">Ver el menú completo</a>
+      </div>
     </section>
 
     <section class="section" id="ubicacion" aria-labelledby="info-title">
@@ -436,6 +423,11 @@
     </section>
 
     <footer class="site-footer">
+      <p class="footer-news" id="footer-news" hidden>
+        <button class="footer-news-btn" id="news-open" type="button">
+          Suscribite a la hoja informativa
+        </button>
+      </p>
       <p>
         Demo de portafolio ·
         <a href="https://sala-cero.onrender.com" target="_blank" rel="noopener">Sala Cero</a>
@@ -462,6 +454,77 @@
         />
       </svg>
     </a>
+
+    <dialog class="news" id="news" aria-labelledby="news-title">
+      <button class="news-close" id="news-close" type="button" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            d="M6 6l12 12M18 6L6 18"
+          />
+        </svg>
+      </button>
+
+      <div class="news-body" id="news-body" tabindex="-1" autofocus>
+        <h2 class="news-title" id="news-title">Hoja informativa</h2>
+        <p class="news-lead">
+          ¡Suscribite a nuestro boletín y recibí ofertas e invitaciones exclusivas!
+        </p>
+
+        <form class="news-form" id="news-form">
+          <p class="news-field">
+            <label for="news-email">Correo electrónico (obligatorio):</label>
+            <input
+              id="news-email"
+              name="correo"
+              type="email"
+              autocomplete="email"
+              placeholder="p. ej. correo@ejemplo.com"
+              required
+            />
+          </p>
+
+          <p class="news-field">
+            <label for="news-phone">Número de teléfono:</label>
+            <input
+              id="news-phone"
+              name="telefono"
+              type="tel"
+              autocomplete="tel"
+              placeholder="p. ej. 70012345"
+            />
+          </p>
+
+          <label class="news-check">
+            <input id="news-sms" name="sms" type="checkbox" />
+            <span>
+              Quiero recibir mensajes sobre ofertas, especiales y eventos que no publicamos
+              al público. <span class="news-legal">Política de privacidad</span>
+              <span class="news-legal">Términos y condiciones</span>
+            </span>
+          </label>
+
+          <ul class="news-notes">
+            <li>Pueden aplicarse tarifas de mensajes y datos.</li>
+            <li>La frecuencia de los mensajes varía.</li>
+          </ul>
+
+          <button class="news-submit" type="submit">Suscribirme</button>
+          <p class="news-demo">Demo de portafolio: no se envía ni se guarda ningún dato.</p>
+        </form>
+      </div>
+
+      <div class="news-done" id="news-done" tabindex="-1" hidden>
+        <p class="news-done-title">¡Listo, quedaste en la lista!</p>
+        <p class="news-done-text">
+          Te escribimos cuando salga un especial nuevo o haya horneada limitada de salteñas.
+        </p>
+        <button class="news-submit" id="news-done-close" type="button">Cerrar</button>
+      </div>
+    </dialog>
 
     <script src="./script.js"></script>
   </body>

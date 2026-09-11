@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pedí online en Sabor Cruceño — armá tu pedido y confirmalo por WhatsApp. Demo portafolio Sala Cero." />
+    <meta name="robots" content="noindex" />
+    <title>Pedí online — Sabor Cruceño</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page-inner">
+    <a class="skip-link" href="#pedido">Saltar al contenido</a>
+
+    <div class="site-top" id="site-top">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <span class="demo-badge">Demo Sala Cero</span>
+          <p class="topbar-text">
+            Delivery y retiro en Equipetrol · pedidos confirmados por WhatsApp
+          </p>
+          <a class="topbar-btn" href="./pedidos.html">Pedir ahora</a>
+        </div>
+      </div>
+
+      <header class="site-header" id="site-header">
+        <div class="header-inner">
+          <a class="brand" href="./index.html" aria-label="Sabor Cruceño — inicio">
+            <span class="brand-diamond">
+              <span class="brand-stack">
+                <span class="brand-script">Sabor</span>
+                <span class="brand-word">Cruceño</span>
+              </span>
+            </span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="./menu.html">Menú</a></li>
+              <li><a class="nav-link" href="./especiales.html">Especiales</a></li>
+              <li><a class="nav-link" href="./index.html#ubicacion">Ubicación</a></li>
+              <li><a class="nav-link" href="./pedidos.html" aria-current="page">Pedidos</a></li>
+              <li><a class="nav-link" href="./index.html#catering">Catering</a></li>
+              <li class="nav-item-drop">
+                <button
+                  class="nav-link nav-drop-toggle"
+                  id="nav-drop-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="nav-drop"
+                >
+                  Pedí online
+                  <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true">
+                    <path
+                      d="M2 4l4 4 4-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="nav-drop" id="nav-drop">
+                  <a href="./pedidos.html">Armar mi pedido</a>
+                  <a href="./menu.html">Ver el menú completo</a>
+                  <a href="./index.html">Volver al inicio</a>
+                </div>
+              </li>
+            </ul>
+
+            <div class="nav-social">
+              <a
+                class="nav-social-link"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9c1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.6v7A10 10 0 0 0 22 12"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m-5 3.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12A2.5 2.5 0 0 0 12 9.5M17.5 6.8a1 1 0 1 1-1 1a1 1 0 0 1 1-1"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://wa.me/59170000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main class="order-page" id="pedido">
+      <figure class="order-hero">
+        <img
+          src="./assets/demo-restaurante-silpancho.webp"
+          width="800"
+          height="600"
+          alt="Silpancho cruceño servido con arroz, papa y huevo frito"
+          fetchpriority="high"
+        />
+      </figure>
+
+      <div class="order-wrap">
+        <div class="order-head">
+          <h1 class="order-shop">Sabor Cruceño</h1>
+          <p class="order-meta">Av. San Martín, Equipetrol · Santa Cruz de la Sierra</p>
+          <p class="order-meta">Pedidos online: 11:00 – 21:30</p>
+
+          <div class="order-head-row">
+            <p class="order-eta">
+              <strong id="order-eta-time">25 min</strong>
+              <span id="order-eta-label">listo para retirar</span>
+            </p>
+
+            <div class="order-modes" role="group" aria-label="Forma de entrega">
+              <button
+                class="order-mode"
+                type="button"
+                data-mode="delivery"
+                aria-pressed="false"
+              >
+                Delivery
+              </button>
+              <button
+                class="order-mode is-active"
+                type="button"
+                data-mode="retiro"
+                aria-pressed="true"
+              >
+                Retiro
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="order-rail-block" aria-labelledby="rail-title">
+          <div class="order-rail-head">
+            <h2 class="order-block-title" id="rail-title">Los más pedidos</h2>
+            <div class="order-rail-btns" id="rail-btns" hidden>
+              <button class="order-rail-btn" id="rail-prev" type="button" aria-label="Ver anteriores">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14 6l-6 6 6 6"
+                  />
+                </svg>
+              </button>
+              <button class="order-rail-btn" id="rail-next" type="button" aria-label="Ver siguientes">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 6l6 6-6 6"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <ul class="order-rail" id="rail">
+            <li class="rail-item">
+              <article class="dish" data-id="saltena" data-name="Salteña especial" data-price="12">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-saltena.webp"
+                    width="800"
+                    height="600"
+                    alt="Salteña dorada recién horneada"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#1 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Salteña especial al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Salteña especial</h3>
+                <p class="dish-price">Bs 12</p>
+              </article>
+            </li>
+
+            <li class="rail-item">
+              <article class="dish" data-id="silpancho" data-name="Silpancho cruceño" data-price="28">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-silpancho.webp"
+                    width="800"
+                    height="600"
+                    alt="Silpancho cruceño con arroz y huevo"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#2 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Silpancho cruceño al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Silpancho cruceño</h3>
+                <p class="dish-price">Bs 28</p>
+              </article>
+            </li>
+
+            <li class="rail-item">
+              <article class="dish" data-id="majadito" data-name="Majadito de charque" data-price="30">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-hero.webp"
+                    width="1600"
+                    height="900"
+                    alt="Majadito de charque con plátano frito y huevo"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#3 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Majadito de charque al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Majadito de charque</h3>
+                <p class="dish-price">Bs 30</p>
+              </article>
+            </li>
+
+            <li class="rail-item">
+              <article class="dish" data-id="sopa-mani" data-name="Sopa de maní" data-price="22">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-catering-1.jpg"
+                    width="1600"
+                    height="1067"
+                    alt="Sopa casera servida en mesa de madera"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Sopa de maní al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Sopa de maní</h3>
+                <p class="dish-price">Bs 22</p>
+              </article>
+            </li>
+
+            <li class="rail-item">
+              <article class="dish" data-id="desayuno" data-name="Desayuno cruceño" data-price="25">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-catering-2.jpg"
+                    width="1600"
+                    height="1067"
+                    alt="Desayuno servido con tortilla, pan casero y jugo"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Desayuno cruceño al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Desayuno cruceño</h3>
+                <p class="dish-price">Bs 25</p>
+              </article>
+            </li>
+
+            <li class="rail-item">
+              <article class="dish" data-id="jugo" data-name="Jugo natural" data-price="10">
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-jugo.webp"
+                    width="800"
+                    height="600"
+                    alt="Jugo natural de frutas tropicales"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Jugo natural al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        d="M12 6v12M6 12h12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <h3 class="dish-name">Jugo natural</h3>
+                <p class="dish-price">Bs 10</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="order-cat" aria-labelledby="cat-horneados">
+          <h2 class="order-block-title" id="cat-horneados">Salteñas y horneados</h2>
+          <ul class="order-rows">
+            <li>
+              <article class="dish" data-id="saltena" data-name="Salteña especial" data-price="12">
+                <div class="dish-text">
+                  <h3 class="dish-name">Salteña especial</h3>
+                  <p class="dish-desc">Masa dorada y relleno jugoso de carne. Horneada en el día.</p>
+                  <p class="dish-price">Bs 12</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Salteña especial al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="saltena-pollo" data-name="Salteña de pollo" data-price="12">
+                <div class="dish-text">
+                  <h3 class="dish-name">Salteña de pollo</h3>
+                  <p class="dish-desc">Pollo desmenuzado, arveja y un toque de ají amarillo.</p>
+                  <p class="dish-price">Bs 12</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Salteña de pollo al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="cunape" data-name="Cuñapé (3 unidades)" data-price="10">
+                <div class="dish-text">
+                  <h3 class="dish-name">Cuñapé (3 unidades)</h3>
+                  <p class="dish-desc">Queso chaqueño y almidón de yuca, recién salidos del horno.</p>
+                  <p class="dish-price">Bs 10</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Cuñapé al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="empanada" data-name="Empanada de queso" data-price="8">
+                <div class="dish-text">
+                  <h3 class="dish-name">Empanada de queso</h3>
+                  <p class="dish-desc">Masa hojaldrada con queso que se estira. Para el café de la tarde.</p>
+                  <p class="dish-price">Bs 8</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Empanada de queso al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="order-cat" aria-labelledby="cat-platos">
+          <h2 class="order-block-title" id="cat-platos">Platos del día</h2>
+          <ul class="order-rows">
+            <li>
+              <article class="dish" data-id="silpancho" data-name="Silpancho cruceño" data-price="28">
+                <div class="dish-text">
+                  <h3 class="dish-name">Silpancho cruceño</h3>
+                  <p class="dish-desc">Carne empanizada, arroz, papa y dos huevos fritos.</p>
+                  <p class="dish-price">Bs 28</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Silpancho cruceño al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="majadito" data-name="Majadito de charque" data-price="30">
+                <div class="dish-text">
+                  <h3 class="dish-name">Majadito de charque</h3>
+                  <p class="dish-desc">Arroz batido con charque, plátano frito y huevo.</p>
+                  <p class="dish-price">Bs 30</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Majadito de charque al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="pique" data-name="Pique macho para dos" data-price="45">
+                <div class="dish-text">
+                  <h3 class="dish-name">Pique macho para dos</h3>
+                  <p class="dish-desc">Carne, salchicha, papa y locoto aparte. Rinde para dos personas.</p>
+                  <p class="dish-price">Bs 45</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Pique macho al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="locro" data-name="Locro de gallina" data-price="26">
+                <div class="dish-text">
+                  <h3 class="dish-name">Locro de gallina</h3>
+                  <p class="dish-desc">Caldo espeso con arroz, yuca y presa de gallina criolla.</p>
+                  <p class="dish-price">Bs 26</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Locro de gallina al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="order-cat" aria-labelledby="cat-bebidas">
+          <h2 class="order-block-title" id="cat-bebidas">Bebidas</h2>
+          <ul class="order-rows">
+            <li>
+              <article class="dish" data-id="jugo" data-name="Jugo natural" data-price="10">
+                <div class="dish-text">
+                  <h3 class="dish-name">Jugo natural</h3>
+                  <p class="dish-desc">Maracuyá, tumbo o surtido del día. Sin azúcar añadida.</p>
+                  <p class="dish-price">Bs 10</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Jugo natural al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="tamarindo" data-name="Refresco de tamarindo" data-price="8">
+                <div class="dish-text">
+                  <h3 class="dish-name">Refresco de tamarindo</h3>
+                  <p class="dish-desc">Jarra chica, bien fría. También hay de mocochinchi.</p>
+                  <p class="dish-price">Bs 8</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Refresco de tamarindo al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="dish" data-id="cafe" data-name="Café de olla" data-price="9">
+                <div class="dish-text">
+                  <h3 class="dish-name">Café de olla</h3>
+                  <p class="dish-desc">Café de los Yungas, colado a la antigua.</p>
+                  <p class="dish-price">Bs 9</p>
+                </div>
+                <button class="dish-add" type="button" aria-label="Agregar Café de olla al pedido">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="M12 6v12M6 12h12"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Demo de portafolio ·
+        <a href="https://sala-cero.onrender.com" target="_blank" rel="noopener">Sala Cero</a>
+        · Web Express desde Bs 990 ·
+        <a href="/demo/restaurante-pro/">Ver versión con plantilla pro</a>
+      </p>
+    </footer>
+
+    <div class="cartbar" id="cartbar" hidden>
+      <p class="cartbar-info">
+        <strong id="cartbar-count">0 ítems</strong>
+        <span id="cartbar-total">Bs 0</span>
+      </p>
+      <button class="cartbar-btn" id="cart-open" type="button">Ver mi pedido</button>
+    </div>
+
+    <dialog class="news cart" id="cart" aria-labelledby="cart-title">
+      <button class="news-close" id="cart-close" type="button" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            d="M6 6l12 12M18 6L6 18"
+          />
+        </svg>
+      </button>
+
+      <div class="news-body" id="cart-body" tabindex="-1" autofocus>
+        <h2 class="news-title" id="cart-title">Mi pedido</h2>
+
+        <p class="cart-empty" id="cart-empty">Todavía no agregaste nada.</p>
+        <ul class="cart-list" id="cart-list"></ul>
+
+        <p class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">Bs 0</strong>
+        </p>
+
+        <p class="cart-note" id="cart-note">Retiro en Av. San Martín, Equipetrol.</p>
+
+        <a
+          class="news-submit"
+          id="cart-send"
+          href="https://wa.me/59170000000"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Enviar pedido por WhatsApp
+        </a>
+
+        <button class="cart-clear" id="cart-clear" type="button">Vaciar pedido</button>
+
+        <p class="news-demo">
+          Demo de portafolio: el pedido se arma en tu navegador y se envía como mensaje.
+        </p>
+      </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

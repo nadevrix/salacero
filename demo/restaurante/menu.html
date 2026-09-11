@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Menú de Sabor Cruceño — desayunos, almuerzos y bebidas en Santa Cruz. Demo portafolio Sala Cero." />
+    <meta name="robots" content="noindex" />
+    <title>Menú — Sabor Cruceño</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page-inner">
+    <a class="skip-link" href="#menu-contenido">Saltar al contenido</a>
+
+    <div class="site-top" id="site-top">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <span class="demo-badge">Demo Sala Cero</span>
+          <p class="topbar-text">
+            Delivery y retiro en Equipetrol · pedidos confirmados por WhatsApp
+          </p>
+          <a class="topbar-btn" href="./pedidos.html">Pedir ahora</a>
+        </div>
+      </div>
+
+      <header class="site-header" id="site-header">
+        <div class="header-inner">
+          <a class="brand" href="./index.html" aria-label="Sabor Cruceño — inicio">
+            <span class="brand-diamond">
+              <span class="brand-stack">
+                <span class="brand-script">Sabor</span>
+                <span class="brand-word">Cruceño</span>
+              </span>
+            </span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="./menu.html" aria-current="page">Menú</a></li>
+              <li><a class="nav-link" href="./especiales.html">Especiales</a></li>
+              <li><a class="nav-link" href="./index.html#ubicacion">Ubicación</a></li>
+              <li><a class="nav-link" href="./pedidos.html">Pedidos</a></li>
+              <li><a class="nav-link" href="./index.html#catering">Catering</a></li>
+              <li class="nav-item-drop">
+                <button
+                  class="nav-link nav-drop-toggle"
+                  id="nav-drop-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="nav-drop"
+                >
+                  Pedí online
+                  <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true">
+                    <path
+                      d="M2 4l4 4 4-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="nav-drop" id="nav-drop">
+                  <a href="./pedidos.html">Armar mi pedido</a>
+                  <a href="./index.html">Volver al inicio</a>
+                  <a
+                    href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20tengo%20una%20consulta."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Escribinos por WhatsApp</a
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <div class="nav-social">
+              <a
+                class="nav-social-link"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9c1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.6v7A10 10 0 0 0 22 12"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m-5 3.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12A2.5 2.5 0 0 0 12 9.5M17.5 6.8a1 1 0 1 1-1 1a1 1 0 0 1 1-1"
+                  />
+                </svg>
+              </a>
+              <a
+                class="nav-social-link"
+                href="https://wa.me/59170000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main class="menu-page" id="menu-contenido">
+      <div class="menu-page-head">
+        <h1 class="menu-page-title">Nuestro menú</h1>
+        <p class="menu-page-note">
+          Precios en bolivianos. Todo se prepara el mismo día.
+        </p>
+
+        <div class="menu-tabs" role="tablist" aria-label="Categorías del menú">
+          <button
+            class="menu-tab is-active"
+            id="tab-desayunos"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-desayunos"
+          >
+            Desayunos
+          </button>
+          <button
+            class="menu-tab"
+            id="tab-almuerzos"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-almuerzos"
+          >
+            Almuerzos
+          </button>
+          <button
+            class="menu-tab"
+            id="tab-bebidas"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-bebidas"
+          >
+            Bebidas
+          </button>
+        </div>
+      </div>
+
+      <section
+        class="menu-panel is-wide"
+        id="panel-desayunos"
+        role="tabpanel"
+        aria-labelledby="tab-desayunos"
+        tabindex="0"
+      >
+        <p class="menu-note">
+          Servimos desayuno de lunes a sábado, de 7:00 a 10:30. Para comer en el local,
+          llevar o pedir por WhatsApp.
+        </p>
+
+        <div class="menu-groups">
+          <div class="menu-col">
+            <article class="menu-group">
+              <h2 class="menu-group-title">Destacados del desayuno</h2>
+              <ul class="menu-items">
+                <li class="menu-feature">
+                  <img
+                    src="./assets/demo-restaurante-saltena.webp"
+                    width="800"
+                    height="600"
+                    alt="Salteña dorada recién salida del horno"
+                    loading="lazy"
+                  />
+                  <div class="menu-feature-head">
+                    <p class="menu-item-name">Docena de salteñas</p>
+                    <p class="menu-item-price">Bs 130</p>
+                  </div>
+                  <p class="menu-item-desc">
+                    Doce salteñas horneadas en el día, surtidas de carne y pollo. Se
+                    encargan con un día de anticipación.
+                  </p>
+                </li>
+                <li class="menu-feature">
+                  <img
+                    src="./assets/demo-restaurante-hero.webp"
+                    width="1600"
+                    height="900"
+                    alt="Mesa con salteñas, jugo natural y café"
+                    loading="lazy"
+                  />
+                  <div class="menu-feature-head">
+                    <p class="menu-item-name">Desayuno completo</p>
+                    <p class="menu-item-price">Bs 35</p>
+                  </div>
+                  <p class="menu-item-desc">
+                    Dos salteñas, jugo natural del día y café con leche. Se puede cambiar
+                    el café por té.
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="menu-col">
+            <article class="menu-group">
+              <h2 class="menu-group-title">Salteñas y horneados</h2>
+              <p class="menu-group-note">
+                Se hornean desde las 7:00 y se venden hasta agotar. Llajua de la casa
+                aparte, sin cargo.
+              </p>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Salteña de carne</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Salteña de pollo</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Salteña picante</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Empanada de queso</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Cuñapés, cuatro unidades</p>
+                  </div>
+                  <p class="menu-item-price">Bs 8</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Humintas al horno</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Pan de arroz</p>
+                  </div>
+                  <p class="menu-item-price">Bs 6</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-group">
+              <h2 class="menu-group-title">Café y jugos</h2>
+              <p class="menu-group-note">
+                El café es de grano de los Yungas y se muele en el día. Los jugos salen sin
+                azúcar añadida.
+              </p>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Café con leche</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Café americano</p>
+                  </div>
+                  <p class="menu-item-price">Bs 8</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Capuchino</p>
+                  </div>
+                  <p class="menu-item-price">Bs 14</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Té con leche</p>
+                  </div>
+                  <p class="menu-item-price">Bs 8</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Jugo de maracuyá</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Jugo de naranja</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Licuado de plátano</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="menu-panel is-wide"
+        id="panel-almuerzos"
+        role="tabpanel"
+        aria-labelledby="tab-almuerzos"
+        tabindex="0"
+      >
+        <p class="menu-note">
+          Servimos almuerzo de lunes a sábado, de 11:00 a 15:00. Para comer en el local,
+          llevar o pedir por WhatsApp.
+        </p>
+
+        <div class="menu-groups">
+          <div class="menu-col">
+            <article class="menu-group">
+              <h2 class="menu-group-title">Destacados del almuerzo</h2>
+              <ul class="menu-items">
+                <li class="menu-feature">
+                  <img
+                    src="./assets/demo-restaurante-silpancho.webp"
+                    width="800"
+                    height="600"
+                    alt="Silpancho cruceño con arroz, papa y huevo frito"
+                    loading="lazy"
+                  />
+                  <div class="menu-feature-head">
+                    <p class="menu-item-name">Silpancho completo</p>
+                    <p class="menu-item-price">Bs 38</p>
+                  </div>
+                  <p class="menu-item-desc">
+                    Silpancho, sopa del día y jugo natural. Es el plato que más sale, así
+                    que conviene encargarlo antes del mediodía.
+                  </p>
+                </li>
+                <li class="menu-feature">
+                  <img
+                    src="./assets/demo-restaurante-hero.webp"
+                    width="1600"
+                    height="900"
+                    alt="Mesa servida con un plato cruceño y jugo natural"
+                    loading="lazy"
+                  />
+                  <div class="menu-feature-head">
+                    <p class="menu-item-name">Almuerzo del día</p>
+                    <p class="menu-item-price">Bs 32</p>
+                  </div>
+                  <p class="menu-item-desc">
+                    Sopa, segundo del día y refresco. Cambia todos los días, preguntá por
+                    WhatsApp qué hay hoy.
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="menu-col">
+            <article class="menu-group">
+              <h2 class="menu-group-title">Platos cruceños</h2>
+              <p class="menu-group-note">
+                Todos vienen con llajua de la casa, sin cargo. Porción para una persona,
+                salvo donde diga lo contrario.
+              </p>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Silpancho cruceño</p>
+                  </div>
+                  <p class="menu-item-price">Bs 28</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Majadito de charque</p>
+                  </div>
+                  <p class="menu-item-price">Bs 30</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Pique macho, para dos</p>
+                  </div>
+                  <p class="menu-item-price">Bs 45</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Lomo montado</p>
+                  </div>
+                  <p class="menu-item-price">Bs 32</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Pollo al horno con yuca</p>
+                  </div>
+                  <p class="menu-item-price">Bs 30</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Charque con mote</p>
+                  </div>
+                  <p class="menu-item-price">Bs 28</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Arroz con queso</p>
+                  </div>
+                  <p class="menu-item-price">Bs 25</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-group">
+              <h2 class="menu-group-title">Sopas y guarniciones</h2>
+              <p class="menu-group-note">
+                Las sopas se hacen en olla chica y se terminan temprano. Las guarniciones
+                se piden aparte.
+              </p>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Sopa de maní</p>
+                  </div>
+                  <p class="menu-item-price">Bs 22</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Locro de gallina</p>
+                  </div>
+                  <p class="menu-item-price">Bs 24</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Sopa de verduras</p>
+                  </div>
+                  <p class="menu-item-price">Bs 18</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Yuca frita</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Plátano frito</p>
+                  </div>
+                  <p class="menu-item-price">Bs 10</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Arroz blanco</p>
+                  </div>
+                  <p class="menu-item-price">Bs 8</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item-text">
+                    <p class="menu-item-name">Ensalada de la casa</p>
+                  </div>
+                  <p class="menu-item-price">Bs 12</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="menu-panel"
+        id="panel-bebidas"
+        role="tabpanel"
+        aria-labelledby="tab-bebidas"
+        tabindex="0"
+      >
+        <article class="menu-group">
+          <h2 class="menu-group-title">Bebidas</h2>
+          <p class="menu-group-note">
+            Los jugos se hacen al momento con fruta de temporada del mercado.
+          </p>
+          <ul class="menu-items">
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Jugo de maracuyá</p>
+              <p class="menu-item-desc">Natural, sin azúcar añadida.</p>
+            </div>
+            <p class="menu-item-price">Bs 10</p>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Jugo de tumbo</p>
+              <p class="menu-item-desc">De temporada, según lo que haya en el mercado.</p>
+            </div>
+            <p class="menu-item-price">Bs 10</p>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Somó</p>
+              <p class="menu-item-desc">Bebida de maíz, bien fría.</p>
+            </div>
+            <p class="menu-item-price">Bs 8</p>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Mocochinchi</p>
+              <p class="menu-item-desc">Refresco de durazno con canela.</p>
+            </div>
+            <p class="menu-item-price">Bs 8</p>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Gaseosa</p>
+              <p class="menu-item-desc">Vaso de 400 ml.</p>
+            </div>
+            <p class="menu-item-price">Bs 8</p>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-text">
+              <p class="menu-item-name">Agua mineral</p>
+              <p class="menu-item-desc">Botella de 500 ml.</p>
+            </div>
+            <p class="menu-item-price">Bs 6</p>
+          </li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="center-cta">
+        <a
+          class="btn-order"
+          href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Demo de portafolio ·
+        <a href="https://sala-cero.onrender.com" target="_blank" rel="noopener">Sala Cero</a>
+        · Web Express desde Bs 990 ·
+        <a href="/demo/restaurante-pro/">Ver versión con plantilla pro</a>
+      </p>
+    </footer>
+
+    <a
+      class="wa-float"
+      href="https://wa.me/59170000000?text=Hola%20Sabor%20Cruce%C3%B1o%2C%20quiero%20hacer%20un%20pedido."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Pedir por WhatsApp"
+    >
+      <span class="wa-float-tip" aria-hidden="true">
+        <strong>¿Hacemos tu pedido?</strong>
+        Escribinos por WhatsApp
+      </span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.47-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.29 2.33 1.44.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.69-.17 1.36Z"
+        />
+      </svg>
+    </a>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
