@@ -473,17 +473,10 @@ h3 {
 }
 
 .hero-lead {
-  margin: 0 0 1.75rem;
+  margin: 0;
   max-width: 38ch;
   color: #ded7d1;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
 }
 
 .hero-controls {
@@ -537,43 +530,6 @@ h3 {
 .hero.is-paused .ic-play,
 .hero.is-unmuted .ic-sound-on {
   display: block;
-}
-
-/* ── BOTONES ─────────────────────────────────────────────────────────────── */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.9rem 1.5rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-wa {
-  background: var(--wa);
-  color: #041006;
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.btn-ghost:hover {
-  background: #fff;
-  color: var(--ink);
 }
 
 /* ── SECCIONES ───────────────────────────────────────────────────────────── */
@@ -2719,7 +2675,6 @@ a.news-submit[hidden] {
     animation: none;
   }
 
-  .btn:hover,
   .btn-order:hover,
   .wa-float:hover,
   .menu-card:hover {
