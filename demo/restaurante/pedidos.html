@@ -379,239 +379,447 @@
           </ul>
         </section>
 
-        <section class="order-cat" aria-labelledby="cat-horneados">
-          <h2 class="order-block-title" id="cat-horneados">Salteñas y horneados</h2>
-          <ul class="order-rows">
+        <nav class="order-menu" aria-label="Categorías del pedido">
+          <div class="order-menu-head">
+            <p class="order-menu-label">Carta</p>
+            <p class="order-menu-hours">11:00 – 21:30</p>
+          </div>
+          <div class="order-tabs" role="tablist" aria-label="Secciones de la carta">
+            <button
+              class="order-tab is-active"
+              id="tab-mas"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-mas"
+            >
+              Los más pedidos
+            </button>
+            <button
+              class="order-tab"
+              id="tab-horneados"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-horneados"
+              tabindex="-1"
+            >
+              Salteñas
+            </button>
+            <button
+              class="order-tab"
+              id="tab-platos"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-platos"
+              tabindex="-1"
+            >
+              Platos
+            </button>
+            <button
+              class="order-tab"
+              id="tab-bebidas"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-bebidas"
+              tabindex="-1"
+            >
+              Bebidas
+            </button>
+          </div>
+        </nav>
+
+        <section
+          class="order-cat"
+          id="panel-mas"
+          role="tabpanel"
+          aria-labelledby="tab-mas"
+        >
+          <h2 class="order-block-title">Los más pedidos</h2>
+          <p class="order-cat-lead">Los platos que más se piden en Equipetrol.</p>
+          <ul class="order-grid">
             <li>
-              <article class="dish" data-id="saltena" data-name="Salteña especial" data-price="12">
+              <article class="dish dish-card" data-id="saltena" data-name="Salteña especial" data-price="12">
                 <div class="dish-text">
                   <h3 class="dish-name">Salteña especial</h3>
                   <p class="dish-desc">Masa dorada y relleno jugoso de carne. Horneada en el día.</p>
-                  <p class="dish-price">Bs 12</p>
+                  <p class="dish-stat">
+                    <span>Bs 12</span>
+                    <span class="dish-likes">92% (64)</span>
+                  </p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Salteña especial al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-saltena.webp"
+                    width="800"
+                    height="600"
+                    alt="Salteña dorada recién horneada"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#1 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Salteña especial al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
             <li>
-              <article class="dish" data-id="saltena-pollo" data-name="Salteña de pollo" data-price="12">
-                <div class="dish-text">
-                  <h3 class="dish-name">Salteña de pollo</h3>
-                  <p class="dish-desc">Pollo desmenuzado, arveja y un toque de ají amarillo.</p>
-                  <p class="dish-price">Bs 12</p>
-                </div>
-                <button class="dish-add" type="button" aria-label="Agregar Salteña de pollo al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-            <li>
-              <article class="dish" data-id="cunape" data-name="Cuñapé (3 unidades)" data-price="10">
-                <div class="dish-text">
-                  <h3 class="dish-name">Cuñapé (3 unidades)</h3>
-                  <p class="dish-desc">Queso chaqueño y almidón de yuca, recién salidos del horno.</p>
-                  <p class="dish-price">Bs 10</p>
-                </div>
-                <button class="dish-add" type="button" aria-label="Agregar Cuñapé al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-            <li>
-              <article class="dish" data-id="empanada" data-name="Empanada de queso" data-price="8">
-                <div class="dish-text">
-                  <h3 class="dish-name">Empanada de queso</h3>
-                  <p class="dish-desc">Masa hojaldrada con queso que se estira. Para el café de la tarde.</p>
-                  <p class="dish-price">Bs 8</p>
-                </div>
-                <button class="dish-add" type="button" aria-label="Agregar Empanada de queso al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-          </ul>
-        </section>
-
-        <section class="order-cat" aria-labelledby="cat-platos">
-          <h2 class="order-block-title" id="cat-platos">Platos del día</h2>
-          <ul class="order-rows">
-            <li>
-              <article class="dish" data-id="silpancho" data-name="Silpancho cruceño" data-price="28">
+              <article class="dish dish-card" data-id="silpancho" data-name="Silpancho cruceño" data-price="28">
                 <div class="dish-text">
                   <h3 class="dish-name">Silpancho cruceño</h3>
                   <p class="dish-desc">Carne empanizada, arroz, papa y dos huevos fritos.</p>
-                  <p class="dish-price">Bs 28</p>
+                  <p class="dish-stat">
+                    <span>Bs 28</span>
+                    <span class="dish-likes">88% (51)</span>
+                  </p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Silpancho cruceño al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-silpancho.webp"
+                    width="800"
+                    height="600"
+                    alt="Silpancho cruceño con arroz y huevo"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#2 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Silpancho cruceño al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
             <li>
-              <article class="dish" data-id="majadito" data-name="Majadito de charque" data-price="30">
+              <article class="dish dish-card" data-id="majadito" data-name="Majadito de charque" data-price="30">
                 <div class="dish-text">
                   <h3 class="dish-name">Majadito de charque</h3>
                   <p class="dish-desc">Arroz batido con charque, plátano frito y huevo.</p>
-                  <p class="dish-price">Bs 30</p>
+                  <p class="dish-stat">
+                    <span>Bs 30</span>
+                    <span class="dish-likes">90% (47)</span>
+                  </p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Majadito de charque al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-hero.webp"
+                    width="1600"
+                    height="900"
+                    alt="Majadito de charque con plátano frito y huevo"
+                    loading="lazy"
+                  />
+                  <p class="dish-rank">#3 más pedido</p>
+                  <button class="dish-add" type="button" aria-label="Agregar Majadito de charque al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
             <li>
-              <article class="dish" data-id="pique" data-name="Pique macho para dos" data-price="45">
+              <article class="dish dish-card" data-id="sopa-mani" data-name="Sopa de maní" data-price="22">
+                <div class="dish-text">
+                  <h3 class="dish-name">Sopa de maní</h3>
+                  <p class="dish-desc">Con papa frita y segundo de pollo al horno con yuca.</p>
+                  <p class="dish-stat">
+                    <span>Bs 22</span>
+                    <span class="dish-likes">85% (33)</span>
+                  </p>
+                </div>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-catering-1.jpg"
+                    width="1600"
+                    height="1067"
+                    alt="Sopa casera servida en mesa de madera"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Sopa de maní al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="desayuno" data-name="Desayuno cruceño" data-price="25">
+                <div class="dish-text">
+                  <h3 class="dish-name">Desayuno cruceño</h3>
+                  <p class="dish-desc">Huevo, pan casero y jugo natural. Se sirve hasta las 10:30.</p>
+                  <p class="dish-stat">
+                    <span>Bs 25</span>
+                    <span class="dish-likes">87% (29)</span>
+                  </p>
+                </div>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-catering-2.jpg"
+                    width="1600"
+                    height="1067"
+                    alt="Desayuno servido con tortilla, pan casero y jugo"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Desayuno cruceño al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="pique" data-name="Pique macho para dos" data-price="45">
                 <div class="dish-text">
                   <h3 class="dish-name">Pique macho para dos</h3>
                   <p class="dish-desc">Carne, salchicha, papa y locoto aparte. Rinde para dos personas.</p>
-                  <p class="dish-price">Bs 45</p>
+                  <p class="dish-stat">
+                    <span>Bs 45</span>
+                    <span class="dish-likes">84% (22)</span>
+                  </p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Pique macho al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-            <li>
-              <article class="dish" data-id="locro" data-name="Locro de gallina" data-price="26">
-                <div class="dish-text">
-                  <h3 class="dish-name">Locro de gallina</h3>
-                  <p class="dish-desc">Caldo espeso con arroz, yuca y presa de gallina criolla.</p>
-                  <p class="dish-price">Bs 26</p>
+                <div class="dish-media">
+                  <img
+                    src="./assets/demo-restaurante-hero.webp"
+                    width="1600"
+                    height="900"
+                    alt="Pique macho servido para compartir"
+                    loading="lazy"
+                  />
+                  <button class="dish-add" type="button" aria-label="Agregar Pique macho al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Locro de gallina al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
               </article>
             </li>
           </ul>
         </section>
 
-        <section class="order-cat" aria-labelledby="cat-bebidas">
-          <h2 class="order-block-title" id="cat-bebidas">Bebidas</h2>
-          <ul class="order-rows">
+        <section
+          class="order-cat"
+          id="panel-horneados"
+          role="tabpanel"
+          aria-labelledby="tab-horneados"
+        >
+          <h2 class="order-block-title" id="cat-horneados">Salteñas y horneados</h2>
+          <p class="order-cat-lead">Se hornean desde las 7:00 y se venden hasta agotar.</p>
+          <ul class="order-grid">
             <li>
-              <article class="dish" data-id="jugo" data-name="Jugo natural" data-price="10">
+              <article class="dish dish-card" data-id="saltena" data-name="Salteña especial" data-price="12">
+                <div class="dish-text">
+                  <h3 class="dish-name">Salteña especial</h3>
+                  <p class="dish-desc">Masa dorada y relleno jugoso de carne. Horneada en el día.</p>
+                  <p class="dish-stat"><span>Bs 12</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-saltena.webp" width="800" height="600" alt="Salteña dorada recién horneada" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Salteña especial al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="saltena-pollo" data-name="Salteña de pollo" data-price="12">
+                <div class="dish-text">
+                  <h3 class="dish-name">Salteña de pollo</h3>
+                  <p class="dish-desc">Pollo desmenuzado, arveja y un toque de ají amarillo.</p>
+                  <p class="dish-stat"><span>Bs 12</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-saltena.webp" width="800" height="600" alt="Salteña de pollo" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Salteña de pollo al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="cunape" data-name="Cuñapé (3 unidades)" data-price="10">
+                <div class="dish-text">
+                  <h3 class="dish-name">Cuñapé (3 unidades)</h3>
+                  <p class="dish-desc">Queso chaqueño y almidón de yuca, recién salidos del horno.</p>
+                  <p class="dish-stat"><span>Bs 10</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-catering-2.jpg" width="1600" height="1067" alt="Cuñapés recién horneados" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Cuñapé al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="empanada" data-name="Empanada de queso" data-price="8">
+                <div class="dish-text">
+                  <h3 class="dish-name">Empanada de queso</h3>
+                  <p class="dish-desc">Masa hojaldrada con queso que se estira. Para el café de la tarde.</p>
+                  <p class="dish-stat"><span>Bs 8</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-catering-2.jpg" width="1600" height="1067" alt="Empanada de queso" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Empanada de queso al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="order-cat"
+          id="panel-platos"
+          role="tabpanel"
+          aria-labelledby="tab-platos"
+        >
+          <h2 class="order-block-title" id="cat-platos">Platos del día</h2>
+          <p class="order-cat-lead">Preparados el mismo día. El segundo cambia según el mercado.</p>
+          <ul class="order-grid">
+            <li>
+              <article class="dish dish-card" data-id="silpancho" data-name="Silpancho cruceño" data-price="28">
+                <div class="dish-text">
+                  <h3 class="dish-name">Silpancho cruceño</h3>
+                  <p class="dish-desc">Carne empanizada, arroz, papa y dos huevos fritos.</p>
+                  <p class="dish-stat"><span>Bs 28</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-silpancho.webp" width="800" height="600" alt="Silpancho cruceño con arroz y huevo" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Silpancho cruceño al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="majadito" data-name="Majadito de charque" data-price="30">
+                <div class="dish-text">
+                  <h3 class="dish-name">Majadito de charque</h3>
+                  <p class="dish-desc">Arroz batido con charque, plátano frito y huevo.</p>
+                  <p class="dish-stat"><span>Bs 30</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-hero.webp" width="1600" height="900" alt="Majadito de charque" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Majadito de charque al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="pique" data-name="Pique macho para dos" data-price="45">
+                <div class="dish-text">
+                  <h3 class="dish-name">Pique macho para dos</h3>
+                  <p class="dish-desc">Carne, salchicha, papa y locoto aparte. Rinde para dos personas.</p>
+                  <p class="dish-stat"><span>Bs 45</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-hero.webp" width="1600" height="900" alt="Pique macho para compartir" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Pique macho al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="dish dish-card" data-id="locro" data-name="Locro de gallina" data-price="26">
+                <div class="dish-text">
+                  <h3 class="dish-name">Locro de gallina</h3>
+                  <p class="dish-desc">Caldo espeso con arroz, yuca y presa de gallina criolla.</p>
+                  <p class="dish-stat"><span>Bs 26</span></p>
+                </div>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-catering-1.jpg" width="1600" height="1067" alt="Locro de gallina" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Locro de gallina al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="order-cat"
+          id="panel-bebidas"
+          role="tabpanel"
+          aria-labelledby="tab-bebidas"
+        >
+          <h2 class="order-block-title" id="cat-bebidas">Bebidas</h2>
+          <p class="order-cat-lead">Jugos del día y café de los Yungas.</p>
+          <ul class="order-grid">
+            <li>
+              <article class="dish dish-card" data-id="jugo" data-name="Jugo natural" data-price="10">
                 <div class="dish-text">
                   <h3 class="dish-name">Jugo natural</h3>
                   <p class="dish-desc">Maracuyá, tumbo o surtido del día. Sin azúcar añadida.</p>
-                  <p class="dish-price">Bs 10</p>
+                  <p class="dish-stat"><span>Bs 10</span></p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Jugo natural al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-jugo.webp" width="800" height="600" alt="Jugo natural de frutas tropicales" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Jugo natural al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
             <li>
-              <article class="dish" data-id="tamarindo" data-name="Refresco de tamarindo" data-price="8">
+              <article class="dish dish-card" data-id="tamarindo" data-name="Refresco de tamarindo" data-price="8">
                 <div class="dish-text">
                   <h3 class="dish-name">Refresco de tamarindo</h3>
                   <p class="dish-desc">Jarra chica, bien fría. También hay de mocochinchi.</p>
-                  <p class="dish-price">Bs 8</p>
+                  <p class="dish-stat"><span>Bs 8</span></p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Refresco de tamarindo al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-jugo.webp" width="800" height="600" alt="Refresco de tamarindo" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Refresco de tamarindo al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
             <li>
-              <article class="dish" data-id="cafe" data-name="Café de olla" data-price="9">
+              <article class="dish dish-card" data-id="cafe" data-name="Café de olla" data-price="9">
                 <div class="dish-text">
                   <h3 class="dish-name">Café de olla</h3>
                   <p class="dish-desc">Café de los Yungas, colado a la antigua.</p>
-                  <p class="dish-price">Bs 9</p>
+                  <p class="dish-stat"><span>Bs 9</span></p>
                 </div>
-                <button class="dish-add" type="button" aria-label="Agregar Café de olla al pedido">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M12 6v12M6 12h12"
-                    />
-                  </svg>
-                </button>
+                <div class="dish-media">
+                  <img src="./assets/demo-restaurante-catering-2.jpg" width="1600" height="1067" alt="Café de olla" loading="lazy" />
+                  <button class="dish-add" type="button" aria-label="Agregar Café de olla al pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
               </article>
             </li>
           </ul>
@@ -635,6 +843,53 @@
       </p>
       <button class="cartbar-btn" id="cart-open" type="button">Ver mi pedido</button>
     </div>
+
+    <dialog class="plate" id="plate" aria-labelledby="plate-title">
+      <div class="plate-bar" id="plate-bar" hidden>
+        <button class="plate-x" id="plate-bar-close" type="button" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              d="M6 6l12 12M18 6L6 18"
+            />
+          </svg>
+        </button>
+        <p class="plate-bar-title" id="plate-bar-title"></p>
+      </div>
+
+      <div class="plate-scroll" id="plate-scroll">
+        <div class="plate-hero">
+          <button class="plate-x plate-x-over" id="plate-close" type="button" aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                d="M6 6l12 12M18 6L6 18"
+              />
+            </svg>
+          </button>
+          <img id="plate-photo" src="./assets/demo-restaurante-silpancho.webp" width="800" height="600" alt="" />
+        </div>
+
+        <div class="plate-body">
+          <h2 class="plate-title" id="plate-title">Plato</h2>
+          <p class="plate-meta" id="plate-meta" hidden></p>
+          <p class="plate-desc" id="plate-desc"></p>
+          <div id="plate-groups"></div>
+        </div>
+      </div>
+
+      <div class="plate-foot">
+        <button class="plate-cta" id="plate-cta" type="button" disabled>
+          Hacé 3 selecciones obligatorias
+        </button>
+      </div>
+    </dialog>
 
     <dialog class="news cart" id="cart" aria-labelledby="cart-title">
       <button class="news-close" id="cart-close" type="button" aria-label="Cerrar">

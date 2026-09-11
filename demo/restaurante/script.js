@@ -239,8 +239,8 @@
   }
 
   /* Pestañas del menú: solo existen en menu.html. */
-  function initMenuTabs() {
-    var tabs = document.querySelectorAll(".menu-tab");
+  function initTabs(selector) {
+    var tabs = document.querySelectorAll(selector);
     if (!tabs.length) return;
 
     function select(target) {
@@ -252,6 +252,9 @@
         tab.tabIndex = on ? 0 : -1;
         if (panel) panel.hidden = !on;
       });
+      if (target.scrollIntoView) {
+        target.scrollIntoView({ inline: "center", block: "nearest" });
+      }
     }
 
     tabs.forEach(function (tab) {
@@ -395,6 +398,10 @@
         return saved.filter(function (item) {
           return item && item.id && item.qty > 0 && isFinite(item.price);
         });
+        return saved.map(function (item) {
+          if (!item.key) item.key = item.id;
+          return item;
+        });
       } catch (error) {
         return [];
       }
@@ -431,7 +438,9 @@
 
     function waLink() {
       var lines = items.map(function (item) {
-        return item.qty + " x " + item.name + " — " + money(item.qty * item.price);
+        var line = item.qty + " x " + item.name + " — " + money(item.qty * item.price);
+        if (item.detail) line += "\n  " + item.detail.replace(/ · /g, "\n  ");
+        return line;
       });
       var text =
         "Hola Sabor Cruceño, " +
@@ -466,6 +475,12 @@
       unit.textContent = money(item.price) + " c/u";
       text.appendChild(name);
       text.appendChild(unit);
+      if (item.detail) {
+        var extra = document.createElement("p");
+        extra.className = "cart-item-price";
+        extra.textContent = item.detail;
+        text.appendChild(extra);
+      }
 
       var qty = document.createElement("div");
       qty.className = "cart-qty";
@@ -518,26 +533,452 @@
       render();
     }
 
-    function add(dish) {
-      var id = dish.getAttribute("data-id");
+    function addItem(entry) {
       var found = null;
       items.forEach(function (item) {
-        if (item.id === id) found = item;
+        if (item.key === entry.key) found = item;
       });
 
       if (found) {
         found.qty += 1;
       } else {
-        items.push({
-          id: id,
-          name: dish.getAttribute("data-name"),
-          price: Number(dish.getAttribute("data-price")),
-          qty: 1
-        });
+        items.push(entry);
       }
 
       render();
     }
+
+    function add(dish) {
+      addItem({
+        key: dish.getAttribute("data-id"),
+        id: dish.getAttribute("data-id"),
+        name: dish.getAttribute("data-name"),
+        price: Number(dish.getAttribute("data-price")),
+        qty: 1
+      });
+    }
+
+    var DRINKS = { jugo: 1, tamarindo: 1, cafe: 1 };
+    var PLUS_SVG =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12"/></svg>';
+    var MINUS_SVG =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 12h12"/></svg>';
+
+    var SIDES = [
+      "Arroz blanco",
+      "Plátano frito",
+      "Ensalada de la casa",
+      "Papa cocida",
+      "Papa frita",
+      "Yuca frita",
+      "Choclo",
+      "Poroto",
+      "Llajua",
+      "Repollo",
+      "Sopa del día",
+      "Fideo",
+      "Zapallo",
+      "Huevo frito"
+    ];
+
+    var DRINK_OPTS = [
+      { name: "Coca-Cola", extra: 8 },
+      { name: "Coca-Cola Light", extra: 8 },
+      { name: "Sprite", extra: 8 },
+      { name: "Fanta naranja", extra: 8 },
+      { name: "Simba", extra: 8 },
+      { name: "Agua sin gas", extra: 5 },
+      { name: "Jugo del día", extra: 10 }
+    ];
+
+    var MODS = [
+      { name: "Llajua", on: true },
+      { name: "Locoto aparte", on: false },
+      { name: "Sin cebolla", on: false },
+      { name: "Cebolla asada", on: true },
+      { name: "Arroz extra", on: false },
+      { name: "Papa extra", on: false }
+    ];
+
+    var EXTRAS = [
+      { name: "Agregar champiñones", extra: 6 },
+      { name: "Extra huevo", extra: 4 },
+      { name: "Extra charque", extra: 8 }
+    ];
+
+    var SUGGEST = [
+      { name: "Sopa de maní", extra: 18 },
+      { name: "Cuñapé (3 unidades)", extra: 10 },
+      { name: "Empanada de queso", extra: 8 }
+    ];
+
+    var SWEETS = [
+      { name: "Helado de canela", extra: 12 },
+      { name: "Budín de pan", extra: 10 },
+      { name: "Fruta de estación", extra: 8 }
+    ];
+
+    function initPlate() {
+      var dialog = document.getElementById("plate");
+      if (!dialog || typeof dialog.showModal !== "function") return null;
+
+      var scroll = document.getElementById("plate-scroll");
+      var bar = document.getElementById("plate-bar");
+      var barTitle = document.getElementById("plate-bar-title");
+      var photo = document.getElementById("plate-photo");
+      var title = document.getElementById("plate-title");
+      var meta = document.getElementById("plate-meta");
+      var desc = document.getElementById("plate-desc");
+      var groups = document.getElementById("plate-groups");
+      var cta = document.getElementById("plate-cta");
+      var current = null;
+      var sidesOn = [];
+      var drinkOn = null;
+      var modsOn = [];
+      var extraOn = [];
+      var suggestOn = [];
+      var sweetOn = [];
+      var backup = "preguntar";
+
+      function close() {
+        document.body.classList.remove("news-open");
+        if (dialog.open) dialog.close();
+      }
+
+      function extraSum(list) {
+        return list.reduce(function (n, item) {
+          return n + (item.extra || 0);
+        }, 0);
+      }
+
+      function total() {
+        if (!current) return 0;
+        return (
+          current.price +
+          extraSum(drinkOn ? [drinkOn] : []) +
+          extraSum(extraOn) +
+          extraSum(suggestOn) +
+          extraSum(sweetOn)
+        );
+      }
+
+      function needed() {
+        if (!current || current.simple) return 0;
+        return Math.max(0, 2 - sidesOn.length) + (drinkOn ? 0 : 1);
+      }
+
+      function paintCta() {
+        var left = needed();
+        var pay = money(total());
+        cta.disabled = left > 0;
+        cta.classList.toggle("is-ready", left === 0);
+        cta.textContent =
+          left > 0
+            ? "Hacé " + left + " selección" + (left === 1 ? "" : "es") + " obligatoria" + (left === 1 ? "" : "s") + " — " + pay
+            : "Agregar — " + pay;
+      }
+
+      function setPlusRow(btn, on) {
+        btn.classList.toggle("is-on", on);
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+        btn.querySelector(".plate-tick").innerHTML = on ? MINUS_SVG : PLUS_SVG;
+      }
+
+      function paintSides() {
+        groups.querySelectorAll("[data-side]").forEach(function (btn) {
+          var name = btn.getAttribute("data-side");
+          var on = sidesOn.indexOf(name) !== -1;
+          setPlusRow(btn, on);
+          btn.disabled = !on && sidesOn.length >= 2;
+        });
+      }
+
+      function head(titleText, required, note) {
+        var box = document.createElement("section");
+        box.className = "plate-group";
+        var h = document.createElement("h3");
+        h.className = "plate-group-title";
+        h.textContent = titleText;
+        box.appendChild(h);
+        var p = document.createElement("p");
+        p.className = "plate-group-note";
+        if (required) {
+          var warn = document.createElement("span");
+          warn.className = "plate-req";
+          warn.textContent = "Requerido";
+          p.appendChild(warn);
+          p.appendChild(document.createTextNode(" · " + note));
+        } else {
+          p.textContent = note;
+        }
+        box.appendChild(p);
+        return box;
+      }
+
+      function plusRow(name, onClick) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "plate-row";
+        btn.setAttribute("data-side", name);
+        var text = document.createElement("div");
+        text.className = "plate-row-text";
+        var label = document.createElement("p");
+        label.className = "plate-row-name";
+        label.textContent = name;
+        text.appendChild(label);
+        var tick = document.createElement("span");
+        tick.className = "plate-tick";
+        tick.innerHTML = PLUS_SVG;
+        btn.appendChild(text);
+        btn.appendChild(tick);
+        btn.addEventListener("click", onClick);
+        return btn;
+      }
+
+      function choice(kind, item, nameAttr, checked, onChange) {
+        var lab = document.createElement("label");
+        lab.className = "plate-choice";
+        var input = document.createElement("input");
+        input.type = kind;
+        input.name = nameAttr;
+        input.checked = !!checked;
+        input.addEventListener("change", onChange);
+        var box = document.createElement("span");
+        var n = document.createElement("p");
+        n.className = "plate-choice-name";
+        n.textContent = item.name;
+        box.appendChild(n);
+        if (item.extra) {
+          var extra = document.createElement("p");
+          extra.className = "plate-row-extra";
+          extra.textContent = "+" + money(item.extra);
+          box.appendChild(extra);
+        }
+        if (item.hint) {
+          var hint = document.createElement("p");
+          hint.className = "plate-row-extra";
+          hint.textContent = item.hint;
+          box.appendChild(hint);
+        }
+        lab.appendChild(input);
+        lab.appendChild(box);
+        return lab;
+      }
+
+      function fill() {
+        groups.innerHTML = "";
+        if (current.simple) {
+          paintCta();
+          return;
+        }
+
+        var sidesBox = head("Elija 2 guarniciones para el plato.", true, "Seleccioná 2");
+        SIDES.forEach(function (name) {
+          sidesBox.appendChild(
+            plusRow(name, function () {
+              var i = sidesOn.indexOf(name);
+              if (i !== -1) sidesOn.splice(i, 1);
+              else if (sidesOn.length < 2) sidesOn.push(name);
+              paintSides();
+              paintCta();
+            })
+          );
+        });
+        groups.appendChild(sidesBox);
+
+        var drinkBox = head("Bebida de entrada", true, "Seleccioná 1");
+        DRINK_OPTS.forEach(function (item, i) {
+          drinkBox.appendChild(
+            choice("radio", item, "plate-drink", false, function () {
+              drinkOn = item;
+              paintCta();
+            })
+          );
+        });
+        groups.appendChild(drinkBox);
+
+        var modsBox = head("Modificaciones del plato", false, "(Opcional)");
+        modsOn = [];
+        MODS.forEach(function (item) {
+          if (item.on) modsOn.push(item);
+          modsBox.appendChild(
+            choice("checkbox", { name: item.name, hint: item.on ? "" : "" }, "plate-mod-" + item.name, item.on, function (event) {
+              if (event.target.checked) modsOn.push(item);
+              else {
+                modsOn = modsOn.filter(function (entry) {
+                  return entry.name !== item.name;
+                });
+              }
+            })
+          );
+        });
+        groups.appendChild(modsBox);
+
+        var extraBox = head("Ingredientes adicionales", false, "(Opcional)");
+        extraOn = [];
+        EXTRAS.forEach(function (item) {
+          extraBox.appendChild(
+            choice("checkbox", item, "plate-extra-" + item.name, false, function (event) {
+              if (event.target.checked) extraOn.push(item);
+              else {
+                extraOn = extraOn.filter(function (entry) {
+                  return entry.name !== item.name;
+                });
+              }
+              paintCta();
+            })
+          );
+        });
+        groups.appendChild(extraBox);
+
+        var sugBox = head("Acompañamientos recomendados", false, "(Opcional) · Elegí hasta 3");
+        suggestOn = [];
+        SUGGEST.forEach(function (item) {
+          sugBox.appendChild(
+            choice("checkbox", item, "plate-sug-" + item.name, false, function (event) {
+              if (event.target.checked) {
+                if (suggestOn.length >= 3) {
+                  event.target.checked = false;
+                  return;
+                }
+                suggestOn.push(item);
+              } else {
+                suggestOn = suggestOn.filter(function (entry) {
+                  return entry.name !== item.name;
+                });
+              }
+              paintCta();
+            })
+          );
+        });
+        groups.appendChild(sugBox);
+
+        var sweetBox = head("Postres recomendados", false, "(Opcional) · Elegí hasta 3");
+        sweetOn = [];
+        SWEETS.forEach(function (item) {
+          sweetBox.appendChild(
+            choice("checkbox", item, "plate-sweet-" + item.name, false, function (event) {
+              if (event.target.checked) {
+                if (sweetOn.length >= 3) {
+                  event.target.checked = false;
+                  return;
+                }
+                sweetOn.push(item);
+              } else {
+                sweetOn = sweetOn.filter(function (entry) {
+                  return entry.name !== item.name;
+                });
+              }
+              paintCta();
+            })
+          );
+        });
+        groups.appendChild(sweetBox);
+
+        var miss = head("Si el artículo no está disponible", false, "");
+        [
+          { name: "Dejá este ítem afuera", val: "afuera" },
+          { name: "Reemplazalo por el más parecido", val: "parecido" },
+          { name: "Preguntame por WhatsApp", val: "preguntar" }
+        ].forEach(function (item) {
+          miss.appendChild(
+            choice("radio", item, "plate-miss", item.val === backup, function () {
+              backup = item.val;
+            })
+          );
+        });
+        groups.appendChild(miss);
+
+        sidesOn = [];
+        drinkOn = null;
+        paintSides();
+        paintCta();
+      }
+
+      function open(dish) {
+        var img = dish.querySelector("img");
+        current = {
+          id: dish.getAttribute("data-id"),
+          name: dish.getAttribute("data-name"),
+          price: Number(dish.getAttribute("data-price")),
+          simple: !!DRINKS[dish.getAttribute("data-id")]
+        };
+
+        title.textContent = current.name;
+        barTitle.textContent = current.name;
+        desc.textContent = (dish.querySelector(".dish-desc") || {}).textContent || "";
+        photo.src = img ? img.getAttribute("src") : "";
+        photo.alt = img ? img.getAttribute("alt") || current.name : current.name;
+
+        var rank = dish.querySelector(".dish-rank");
+        var likes = dish.querySelector(".dish-likes");
+        meta.innerHTML = "";
+        if (rank) {
+          var badge = document.createElement("span");
+          badge.className = "dish-rank";
+          badge.textContent = rank.textContent;
+          meta.appendChild(badge);
+        }
+        if (likes) {
+          var like = document.createElement("span");
+          like.className = "plate-likes";
+          like.textContent = likes.textContent;
+          meta.appendChild(like);
+        }
+        meta.hidden = !rank && !likes;
+
+        fill();
+        bar.hidden = true;
+        scroll.scrollTop = 0;
+        if (!dialog.open) dialog.showModal();
+        document.body.classList.add("news-open");
+      }
+
+      function detail() {
+        var bits = [];
+        if (sidesOn.length) bits.push("Guarnición: " + sidesOn.join(", "));
+        if (drinkOn) bits.push("Bebida: " + drinkOn.name);
+        if (modsOn.length) {
+          bits.push(
+            "Mods: " +
+              modsOn
+                .map(function (item) {
+                  return item.name;
+                })
+                .join(", ")
+          );
+        }
+        extraOn.concat(suggestOn, sweetOn).forEach(function (item) {
+          bits.push(item.name + (item.extra ? " (+" + money(item.extra) + ")" : ""));
+        });
+        return bits.join(" · ");
+      }
+
+      scroll.addEventListener("scroll", function () {
+        bar.hidden = scroll.scrollTop < 160;
+      });
+
+      cta.addEventListener("click", function () {
+        if (!current || needed() > 0) return;
+        addItem({
+          key: current.id + "|" + detail(),
+          id: current.id,
+          name: current.name,
+          price: total(),
+          detail: detail(),
+          qty: 1
+        });
+        close();
+      });
+
+      document.getElementById("plate-close").addEventListener("click", close);
+      document.getElementById("plate-bar-close").addEventListener("click", close);
+      closeOnOutside(dialog, close);
+
+      return open;
+    }
+
+    var openPlate = initPlate();
 
     function openCart() {
       /* Sin soporte de dialog el pedido igual se puede enviar. */
@@ -561,10 +1002,13 @@
       next.disabled = rail.scrollLeft >= max;
     }
 
-    page.querySelectorAll(".dish-add").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var dish = btn.closest(".dish");
-        if (!dish) return;
+    page.querySelectorAll(".dish").forEach(function (dish) {
+      dish.addEventListener("click", function (event) {
+        if (event.target.closest("a")) return;
+        if (openPlate) {
+          openPlate(dish);
+          return;
+        }
         add(dish);
         dish.classList.add("is-added");
         window.setTimeout(function () {
@@ -612,7 +1056,8 @@
   syncHeader();
   initHeroVideo();
   initSlider();
-  initMenuTabs();
+  initTabs(".menu-tab");
+  initTabs(".order-tab");
   initNewsletter();
   initOrder();
 })();
