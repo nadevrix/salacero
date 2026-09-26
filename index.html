@@ -40,6 +40,7 @@
     <link rel="icon" href="./public/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="./public/site.webmanifest" />
     <link rel="preload" href="./public/images/hero-stage-v3.webp" as="image" type="image/webp" />
+    <link rel="preload" href="./sala_cero_video_background.mp4" as="video" type="video/mp4" fetchpriority="low" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./site-config.js"></script>
     <script type="application/ld+json">
@@ -140,8 +141,23 @@
 
     <main id="contenido">
       <section class="hero" id="inicio" aria-labelledby="hero-title" data-hero>
+        <!-- Video Background con poster fallback (CLS = 0) -->
         <div class="hero-media" data-hero-media aria-hidden="true">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="./public/images/hero-stage-v3.webp"
+            data-hero-video
+          >
+            <source src="./sala_cero_video_background.mp4" type="video/mp4" />
+          </video>
+          <!-- Fallback estático: se muestra si JS está deshabilitado o video no soportado -->
           <img
+            class="hero-poster-fallback"
             src="./public/images/hero-stage-v3.webp"
             width="1672"
             height="941"
@@ -149,6 +165,8 @@
             fetchpriority="high"
           />
         </div>
+
+        <!-- Velo oscuro con gradientes para contraste WCAG AAA -->
         <div class="hero-veil" aria-hidden="true"></div>
         <canvas class="hero-particles" data-hero-particles aria-hidden="true"></canvas>
 
@@ -156,29 +174,35 @@
           <div class="hero-copy reveal">
             <p class="eyebrow">
               <span></span>
-              Santa Cruz, Bolivia
+              Agencia digital · Santa Cruz, Bolivia
             </p>
             <h1 id="hero-title">
               <span>Tu negocio</span>
-              <span><em>online</em> en días.</span>
+              <span>vendiendo <em>online</em></span>
+              <span>en días, no en meses.</span>
             </h1>
             <p class="hero-lead">
-              Páginas web, tiendas con carrito y sistemas para tu empresa.
-              Te decimos precio y plazo en 24 horas — sin letra chica.
+              Creamos páginas web, tiendas con carrito y sistemas a medida
+              para que vendas más. Te decimos precio y plazo en 24 horas — sin letra chica.
             </p>
 
+            <!-- Badges de confianza (CRO: regla de 3 segundos) -->
             <div class="hero-badges" aria-label="Beneficios principales">
               <div class="hero-badge">
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm-.5 4.5v4l3 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Entrega en días</span>
+                <span>Entrega desde <strong>2 días</strong></span>
               </div>
               <div class="hero-badge">
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v4m0 8v4M2 10h4m8 0h4m-2.83-5.17-2.83 2.83M7.66 12.34l-2.83 2.83m11.34 0-2.83-2.83M7.66 7.66 4.83 4.83" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                 <span>Desde <strong>Bs 990</strong></span>
               </div>
               <div class="hero-badge">
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 14.5s1.5-2 5-2 5 2 5 2M10 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm5.5-.5 2 2 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>WhatsApp directo</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2l2.5 5.5L18 8.5l-4 4 1 5.5L10 15l-5 3 1-5.5-4-4 5.5-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>6 meses</strong> de garantía</span>
+              </div>
+              <div class="hero-badge">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1c-4.97 0-9 3.58-9 8 0 2.55 1.35 4.82 3.5 6.28V19l3.28-1.8c.7.13 1.44.2 2.22.2 4.97 0 9-3.58 9-8s-4.03-8-9-8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Soporte en <strong>Santa Cruz</strong></span>
               </div>
             </div>
 
@@ -205,77 +229,123 @@
             </div>
           </div>
 
+          <!-- Showcase Visual: Dispositivos 3D con mini-UIs reales -->
           <div class="hero-showcase reveal" aria-label="Productos que construimos">
-            <a href="#servicios" class="showcase-card showcase-card--featured" data-spotlight>
-              <div class="showcase-card__header">
-                <span class="showcase-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 22V12h6v10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.5" fill="currentColor"/></svg>
-                </span>
-                <span class="showcase-card__label">Más popular</span>
-              </div>
-              <h3 class="showcase-card__title">Tienda Online</h3>
-              <p class="showcase-card__desc">Catálogo, carrito y pedidos por WhatsApp o QR listos para vender.</p>
-              <div class="showcase-card__mockup" aria-hidden="true">
-                <div class="mockup-row">
-                  <span class="mockup-pill">🛒 Carrito</span>
-                  <span class="mockup-pill">📱 QR</span>
+            <!-- Glow de fondo del showcase -->
+            <div class="showcase-aura" aria-hidden="true"></div>
+
+            <!-- CARD 1: Celular — Tienda Online (frente, featured) -->
+            <a href="#servicios" class="device-card device-card--phone" data-spotlight>
+              <div class="device-card__border" aria-hidden="true"></div>
+              <div class="device-card__badge">🔥 Más popular</div>
+              <div class="device-frame-phone">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <!-- Mini UI: E-commerce -->
+                <div class="mini-ui">
+                  <div class="mini-ui__topbar">
+                    <span class="mini-ui__logo">Mi Tienda</span>
+                    <span class="mini-ui__cart-icon">🛒 <b>3</b></span>
+                  </div>
+                  <div class="mini-ui__product">
+                    <div class="mini-ui__product-img" aria-hidden="true"></div>
+                    <div class="mini-ui__product-info">
+                      <span class="mini-ui__product-name">Producto Premium</span>
+                      <span class="mini-ui__product-price">Bs 189</span>
+                    </div>
+                  </div>
+                  <div class="mini-ui__product">
+                    <div class="mini-ui__product-img mini-ui__product-img--alt" aria-hidden="true"></div>
+                    <div class="mini-ui__product-info">
+                      <span class="mini-ui__product-name">Pack Especial ×2</span>
+                      <span class="mini-ui__product-price">Bs 349</span>
+                    </div>
+                  </div>
+                  <div class="mini-ui__cta-bar">
+                    <span class="mini-ui__wa-btn">💬 Pedir por WhatsApp</span>
+                  </div>
                 </div>
-                <div class="mockup-bar">
-                  <span class="mockup-bar__fill" style="--bar-w:78%"></span>
-                  <span class="mockup-bar__label">+120 productos</span>
+                <div class="device-card__meta">
+                  <strong>Tienda Online</strong>
+                  <span>Desde <em>Bs 3.900</em></span>
                 </div>
-              </div>
-              <div class="showcase-card__footer">
-                <span class="showcase-card__price">Desde <strong>Bs 3.900</strong></span>
-                <span class="showcase-card__cta">Cotizar <span aria-hidden="true">↗</span></span>
               </div>
             </a>
 
-            <a href="#servicios" class="showcase-card" data-spotlight>
-              <div class="showcase-card__header">
-                <span class="showcase-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M9 21V9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </span>
-              </div>
-              <h3 class="showcase-card__title">Web Profesional</h3>
-              <p class="showcase-card__desc">La presencia que tu negocio necesita para generar confianza.</p>
-              <div class="showcase-card__mockup" aria-hidden="true">
-                <div class="mockup-stats">
-                  <div class="mockup-stat">
-                    <span class="mockup-stat__num">+300</span>
-                    <span class="mockup-stat__label">visitas/mes</span>
+            <!-- CARD 2: Navegador — Web Profesional (atrás izquierda) -->
+            <a href="#servicios" class="device-card device-card--browser" data-spotlight>
+              <div class="device-card__border" aria-hidden="true"></div>
+              <div class="device-frame-browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><i></i><i></i><i></i></span>
+                  <span class="browser-url">tuempresa.com</span>
+                </div>
+                <!-- Mini UI: Web corporativa -->
+                <div class="mini-ui mini-ui--web">
+                  <div class="mini-web__hero">
+                    <div class="mini-web__hero-text" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="mini-web__hero-btn" aria-hidden="true"></div>
                   </div>
-                  <div class="mockup-stat">
-                    <span class="mockup-stat__num">SEO</span>
-                    <span class="mockup-stat__label">optimizado</span>
+                  <div class="mini-web__stats">
+                    <div class="mini-web__stat">
+                      <b>+300</b>
+                      <span>visitas</span>
+                    </div>
+                    <div class="mini-web__stat">
+                      <b>4.9★</b>
+                      <span>reviews</span>
+                    </div>
+                    <div class="mini-web__stat">
+                      <b>SEO</b>
+                      <span>top 5</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="showcase-card__footer">
-                <span class="showcase-card__price">Desde <strong>Bs 990</strong></span>
-                <span class="showcase-card__cta">Cotizar <span aria-hidden="true">↗</span></span>
+                <div class="device-card__meta">
+                  <strong>Web Profesional</strong>
+                  <span>Desde <em>Bs 990</em></span>
+                </div>
               </div>
             </a>
 
-            <a href="#servicios" class="showcase-card" data-spotlight>
-              <div class="showcase-card__header">
-                <span class="showcase-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </div>
-              <h3 class="showcase-card__title">Sistema a Medida</h3>
-              <p class="showcase-card__desc">Inventario, ventas, CRM y reportes en un solo panel.</p>
-              <div class="showcase-card__mockup" aria-hidden="true">
-                <div class="mockup-modules">
-                  <span>Inventario</span>
-                  <span>Ventas</span>
-                  <span>CRM</span>
-                  <span>Reportes</span>
+            <!-- CARD 3: Panel — Sistema a Medida (atrás derecha) -->
+            <a href="#servicios" class="device-card device-card--dashboard" data-spotlight>
+              <div class="device-card__border" aria-hidden="true"></div>
+              <div class="device-frame-browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><i></i><i></i><i></i></span>
+                  <span class="browser-url">panel.tuempresa.com</span>
                 </div>
-              </div>
-              <div class="showcase-card__footer">
-                <span class="showcase-card__price">Desde <strong>Bs 6.900</strong></span>
-                <span class="showcase-card__cta">Cotizar <span aria-hidden="true">↗</span></span>
+                <!-- Mini UI: Dashboard/POS -->
+                <div class="mini-ui mini-ui--dash">
+                  <div class="mini-dash__sidebar" aria-hidden="true">
+                    <span></span><span></span><span></span><span class="active"></span><span></span>
+                  </div>
+                  <div class="mini-dash__main">
+                    <div class="mini-dash__kpis">
+                      <div class="mini-dash__kpi">
+                        <span class="mini-dash__kpi-val">Bs 24.5k</span>
+                        <span class="mini-dash__kpi-label">Ventas hoy</span>
+                        <span class="mini-dash__kpi-up">↑ 12%</span>
+                      </div>
+                      <div class="mini-dash__kpi">
+                        <span class="mini-dash__kpi-val">847</span>
+                        <span class="mini-dash__kpi-label">Productos</span>
+                      </div>
+                    </div>
+                    <div class="mini-dash__chart" aria-hidden="true">
+                      <svg viewBox="0 0 120 32" preserveAspectRatio="none">
+                        <polyline points="0,28 15,24 30,26 45,18 55,20 70,10 85,14 95,6 110,12 120,4" fill="none" stroke="url(#chartGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs><linearGradient id="chartGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#29b8ff"/><stop offset="100%" stop-color="#ff3aa7"/></linearGradient></defs>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="device-card__meta">
+                  <strong>Sistema a Medida</strong>
+                  <span>Desde <em>Bs 6.900</em></span>
+                </div>
               </div>
             </a>
           </div>

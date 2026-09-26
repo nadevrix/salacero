@@ -75,6 +75,49 @@ if (hero && heroMedia && !reducedMotion && window.matchMedia("(pointer: fine)").
   });
 }
 
+/* Hero Video Background: manejo de reproducción, accesibilidad y rendimiento */
+const heroVideo = document.querySelector("[data-hero-video]");
+if (heroVideo && heroMedia) {
+  /* 1. prefers-reduced-motion: pausar el video y mostrar poster */
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const applyMotionPref = (matches) => {
+    if (matches) {
+      heroVideo.pause();
+      heroMedia.classList.remove("video-playing");
+    } else {
+      heroVideo.play().catch(() => {});
+    }
+  };
+  applyMotionPref(motionQuery.matches);
+  motionQuery.addEventListener("change", (e) => applyMotionPref(e.matches));
+
+  /* 2. Save-Data / datos reducidos: no reproducir video */
+  const saveData = navigator.connection?.saveData;
+  if (saveData) {
+    heroVideo.pause();
+    heroVideo.removeAttribute("autoplay");
+    heroMedia.classList.remove("video-playing");
+  }
+
+  /* 3. Marcar "video-playing" cuando arranca (oculta poster con transición CSS) */
+  heroVideo.addEventListener("playing", () => {
+    heroMedia.classList.add("video-playing");
+  }, { once: true });
+
+  /* 4. Pausar video si el hero sale del viewport (ahorra GPU/batería) */
+  if ("IntersectionObserver" in window && !captureMode) {
+    new IntersectionObserver(([entry]) => {
+      if (motionQuery.matches || saveData) return;
+      if (entry.isIntersecting) {
+        heroVideo.play().catch(() => {});
+      } else {
+        heroVideo.pause();
+      }
+    }, { threshold: 0.08 }).observe(hero);
+  }
+}
+
+
 const particleCanvas = document.querySelector("[data-hero-particles]");
 if (particleCanvas && !reducedMotion && !captureMode) {
   const context = particleCanvas.getContext("2d");
